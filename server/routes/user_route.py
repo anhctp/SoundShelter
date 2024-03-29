@@ -7,7 +7,7 @@ from schemas.user_schema import Register, Login
 from models.user_model import UserModel
 
 router = APIRouter(
-    tags=["User"],
+    tags=["Users"],
     responses={404: {"description": "Not found"}},
 )
 
