@@ -4,6 +4,7 @@ import "../../public/globals.css";
 import Sidebar from "@/components/sidebar";
 import Header from "@/components/header";
 import AuthWatcher from "@/components/authwatcher";
+import AudioPlayer from "@/components/audio/audio-player";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +31,9 @@ export default function RootLayout({
               {children}
             </div>
           </div>
-          <div className="h-[84px]"></div>
+          <div className="h-[84px]">
+            <AudioPlayer />
+          </div>
         </main>
       </body>
     </html>
