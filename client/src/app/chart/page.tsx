@@ -15,57 +15,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [hoveredButton, setHoveredButton] = useState<number | null>(null);
-  //   const [songs, setSongs] = useState<SongChart[]>([]);
-  const songs = [
-    {
-      id: 1,
-      title: "Alo",
-      image_file_path: "/logo-no-background.svg",
-      artist: "Vu",
-      albums_title: "50 phut",
-      time: "03:12",
-    },
-    {
-      id: 2,
-      title: "Blo",
-      image_file_path: "/logo-no-background.svg",
-      artist: "Vu",
-      albums_title: "50 phut",
-      time: "05:12",
-    },
-    {
-      id: 3,
-      title: "Blo",
-      image_file_path: "/logo-no-background.svg",
-      artist: "Vu",
-      albums_title: "50 phut",
-      time: "05:12",
-    },
-    {
-      id: 4,
-      title: "Blo",
-      image_file_path: "/logo-no-background.svg",
-      artist: "Vu",
-      albums_title: "50 phut",
-      time: "05:12",
-    },
-    {
-      id: 5,
-      title: "Blo",
-      image_file_path: "/logo-no-background.svg",
-      artist: "Vu",
-      albums_title: "50 phut",
-      time: "05:12",
-    },
-    {
-      id: 6,
-      title: "Blo",
-      image_file_path: "/logo-no-background.svg",
-      artist: "Vu",
-      albums_title: "50 phut",
-      time: "05:12",
-    },
-  ];
+  const [songs, setSongs] = useState<SongChart[]>([]);
   //   const { setSong } = useSongStore();
   //   const { userID } = useUserStore();
 
@@ -123,9 +73,7 @@ export default function Home() {
             >
               {index + 1}
             </div>
-            <div
-              className="flex items-center gap-5 max-w-3xlcursor-default"
-            >
+            <div className="flex items-center gap-5 max-w-3xlcursor-default">
               <Image
                 src={item.image_file_path}
                 width={60}
