@@ -46,7 +46,7 @@ export default function Home() {
   }, []);
   return (
     <div className="w-full h-[calc(100%_-_84px)] overflow-auto p-10">
-      <div className="w-full flex items-center gap-3 mb-8 capitalize text-4xl text-white font-bold">
+      <div className="w-full flex items-center gap-3 mb-8 capitalize text-4xl font-bold">
         Mới phát hành
       </div>
       {newestSongs.map((item, index) => (
@@ -54,7 +54,7 @@ export default function Home() {
           key={index}
           onMouseEnter={() => setHoveredButton(item.id)}
           onMouseLeave={() => setHoveredButton(null)}
-          className="w-full flex items-center text-left p-2.5 text-xs font-light gap-4 text-white rounded focus:bg-[#393243] hover:bg-[#393243] "
+          className="w-full flex items-center text-left p-2.5 text-xs font-light gap-4 border-b rounded focus:bg-primary hover:bg-primary "
         >
           <div className="flex items-center gap-10 w-1/2 mr-2.5">
             <div
@@ -70,13 +70,13 @@ export default function Home() {
                   hoveredButton === item.id && "opacity-50"
                 }`}
               />
-              <div className="text-xs tracking-tight text-white">
+              <div className="text-xs tracking-tight">
                 <div className="font-bold">{item.title}</div>
                 <div className="font-light opacity-50">{item.artist}</div>
               </div>
               {hoveredButton === item.id && (
                 <div
-                  className="absolute px-4 text-white cursor-pointer"
+                  className="absolute px-2 cursor-pointer"
                   onClick={() => handlePlaySong(item)}
                 >
                   <IconPlay1 />

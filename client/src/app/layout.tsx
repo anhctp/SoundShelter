@@ -25,7 +25,7 @@ export default function RootLayout({
         <main className="h-screen flex flex-col justify-between text-secondary bg-primary-200">
           <div className="h-[calc(100%_-_84px)] flex">
             <Sidebar />
-            <div className="w-full h-full">
+            <div className="w-[calc(100%_-_240px)] h-full">
               <Header />
               {children}
             </div>
