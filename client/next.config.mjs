@@ -7,8 +7,14 @@ const nextConfig = {
         hostname: "photo-zmp3.zmdcdn.me",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "photo-resize-zmp3.zmdcdn.me",
+        port: "",
+      },
     ],
   },
+  reactStrictMode: false,
 };
 
 export default nextConfig;

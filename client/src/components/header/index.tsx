@@ -6,12 +6,12 @@ import {
 } from "@/services/header/header-helpers";
 import Link from "next/link";
 import { useState } from "react";
-// import Login from "../login";
-// import Signup from "../signup";
-// import useAuthStore from "@/stores/authStore";
+import Login from "../login";
+import Signup from "../signup";
+import useAuthStore from "@/stores/auth-store";
 
 const Header = () => {
-  //   const { authorized } = useAuthStore();
+  const { authorized } = useAuthStore();
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignupModal, setOpenSignupModal] = useState(false);
   const [clickedAccount, setClickedAccount] = useState(false);
@@ -31,7 +31,7 @@ const Header = () => {
         </div>
       </form>
       <div className="flex gap-4 items-center">
-        <div className="w-10 h-10 flex items-center justify-center border border-secondary rounded-full bg-primary">
+        <div className="w-10 h-10 flex items-center justify-center border border-secondary rounded-full">
           <div
             className="cursor-pointer"
             onClick={() => {
@@ -66,15 +66,15 @@ const Header = () => {
               setClickedAccount(!clickedAccount);
             }}
           >
-            {/* {authorized ? (
+            {authorized ? (
               <IconUser />
-            ) : ( */}
-            <div onClick={() => setOpenLoginModal(true)}>
-              <div className="w-40 flex items-center justify-center text-center rounded-xl border border-secondary py-2 px-1 text-xs text-secondary bg-primary font-medium">
-                Đăng nhập
+            ) : (
+              <div onClick={() => setOpenLoginModal(true)}>
+                <div className="w-40 flex items-center justify-center text-center rounded-xl border border-secondary py-2 px-1 text-xs text-secondary bg-primary font-medium">
+                  Đăng nhập
+                </div>
               </div>
-            </div>
-            {/* )} */}
+            )}
           </div>
           <div
             onMouseLeave={() => setClickedAccount(false)}
@@ -82,25 +82,25 @@ const Header = () => {
               !clickedAccount && "hidden"
             } absolute flex flex-col justify-between right-16 z-10 mt-2 w-56 origin-top-right rounded-md bg-primary shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
           >
-            {/* {authorized && ( */}
-            <div>
-              {headerAccountItem.map((item, index) => (
-                <div key={index} className="flex items-center">
-                  <item.IconComponent />
-                  <Link
-                    href={item.link}
-                    className="text-secondary block px-4 py-2 text-sm gap-2"
-                  >
-                    {item.label}
-                  </Link>
-                </div>
-              ))}
-            </div>
-            {/* )} */}
+            {authorized && (
+              <div>
+                {headerAccountItem.map((item, index) => (
+                  <div key={index} className="flex items-center">
+                    <item.IconComponent />
+                    <Link
+                      href={item.link}
+                      className="text-secondary block px-4 py-2 text-sm gap-2"
+                    >
+                      {item.label}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
-      {/* {openLoginModal && (
+      {openLoginModal && (
         <Login
           openLoginModal={openLoginModal}
           setOpenLoginModal={setOpenLoginModal}
@@ -114,7 +114,7 @@ const Header = () => {
           openSignupModal={true}
           setOpenSignupModal={setOpenSignupModal}
         />
-      )} */}
+      )}
     </div>
   );
 };

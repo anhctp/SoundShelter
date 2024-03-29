@@ -3,22 +3,22 @@ import { IconGoRight, IconPlay } from "@/assets/icons";
 import {
   getListAlbumsByGenre,
   getNewestSongs,
-} from "@/services/discovery/discoveryApi";
-import { Album, Playlist, Song } from "@/services/discovery/discoveryHelpers";
-import { getAllGenre } from "@/services/hub/hubApi";
-import { Genre } from "@/services/hub/hubHelpers";
-import useAuthStore from "@/stores/authStore";
-import { useUserStore } from "@/stores/userStore";
+} from "@/services/discovery/discovery-api";
+import { Album, Playlist, Song } from "@/services/discovery/discovery-helpers";
+import { getAllGenre } from "@/services/hub/hub-api";
+import { Genre } from "@/services/hub/hub-helpers";
+import useAuthStore from "@/stores/auth-store";
+import { useUserStore } from "@/stores/user-store";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSongStore } from "@/stores/songStore";
-import { getAllPlaylist } from "@/services/playlist/albumApi";
+import { useSongStore } from "@/stores/song-store";
+import { getAllPlaylist } from "@/services/playlist/playlist-api";
 import {
   getRecentlyHeardSongs,
   setRecentlyHeardSongs,
   updateSongView,
-} from "@/services/library/libraryApi";
+} from "@/services/library/library-api";
 
 export default function Home() {
   const { authorized } = useAuthStore();
@@ -123,10 +123,10 @@ export default function Home() {
       {authorized && (
         <div className="mt-[48px]">
           <div className="flex justify-between p-4  text-xl">
-            <div className="text-header text-white">Gần đây</div>
+            <div className="text-header">Gần đây</div>
             <Link
               href={"/library/history"}
-              className="flex items-center text-header text-white cursor-pointer hover:text-[#8d22c3]"
+              className="flex items-center text-header text-primary-100 cursor-pointer hover:text-secondary"
             >
               Xem thêm
               <IconGoRight />
@@ -139,7 +139,7 @@ export default function Home() {
                   onMouseEnter={() => setHoveredButton(song.id)}
                   onMouseLeave={() => setHoveredButton(null)}
                   key={index}
-                  className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-[#393243] hover:bg-[#393243] cursor-default"
+                  className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-primary hover:bg-primary cursor-default"
                   style={{ position: "relative" }}
                 >
                   <Image
@@ -151,7 +151,7 @@ export default function Home() {
                       hoveredButton === song.id && "opacity-50"
                     }`}
                   />
-                  <div className="text-xs tracking-tight text-white">
+                  <div className="text-xs tracking-tight">
                     <div className="font-bold">{song.title}</div>
                     <div className="font-light opacity-50">{song.artist}</div>
                     <div className="font-light opacity-50">
@@ -160,7 +160,7 @@ export default function Home() {
                   </div>
                   {hoveredButton === song.id && (
                     <div
-                      className="absolute px-4 text-white cursor-pointer"
+                      className="absolute px-4 cursor-pointer"
                       onClick={() => handlePlaySong(song)}
                     >
                       <IconPlay />
@@ -175,7 +175,7 @@ export default function Home() {
                   onMouseEnter={() => setHoveredButton(song.id)}
                   onMouseLeave={() => setHoveredButton(null)}
                   key={index}
-                  className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-[#393243] hover:bg-[#393243] cursor-default"
+                  className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-primary hover:bg-primary cursor-default"
                   style={{ position: "relative" }}
                 >
                   <Image
@@ -187,7 +187,7 @@ export default function Home() {
                       hoveredButton === song.id && "opacity-50"
                     }`}
                   />
-                  <div className="text-xs tracking-tight text-white">
+                  <div className="text-xs tracking-tight">
                     <div className="font-bold">{song.title}</div>
                     <div className="font-light opacity-50">{song.artist}</div>
                     <div className="font-light opacity-50">
@@ -196,7 +196,7 @@ export default function Home() {
                   </div>
                   {hoveredButton === song.id && (
                     <div
-                      className="absolute px-4 text-white cursor-pointer"
+                      className="absolute px-4 cursor-pointer"
                       onClick={() => handlePlaySong(song)}
                     >
                       <IconPlay />
@@ -210,10 +210,10 @@ export default function Home() {
       )}
       <div className="mt-[48px]">
         <div className="flex justify-between p-4  text-xl">
-          <div className="text-header text-white">Mới phát hành</div>
+          <div className="text-header">Mới phát hành</div>
           <Link
             href={"/new-release"}
-            className="flex items-center text-header text-white cursor-pointer hover:text-[#8d22c3]"
+            className="flex items-center text-header text-primary-100 cursor-pointer hover:text-secondary"
           >
             Xem thêm
             <IconGoRight />
@@ -226,7 +226,7 @@ export default function Home() {
                 onMouseEnter={() => setHoveredButton(song.id)}
                 onMouseLeave={() => setHoveredButton(null)}
                 key={index}
-                className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-[#393243] hover:bg-[#393243] cursor-default"
+                className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-primary hover:bg-primary cursor-default"
                 style={{ position: "relative" }}
               >
                 <Image
@@ -238,7 +238,7 @@ export default function Home() {
                     hoveredButton === song.id && "opacity-50"
                   }`}
                 />
-                <div className="text-xs tracking-tight text-white">
+                <div className="text-xs tracking-tight">
                   <div className="font-bold">{song.title}</div>
                   <div className="font-light opacity-50">{song.artist}</div>
                   <div className="font-light opacity-50">
@@ -247,7 +247,7 @@ export default function Home() {
                 </div>
                 {hoveredButton === song.id && (
                   <div
-                    className="absolute px-4 text-white cursor-pointer"
+                    className="absolute px-4 cursor-pointer"
                     onClick={() => handlePlaySong(song)}
                   >
                     <IconPlay />
@@ -262,7 +262,7 @@ export default function Home() {
                 onMouseEnter={() => setHoveredButton(song.id)}
                 onMouseLeave={() => setHoveredButton(null)}
                 key={index}
-                className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-[#393243] hover:bg-[#393243] cursor-default"
+                className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-primary hover:bg-primary cursor-default"
                 style={{ position: "relative" }}
               >
                 <Image
@@ -274,7 +274,7 @@ export default function Home() {
                     hoveredButton === song.id && "opacity-50"
                   }`}
                 />
-                <div className="text-xs tracking-tight text-white">
+                <div className="text-xs tracking-tight">
                   <div className="font-bold">{song.title}</div>
                   <div className="font-light opacity-50">{song.artist}</div>
                   <div className="font-light opacity-50">
@@ -283,7 +283,7 @@ export default function Home() {
                 </div>
                 {hoveredButton === song.id && (
                   <div
-                    className="absolute px-4 text-white cursor-pointer"
+                    className="absolute px-4 cursor-pointer"
                     onClick={() => handlePlaySong(song)}
                   >
                     <IconPlay />
@@ -297,10 +297,10 @@ export default function Home() {
       {genresWithAlbums.map(({ genre, album }, index) => (
         <div key={index} className="mt-[48px]">
           <div className="flex justify-between p-4  text-xl">
-            <div className="text-header text-white">{genre.name}</div>
+            <div className="text-header">{genre.name}</div>
             <Link
               href={`/hub/${genre.id}`}
-              className="flex items-center text-header text-white cursor-pointer hover:text-[#8d22c3]"
+              className="flex items-center text-primary-100 text-header cursor-pointer hover:text-secondary"
             >
               Xem thêm
               <IconGoRight />
@@ -328,13 +328,13 @@ export default function Home() {
                   {hoveredButton === item.id && (
                     <Link
                       href={`/album/${item.id}`}
-                      className="absolute px-4 text-white cursor-pointer"
+                      className="absolute px-4 cursor-pointer"
                     >
                       <IconPlay />
                     </Link>
                   )}
                 </div>
-                <div className="text-xs font-bold tracking-tight text-white opacity-50">
+                <div className="text-xs font-bold tracking-tight opacity-50">
                   {item.title}
                 </div>
               </div>

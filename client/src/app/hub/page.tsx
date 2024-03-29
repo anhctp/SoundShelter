@@ -1,10 +1,10 @@
 "use client";
 import { IconGoRight, IconPlay } from "@/assets/icons";
-// import { getListAlbumsByGenre } from "@/services/discovery/discoveryApi";
+import { getListAlbumsByGenre } from "@/services/discovery/discovery-api";
 import { Album, Playlist } from "@/services/discovery/discovery-helpers";
-// import { getAllGenre } from "@/services/hub/hubApi";
+import { getAllGenre } from "@/services/hub/hub-api";
 import { Genre } from "@/services/hub/hub-helpers";
-// import { getAllPlaylist } from "@/services/playlist/albumApi";
+import { getAllPlaylist } from "@/services/playlist/playlist-api";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -17,46 +17,46 @@ export default function Home() {
   const [genre, setGenre] = useState<Genre[]>([]);
   const [playlist, setPlaylist] = useState<Playlist[]>([]);
 
-  //   const getPlaylists = async () => {
-  //     const res = await getAllPlaylist();
-  //     setPlaylist(res.data);
-  //   };
-  //   const getGenres = async () => {
-  //     const res = await getAllGenre();
-  //     setGenre(res.data);
-  //   };
-  //   useEffect(() => {
-  //     getGenres();
-  //     getPlaylists();
-  //   }, []);
+  const getPlaylists = async () => {
+    const res = await getAllPlaylist();
+    setPlaylist(res.data);
+  };
+  const getGenres = async () => {
+    const res = await getAllGenre();
+    setGenre(res.data);
+  };
+  useEffect(() => {
+    getGenres();
+    getPlaylists();
+  }, []);
 
-  //   useEffect(() => {
-  //     const fetchAlbums = async () => {
-  //       const genresWithAlbumsData: { genre: Genre; album: Album[] }[] = [];
+  useEffect(() => {
+    const fetchAlbums = async () => {
+      const genresWithAlbumsData: { genre: Genre; album: Album[] }[] = [];
 
-  //       for (const genreItem of genre) {
-  //         try {
-  //           const response = await getListAlbumsByGenre(genreItem.id);
-  //           const albumsData = response.data.slice(0, 6);
+      for (const genreItem of genre) {
+        try {
+          const response = await getListAlbumsByGenre(genreItem.id);
+          const albumsData = response.data.slice(0, 6);
 
-  //           if (albumsData.length > 0) {
-  //             genresWithAlbumsData.push({
-  //               genre: genreItem,
-  //               album: albumsData,
-  //             });
-  //           }
-  //         } catch (error) {
-  //           console.error(
-  //             `Error fetching albums for genre ${genreItem.id}: ${error}`
-  //           );
-  //         }
-  //       }
+          if (albumsData.length > 0) {
+            genresWithAlbumsData.push({
+              genre: genreItem,
+              album: albumsData,
+            });
+          }
+        } catch (error) {
+          console.error(
+            `Error fetching albums for genre ${genreItem.id}: ${error}`
+          );
+        }
+      }
 
-  //       setGenresWithAlbums(genresWithAlbumsData);
-  //     };
+      setGenresWithAlbums(genresWithAlbumsData);
+    };
 
-  //     fetchAlbums();
-  //   }, [genre]);
+    fetchAlbums();
+  }, [genre]);
   return (
     <div className="h-[calc(100%_-_84px)] overflow-auto">
       <div className="w-full">
