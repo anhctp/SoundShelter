@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../../public/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "SoundShelter",
   description: "Music app",
+  icons: "/soundshelter-favicon-color.png",
 };
 
 export default function RootLayout({
