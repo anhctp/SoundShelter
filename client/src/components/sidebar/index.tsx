@@ -10,7 +10,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { IconAdd } from "@/assets/icons";
-// import useAuthStore from "@/stores/authStore";
+import useAuthStore from "@/stores/auth-store";
 
 const Sidebar = () => {
   const [selectedOption, setSelectedOption] = useState<SelectedOptionSidebar>(
@@ -18,7 +18,7 @@ const Sidebar = () => {
   );
   const logoUrl = "/logo-no-background.png";
   const currentURL = usePathname();
-  // const { authorized } = useAuthStore();
+  const { authorized } = useAuthStore();
   useEffect(() => {
     if (currentURL.includes("chart")) {
       setSelectedOption(SelectedOptionSidebar.Chart);
@@ -56,8 +56,7 @@ const Sidebar = () => {
             </ButtonSidebar>
           </Link>
         ))}
-        {
-          // authorized &&
+        {authorized &&
           sidebarItemsLibrary.map((item, index) => (
             <Link key={index} href={item.link}>
               <ButtonSidebar
@@ -68,8 +67,7 @@ const Sidebar = () => {
                 {item.lable}
               </ButtonSidebar>
             </Link>
-          ))
-        }
+          ))}
       </div>
       {/* <div className="fixed w-[240px] h-[70px] bottom-0 flex items-center border-t px-6 bottom-0 cursor-pointer">
         <IconAdd />

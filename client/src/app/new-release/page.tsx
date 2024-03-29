@@ -2,6 +2,7 @@
 import { IconHeart, IconPlay1 } from "@/assets/icons";
 import { getRankSongs } from "@/services/chart/chart-api";
 import { SongChart } from "@/services/chart/chart-helpers";
+import { getNewestSongs } from "@/services/discovery/discovery-api";
 import { Song } from "@/services/discovery/discovery-helpers";
 import {
   setFavoriteSongs,
@@ -15,15 +16,14 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [hoveredButton, setHoveredButton] = useState<number | null>(null);
-  const [songs, setSongs] = useState<SongChart[]>([]);
+  const [newestSongs, setNewestSongs] = useState<Song[]>([]);
   const { setSong } = useSongStore();
   const { userID } = useUserStore();
 
   const getSongs = async () => {
-    const res = await getRankSongs();
-    setSongs(res.data);
+    const res = await getNewestSongs();
+    setNewestSongs(res.data.newest_songs);
   };
-
   const handlePlaySong = async (song: Song) => {
     const currentDate = new Date();
     const formattedDate = currentDate.toISOString();
@@ -47,36 +47,18 @@ export default function Home() {
   return (
     <div className="w-full h-[calc(100%_-_84px)] overflow-auto p-10">
       <div className="w-full flex items-center gap-3 mb-8 capitalize text-4xl font-bold">
-        Bảng xếp hạng
-        <div className="cursor-pointer">
-          <IconPlay1 />
-        </div>
+        Mới phát hành
       </div>
-      {songs.map((item, index) => (
+      {newestSongs.map((item, index) => (
         <button
           key={index}
           onMouseEnter={() => setHoveredButton(item.id)}
           onMouseLeave={() => setHoveredButton(null)}
-          className="w-full flex items-center text-left p-2.5 text-xs font-light gap-4 rounded focus:bg-primary hover:bg-primary border-b "
+          className="w-full flex items-center text-left p-2.5 text-xs font-light gap-4 border-b rounded focus:bg-primary hover:bg-primary "
         >
-          <div
-            className="flex items-center gap-10 w-1/2 mr-2.5"
-          >
+          <div className="flex items-center gap-10 w-1/2 mr-2.5">
             <div
-              className={`w-6 font-black text-4xl ${
-                index + 1 === 1
-                  ? "text-red-500"
-                  : index + 1 === 2
-                  ? "text-lime-500"
-                  : index + 1 === 3
-                  ? "text-cyan-500"
-                  : "text-white"
-              }`}
-            >
-              {index + 1}
-            </div>
-            <div
-              className="flex items-center gap-5 max-w-3xl cursor-default"
+              className="flex items-center gap-5 max-w-3xlcursor-default"
               style={{ position: "relative" }}
             >
               <Image
@@ -94,7 +76,7 @@ export default function Home() {
               </div>
               {hoveredButton === item.id && (
                 <div
-                  className="absolute px-4 cursor-pointer"
+                  className="absolute px-2 cursor-pointer"
                   onClick={() => handlePlaySong(item)}
                 >
                   <IconPlay1 />
@@ -102,17 +84,18 @@ export default function Home() {
               )}
             </div>
           </div>
-          <div className={`w-1/2 opacity-50`}>{item.albums_title}</div>
-          <div className="flex justify-end items-center mr-0 opacity-50 px-12">
-            {hoveredButton === item.id ? (
+          <div className={`w-1/2 opacity-50`}>{item.release_date}</div>
+          <div
+            className="flex gap-5 justify-end items-center mr-0 opacity-50"
+            style={{ position: "relative" }}
+          >
+            {hoveredButton === item.id && (
               <div
-                className="cursor-pointer"
+                className="px-12 absolute cursor-pointer"
                 onClick={() => handleFavoriteSong(item.id)}
               >
                 <IconHeart />
               </div>
-            ) : (
-              <div className="w-6"></div>
             )}
           </div>
         </button>
