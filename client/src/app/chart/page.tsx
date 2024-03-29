@@ -107,7 +107,7 @@ export default function Home() {
           key={index}
           onMouseEnter={() => setHoveredButton(item.id)}
           onMouseLeave={() => setHoveredButton(null)}
-          className="w-full flex items-center text-left p-2.5 text-xs font-light gap-4 rounded focus:bg-primary hover:bg-primary "
+          className="w-full flex items-center text-left p-2.5 text-xs font-light gap-4 rounded focus:bg-primary hover:bg-primary border-b "
         >
           <div className="flex items-center gap-10 w-1/2 mr-2.5">
             <div
