@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import user_route, genre_route, album_route
+from routes import user_route, genre_route, album_route, playlist_route
 from models.playlist_model import PlaylistModel
 from database import Base, engine
 
@@ -17,3 +17,4 @@ app.add_middleware(
 app.include_router(user_route.router, prefix="/api")
 app.include_router(genre_route.router, prefix="/api")
 app.include_router(album_route.router, prefix="/api")
+app.include_router(playlist_route.router, prefix="/api")
