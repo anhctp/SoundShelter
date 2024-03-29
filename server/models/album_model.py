@@ -9,5 +9,5 @@ class AlbumModel(Base):
     title = Column(String(100))
     release_date = Column(DateTime)
     artist = Column(String(100))
-    genre_id = Column(Integer, ForeignKey("Genres.id"))
+    genre_id = Column(Integer, ForeignKey("genres.id"))
     image_file_path = Column(String(255))
