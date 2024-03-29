@@ -21,5 +21,5 @@ export const deleteFavoriteSongs = (userId: number, songId: number) => {
 };
 
 export const updateSongView = (songId: number) => {
-  return axios.get(`/song/updateView/${songId}`);
+  return axios.get(`/song/update-view/${songId}`);
 };
