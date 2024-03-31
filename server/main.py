@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
+from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 from routes import user_route, genre_route, album_route, playlist_route, song_route, history_route, favorite_route
 from models.playlist_model import PlaylistModel
