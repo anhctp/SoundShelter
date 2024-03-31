@@ -27,6 +27,11 @@ def find_song_by_name(name: str, db: Session = Depends(get_database)):
     return SongController.get_song_by_name(name=name, db=db)
 
 
+@router.get("/rank")
+def rank_song_by_views(db: Session = Depends(get_database)):
+    return SongController.rank_song_by_views(db=db)
+
+
 @router.get("/{song_id}")
 def get_song_by_id(song_id: int, db: Session = Depends(get_database)):
     return SongController.get_song_by_id(song_id=song_id, db=db)
