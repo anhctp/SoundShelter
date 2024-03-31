@@ -100,8 +100,8 @@ class SongController:
                 .all()
             )
             songs_list = []
+            # Convert objects to a list of dictionaries
             for song in newest_songs:
-                # Convert objects to a list of dictionaries
                 song_data = {
                     'id': song.id,
                     'title': song.title,
