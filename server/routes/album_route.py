@@ -29,6 +29,11 @@ def get_feature_albums(db: Session = Depends(get_database)):
     return AlbumController.get_feature_albums(db=db)
 
 
+@router.get("/album-by-genre/{genre_id}")
+def get_list_albums_by_genre(genre_id: int, db: Session = Depends(get_database)):
+    return AlbumController.list_albums_by_genre(genre_id=genre_id, db=db)
+
+
 @router.get("/{album_id}")
 def get_album_by_id(album_id: int, db: Session = Depends(get_database)):
     return AlbumController.get_album_by_id(album_id=album_id, db=db)

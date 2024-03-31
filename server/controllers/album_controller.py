@@ -6,6 +6,7 @@ from models.user_model import UserModel
 from models.album_model import AlbumModel
 from models.song_model import SongModel
 from schemas.album_schema import AlbumCreate
+from controllers.genre_controller import GenreController
 
 
 class AlbumController:
@@ -119,3 +120,15 @@ class AlbumController:
         final_result = list(result.values())
 
         return final_result
+
+    def list_albums_by_genre(genre_id: int, db: Session):
+
+        genre = GenreController.get_genre_by_id(genre_id=genre_id, db=db)
+
+        if not genre:
+            raise HTTPException(status_code=404, detail="Genre not found")
+
+        albums = db.query(AlbumModel).filter(
+            AlbumModel.genre_id == genre.id).all()
+
+        return albums

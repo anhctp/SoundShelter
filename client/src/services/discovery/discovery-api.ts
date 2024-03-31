@@ -7,5 +7,5 @@ export const getNewestSongs = () => {
 };
 
 export const getListAlbumsByGenre = (genreId: number) => {
-  return axios.get(`/discovery/albumByGenre/${genreId}`);
+  return axios.get(`/album/album-by-genre/${genreId}`);
 };
