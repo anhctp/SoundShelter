@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "zingmp3-api-full": "^1.0.14"
+  },
+  "type": "module"
+}
