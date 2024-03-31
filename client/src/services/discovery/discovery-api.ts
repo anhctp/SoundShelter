@@ -3,7 +3,7 @@ axios.defaults.withCredentials = true;
 axios.defaults.baseURL = "http://localhost:8000/api";
 
 export const getNewestSongs = () => {
-  return axios.get("/discovery/newest-songs");
+  return axios.get("/song/newest-songs");
 };
 
 export const getListAlbumsByGenre = (genreId: number) => {

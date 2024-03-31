@@ -1,3 +1,4 @@
+from datetime import datetime
 from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session
 from models.song_model import SongModel
@@ -88,3 +89,34 @@ class SongController:
             result.append(song_info)
 
         return result
+
+    def get_newest_songs(db: Session):
+        try:
+            # Query to get 10 newest songs
+            newest_songs = (
+                db.query(SongModel)
+                .order_by(SongModel.release_date.desc())
+                .limit(12)
+                .all()
+            )
+            songs_list = []
+            for song in newest_songs:
+                # Convert objects to a list of dictionaries
+                song_data = {
+                    'id': song.id,
+                    'title': song.title,
+                    'artist': song.artist,
+                    'audio_file_path': song.audio_file_path,
+                    'image_file_path': song.image_file_path,
+                    'album_id': song.album_id,
+                    'playlist_id': song.playlist_id,
+                    'release_date': song.release_date.strftime("%d/%m/%Y"),
+                    'views': song.views
+                }
+                songs_list.append(song_data)
+
+            return {'newest_songs': songs_list}
+
+        except Exception as e:
+            # Handle exceptions appropriately
+            raise HTTPException(status_code=500, detail=str(e))

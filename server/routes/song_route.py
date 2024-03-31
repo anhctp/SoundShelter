@@ -32,6 +32,11 @@ def rank_song_by_views(db: Session = Depends(get_database)):
     return SongController.rank_song_by_views(db=db)
 
 
+@router.get("/newest-songs")
+def get_newest_songs(db: Session = Depends(get_database)):
+    return SongController.get_newest_songs(db=db)
+
+
 @router.get("/{song_id}")
 def get_song_by_id(song_id: int, db: Session = Depends(get_database)):
     return SongController.get_song_by_id(song_id=song_id, db=db)
