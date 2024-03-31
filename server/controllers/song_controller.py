@@ -1,3 +1,4 @@
+from datetime import datetime
 from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session
 from models.song_model import SongModel
@@ -109,7 +110,7 @@ class SongController:
                     'image_file_path': song.image_file_path,
                     'album_id': song.album_id,
                     'playlist_id': song.playlist_id,
-                    'release_date': song.release_date,
+                    'release_date': song.release_date.strftime("%d/%m/%Y"),
                     'views': song.views
                 }
                 songs_list.append(song_data)
