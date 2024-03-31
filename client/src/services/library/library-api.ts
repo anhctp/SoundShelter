@@ -7,7 +7,7 @@ export const getRecentlyHeardSongs = (userId: number) => {
 };
 
 export const setRecentlyHeardSongs = (history: History) => {
-  return axios.post(`/history/create_heard_songs`, history);
+  return axios.post(`/history/create-heard-song`, history);
 };
 
 export const getFavoriteSongs = (userId: number) => {
