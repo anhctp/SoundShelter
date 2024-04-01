@@ -1,13 +1,14 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { NextPage } from "next";
+import { register } from "@/services/user/user-api";
+import useAuthStore from "@/stores/auth-store";
+import { useUserStore } from "@/stores/user-store";
+
 interface Props {
   openSignupModal: boolean;
   setOpenSignupModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
-import { register } from "@/services/user/user-api";
-import useAuthStore from "@/stores/auth-store";
-import { useUserStore } from "@/stores/user-store";
 
 const Signup: NextPage<Props> = (props) => {
   const { openSignupModal, setOpenSignupModal } = props;
@@ -15,8 +16,6 @@ const Signup: NextPage<Props> = (props) => {
   const [password, setPassword] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const cancelButtonRef = useRef(null);
-  const token = useAuthStore((state) => state.token);
-
   const handleRegister = async () => {
     setOpenSignupModal(false);
     if (email && name && password) {
@@ -30,7 +29,7 @@ const Signup: NextPage<Props> = (props) => {
       const newUser = res.data.user;
       localStorage.setItem("user", JSON.stringify(newUser));
       useUserStore.getState().setUser(newUser);
-      localStorage.setItem("accessToken ", res.data.jwtToken);
+      localStorage.setItem("token", res.data.jwtToken);
     }
   };
   return (

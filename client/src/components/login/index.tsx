@@ -22,7 +22,6 @@ const Login: NextPage<Props> = (props) => {
   const [password, setPassword] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const cancelButtonRef = useRef(null);
-  const token = useAuthStore((state) => state.token);
 
   const handleLogin = async () => {
     setOpenLoginModal(false);
@@ -36,7 +35,7 @@ const Login: NextPage<Props> = (props) => {
       const newUser = res.data.user;
       localStorage.setItem("user", JSON.stringify(newUser));
       useUserStore.getState().setUser(newUser);
-      localStorage.setItem("accessToken ", res.data.jwtToken);
+      localStorage.setItem("token", res.data.jwtToken);
     }
   };
   return (
