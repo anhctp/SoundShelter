@@ -1,11 +1,8 @@
-import axios from "axios";
-axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://localhost:8000/api";
-
+import { mainAxiosClient } from "@/services/axios";
 export const getNewestSongs = () => {
-  return axios.get("/song/newest-songs");
+  return mainAxiosClient.get("/song/newest-songs");
 };
 
 export const getListAlbumsByGenre = (genreId: number) => {
-  return axios.get(`/album/album-by-genre/${genreId}`);
+  return mainAxiosClient.get(`/album/album-by-genre/${genreId}`);
 };

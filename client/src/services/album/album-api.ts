@@ -1,13 +1,12 @@
-import axios from "axios";
-axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://localhost:8000/api";
+import { mainAxiosClient } from "@/services/axios";
+const ALBUM_URL = "album";
 
 export const getAllAlbums = () => {
-  return axios.get("/album/all");
+  return mainAxiosClient.get(`/${ALBUM_URL}/all`);
 };
 export const getAlbumById = (albumId: number) => {
-  return axios.get(`/album/get/${albumId}`);
+  return mainAxiosClient.get(`/${ALBUM_URL}/get/${albumId}`);
 };
 export const getSongsByAlbumId = (albumId: number) => {
-  return axios.get(`/album/${albumId}/songs`);
+  return mainAxiosClient.get(`/${ALBUM_URL}/${albumId}/songs`);
 };

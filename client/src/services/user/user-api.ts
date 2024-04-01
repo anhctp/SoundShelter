@@ -1,11 +1,9 @@
-import axios from "axios";
 import { UserLogin, UserRegister } from "./user-helpers";
-axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://localhost:8000/api";
+import { mainAxiosClient } from "@/services/axios";
 
 export const login = (data: UserLogin) => {
-  return axios.post("/login", data);
+  return mainAxiosClient.post("/login", data);
 };
 export const register = (data: UserRegister) => {
-  return axios.post("/register", data);
+  return mainAxiosClient.post("/register", data);
 };

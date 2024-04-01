@@ -1,13 +1,11 @@
-import axios from "axios";
-axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://localhost:8000/api";
+import { mainAxiosClient } from "@/services/axios";
 
 export const getAllPlaylist = () => {
-  return axios.get("/playlist/all");
+  return mainAxiosClient.get("/playlist/all");
 };
 export const getPlaylistById = (playlistId: number) => {
-  return axios.get(`/playlist/${playlistId}`);
+  return mainAxiosClient.get(`/playlist/${playlistId}`);
 };
 export const getSongsByPlaylistId = (playlistId: number) => {
-  return axios.get(`/playlist/${playlistId}/songs`);
+  return mainAxiosClient.get(`/playlist/${playlistId}/songs`);
 };

@@ -1,10 +1,9 @@
-import axios from "axios";
-axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://localhost:8000/api";
+import { mainAxiosClient } from "@/services/axios";
+const GENRE_URL = "genre";
 
 export const getAllGenre = () => {
-  return axios.get("/genre/all");
+  return mainAxiosClient.get(`/${GENRE_URL}/all`);
 };
 export const getGenreById = (genreId: number) => {
-  return axios.get(`/genre/${genreId}`);
+  return mainAxiosClient.get(`/${GENRE_URL}/${genreId}`);
 };
