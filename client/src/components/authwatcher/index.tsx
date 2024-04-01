@@ -42,7 +42,6 @@ const AuthWatcher = () => {
       triggerAuthCheck();
     } else {
       const localToken = localStorage.getItem("token");
-      console.log(localToken);
       if (localToken) {
         setToken(localToken);
       } else {
