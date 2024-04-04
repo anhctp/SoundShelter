@@ -27,7 +27,7 @@ router = APIRouter(
 async def save_data(db: Session = Depends(get_database)):
     try:
         file_path = "data/playlists.json"
-        with open(file_path, "r") as file:
+        with open(file_path, "r", encoding="utf8") as file:
             data = json.load(file)
         for item in data:
             playlist = PlaylistCreate(
@@ -38,7 +38,7 @@ async def save_data(db: Session = Depends(get_database)):
             PlaylistController.create_playlist(playlist=playlist, db=db)
 
         file_path = "data/genres.json"
-        with open(file_path, "r") as file:
+        with open(file_path, "r", encoding="utf8") as file:
             data = json.load(file)
         for item in data:
             genre = GenreCreate(
@@ -48,7 +48,7 @@ async def save_data(db: Session = Depends(get_database)):
             GenreController.create_genre(genre=genre, db=db)
 
         file_path = "data/songs.json"
-        with open(file_path, "r") as file:
+        with open(file_path, "r", encoding="utf8") as file:
             data = json.load(file)
         for item in data:
             date_object = datetime.strptime(
