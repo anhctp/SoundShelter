@@ -101,7 +101,7 @@ const AudioPlayer = () => {
   return (
     <div className="h-full flex justify-between border rounded-white shadow-md">
       <div
-        className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-primary hover:bg-primary cursor-default"
+        className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-primary hover:bg-primary cursor-default w-1/3"
         style={{ position: "relative" }}
       >
         <div className="w-[60px] h-[60px] flex items-center">
@@ -120,7 +120,7 @@ const AudioPlayer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center gap">
+      <div className="flex flex-col justify-center gap w-full">
         <audio ref={audioRef} src={song?.audio_file_path} />
         <div className="flex justify-center items-center gap-4">
           <IoShuffleOutline className="w-8 h-8" />
@@ -151,26 +151,28 @@ const AudioPlayer = () => {
           </span>
         </div>
       </div>
-      <div className="flex items-center gap-2 p-2">
-        <FaVolumeDown
-          className="cursor-pointer"
-          onClick={() => volumeChangeHandler(volume - 0.1)}
-        />
-        <input
-          type="range"
-          className="slider"
-          min={0}
-          max={1}
-          step={0.01}
-          value={volume}
-          onChange={(event) =>
-            volumeChangeHandler(parseFloat(event.target.value))
-          }
-        />
-        <FaVolumeUp
-          className="cursor-pointer"
-          onClick={() => volumeChangeHandler(volume + 0.1)}
-        />
+      <div className="flex items-center justify-center gap-2 p-2 w-1/4">
+        <div className="flex items-center gap-2 w-3/4">
+          <FaVolumeDown
+            className="cursor-pointer"
+            onClick={() => volumeChangeHandler(volume - 0.1)}
+          />
+          <input
+            type="range"
+            className="slider"
+            min={0}
+            max={1}
+            step={0.01}
+            value={volume}
+            onChange={(event) =>
+              volumeChangeHandler(parseFloat(event.target.value))
+            }
+          />
+          <FaVolumeUp
+            className="cursor-pointer"
+            onClick={() => volumeChangeHandler(volume + 0.1)}
+          />
+        </div>
       </div>
     </div>
   );

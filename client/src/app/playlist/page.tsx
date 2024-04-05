@@ -24,7 +24,7 @@ export default function Home() {
           <div
             onMouseEnter={() => setHoveredButton(item.id)}
             onMouseLeave={() => setHoveredButton(null)}
-            key={index}
+            key={item.id}
             className="flex flex-col justify-center items-center text-center p-2 gap-5 max-w-3xl rounded cursor-default"
             style={{ width: "20%" }}
           >
