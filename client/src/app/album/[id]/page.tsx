@@ -104,7 +104,7 @@ export default function Home() {
         </div>
         {songs.map((item, index) => (
           <button
-            key={index}
+            key={item.id}
             onMouseEnter={() => setHoveredButton(item.id)}
             onMouseLeave={() => setHoveredButton(null)}
             className="w-full flex items-center text-left p-2.5 text-xs font-light gap-4 rounded focus:bg-primary hover:bg-primary "

@@ -42,11 +42,11 @@ const Sidebar = () => {
         href={"/"}
         className="flex items-center justify-center px-5 h-[70px] w-[240px]"
       >
-        <Image src={logoUrl} width={300} height={40} alt="logo" />
+        <Image src={logoUrl} width={300} height={40} priority alt="logo" />
       </Link>
       <div className="overflow-auto">
         {sidebarItems.map((item, index) => (
-          <Link key={index} href={item.link}>
+          <Link key={item.id} href={item.link}>
             <ButtonSidebar
               IconComponent={item.IconComponent}
               selected={selectedOption === item.id}
@@ -58,7 +58,7 @@ const Sidebar = () => {
         ))}
         {authorized &&
           sidebarItemsLibrary.map((item, index) => (
-            <Link key={index} href={item.link}>
+            <Link key={item.id} href={item.link}>
               <ButtonSidebar
                 IconComponent={item.IconComponent}
                 selected={selectedOption === item.id}

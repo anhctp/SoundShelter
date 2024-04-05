@@ -71,7 +71,7 @@ export default function Home() {
         />
       </div>
       {genresWithAlbums.map(({ genre, album }, index) => (
-        <div key={index} className="mt-[48px]">
+        <div key={genre.id} className="mt-[48px]">
           <div className="flex justify-between p-4  text-xl">
             <div className="text-header">{genre.name}</div>
             <Link
@@ -87,7 +87,7 @@ export default function Home() {
               <div
                 onMouseEnter={() => setHoveredButton(item.id)}
                 onMouseLeave={() => setHoveredButton(null)}
-                key={index}
+                key={item.id}
                 className="flex flex-col justify-center items-center p-2 gap-5 max-w-3xl rounded cursor-default"
                 style={{ position: "relative" }}
               >
@@ -134,7 +134,7 @@ export default function Home() {
             <div
               onMouseEnter={() => setHoveredButton(item.id)}
               onMouseLeave={() => setHoveredButton(null)}
-              key={index}
+              key={item.id}
               className="flex flex-col justify-center items-center p-2 gap-5 max-w-3xl rounded cursor-default"
               style={{ position: "relative" }}
             >

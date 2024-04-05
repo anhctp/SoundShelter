@@ -107,13 +107,14 @@ export default function Home() {
       <div className="p-4 flex w-full justify-between">
         {playlist.slice(0, 3).map((item, index) => (
           <Link
-            key={index}
+            key={item.id}
             href={`/playlist/${item.id}`}
             className="w-80 transition-transform duration-500 cursor-pointer hover:scale-110"
           >
             <Image
               src={item.image_file_path}
-              alt={`carousel-item-${index}`}
+              alt={`carousel-item-${item.id}`}
+              priority
               width={400}
               height={100}
             />
@@ -138,7 +139,7 @@ export default function Home() {
                 <div
                   onMouseEnter={() => setHoveredButton(song.id)}
                   onMouseLeave={() => setHoveredButton(null)}
-                  key={index}
+                  key={song.id}
                   className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-primary hover:bg-primary cursor-default"
                   style={{ position: "relative" }}
                 >
@@ -174,7 +175,7 @@ export default function Home() {
                 <div
                   onMouseEnter={() => setHoveredButton(song.id)}
                   onMouseLeave={() => setHoveredButton(null)}
-                  key={index}
+                  key={song.id}
                   className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-primary hover:bg-primary cursor-default"
                   style={{ position: "relative" }}
                 >
@@ -225,7 +226,7 @@ export default function Home() {
               <div
                 onMouseEnter={() => setHoveredButton(song.id)}
                 onMouseLeave={() => setHoveredButton(null)}
-                key={index}
+                key={song.id}
                 className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-primary hover:bg-primary cursor-default"
                 style={{ position: "relative" }}
               >
@@ -261,7 +262,7 @@ export default function Home() {
               <div
                 onMouseEnter={() => setHoveredButton(song.id)}
                 onMouseLeave={() => setHoveredButton(null)}
-                key={index}
+                key={song.id}
                 className="flex items-center p-2 gap-5 max-w-3xl rounded focus:bg-primary hover:bg-primary cursor-default"
                 style={{ position: "relative" }}
               >
@@ -295,7 +296,7 @@ export default function Home() {
         </div>
       </div>
       {genresWithAlbums.map(({ genre, album }, index) => (
-        <div key={index} className="mt-[48px]">
+        <div key={genre.id} className="mt-[48px]">
           <div className="flex justify-between p-4  text-xl">
             <div className="text-header">{genre.name}</div>
             <Link
@@ -311,7 +312,7 @@ export default function Home() {
               <div
                 onMouseEnter={() => setHoveredButton(item.id)}
                 onMouseLeave={() => setHoveredButton(null)}
-                key={index}
+                key={item.id}
                 className="flex flex-col justify-center items-center p-2 gap-5 max-w-3xl rounded cursor-default"
                 style={{ position: "relative" }}
               >

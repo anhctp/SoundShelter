@@ -49,7 +49,7 @@ const Header = () => {
           >
             {headeSettingItem.map((item, index) => (
               <div
-                key={index}
+                key={item.id}
                 className="flex items-center text-secondary block px-2 py-2 gap-2 text-sm cursor-pointer"
               >
                 <item.IconComponent />
@@ -85,7 +85,7 @@ const Header = () => {
             {authorized && (
               <div>
                 {headerAccountItem.map((item, index) => (
-                  <div key={index} className="flex items-center">
+                  <div key={item.id} className="flex items-center">
                     <item.IconComponent />
                     <Link
                       href={item.link}
