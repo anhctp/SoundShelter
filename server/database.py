@@ -19,8 +19,7 @@ except mysql.connector.Error as err:
     print(f"Error: {err}")
 
 engine = create_engine(
-    f"mysql+mysqlconnector://{os.getenv('DB_USERNAME')}:{os.getenv('DB_PASSWORD')}@{
-        os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}",
+    f"mysql+mysqlconnector://{os.getenv('DB_USERNAME')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}",
     echo=True,
 )
 
