@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/module/discovery-screen/discovery_screen.dart';
+import 'package:mobile/module/chart-screen/chart_screen.dart';
+import 'package:mobile/module/hub-screen/hub_screen.dart';
+import 'package:mobile/module/library-screen/library_screen.dart';
+import 'package:mobile/module/account-screen/account_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,16 +17,11 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   static const List<Widget> widgetOptions = <Widget>[
-    Text('Discovery Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    Text('Chart Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    Text('Hub Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    Text('Library Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-    Text('Account Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    DiscoveryScreen(),
+    ChartScreen(),
+    HubScreen(),
+    LibraryScreen(),
+    AccountScreen()
   ];
 
   void onItemTapped(int index) {
@@ -40,23 +40,23 @@ class HomeScreenState extends State<HomeScreen> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.cyclone_rounded),
-            label: 'Discovery',
+            label: 'Khám phá',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bar_chart_sharp),
-            label: 'Chart',
+            label: 'Xếp hạng',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.category_outlined),
-            label: 'Hub',
+            label: 'Chủ đề',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.library_music_outlined),
-            label: 'Library',
+            label: 'Thư viện',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),
-            label: 'Account',
+            label: 'Cá nhân',
           ),
         ],
         type: BottomNavigationBarType.fixed,
