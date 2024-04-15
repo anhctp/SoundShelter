@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/module/sign-up-screen/sign_up_screen.dart';
-import 'package:mobile/module/home-screen/home_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -14,12 +13,17 @@ class SignInScreen extends StatelessWidget {
           backgroundColor: const Color(0xFFECE6D6),
           leading: IconButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()));
+              Navigator.pop(context);
             },
             icon: Icon(
               Icons.arrow_back_ios,
               size: 20,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+          title: Text(
+            "Đăng nhập",
+            style: TextStyle(
               color: Theme.of(context).colorScheme.primary,
             ),
           ),
@@ -35,15 +39,8 @@ class SignInScreen extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 30.0),
-                        child: Text(
-                          "Đăng nhập",
-                          style: TextStyle(
-                              color: Theme.of(context).colorScheme.primary,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold),
-                        ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 20.0),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 40),
