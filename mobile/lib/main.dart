@@ -1,49 +1,18 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-   MaterialApp(
-      title: 'SoundShelter',
-      home: SoundShelterHome(),
-      theme: ThemeData(
-        primaryColor: Color(0xFFB2572B),
-        colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: Color(0xFFB2572B),
-        ),
+  runApp(MaterialApp(
+    title: 'SoundShelter',
+    home: HomeScreen(),
+    theme: ThemeData(
+      primaryColor: const Color(0xFFB2572B),
+      colorScheme: ColorScheme.fromSwatch().copyWith(
+        primary: const Color(0xFFB2572B),
+        secondary: const Color(0xFFECE6D6),
+        onSecondary: const Color(0xFFF4F1E7),
+        background: const Color(0xFFDCD1B3),
+        onBackground: const Color(0xFFD6ACAE),
       ),
     ),
-  );
-}
-
-class SoundShelterHome extends StatelessWidget {
-  const SoundShelterHome({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: const IconButton(
-          icon: Icon(Icons.menu),
-          tooltip: 'Navigation menu',
-          onPressed: null,
-        ),
-        title: const Text('SoundShelter'),
-        actions: const [
-          IconButton(
-            icon: Icon(Icons.search),
-            tooltip: 'Search',
-            onPressed: null,
-          ),
-        ],
-      ),
-      body: const Center(
-        child: Text('Hello, world!'),
-      ),
-      floatingActionButton: const FloatingActionButton(
-        tooltip: 'Add',
-        onPressed: null,
-        child: Icon(Icons.add),
-      ),
-    );
-  }
+  ));
 }
