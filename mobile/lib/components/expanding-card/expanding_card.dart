@@ -45,9 +45,8 @@ class _ExpandingCardsState extends State<ExpandingCards>
             padding: const EdgeInsets.only(right: 16),
             child: AnimatedCardItem(
               key: ValueKey(index),
-              title: item['title'],
-              subtitle: item['subtitle'],
-              image: item['image'],
+              title: item['name'],
+              image: item['image_file_path'],
               isExpanded: _selectedIndex == index,
               animation: _controller,
               onTap: () => onExpand(_selectedIndex == index ? -1 : index),
@@ -74,7 +73,6 @@ class _ExpandingCardsState extends State<ExpandingCards>
 
 class AnimatedCardItem extends StatefulWidget {
   final String title;
-  final String subtitle;
   final String image;
   final Animation<double> animation;
   final bool isExpanded;
@@ -83,7 +81,6 @@ class AnimatedCardItem extends StatefulWidget {
   const AnimatedCardItem({
     super.key,
     required this.title,
-    required this.subtitle,
     required this.image,
     required this.animation,
     required this.isExpanded,
@@ -217,23 +214,6 @@ class _AnimatedCardItemState extends State<AnimatedCardItem> {
                                               fontSize: 18,
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Opacity(
-                                        opacity: subtitleValue,
-                                        child: Transform.translate(
-                                          offset: Offset(
-                                            20 * (1 - subtitleValue),
-                                            0,
-                                          ),
-                                          child: Text(
-                                            widget.subtitle,
-                                            maxLines: 1,
-                                            style: const TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15,
                                             ),
                                           ),
                                         ),
