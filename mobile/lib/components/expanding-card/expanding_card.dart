@@ -139,12 +139,6 @@ class _AnimatedCardItemState extends State<AnimatedCardItem> {
                 : const Interval(0.2, 0.8, curve: Curves.easeOut)
                     .transform(value);
 
-            final subtitleValue = widget.isExpanded
-                ? const Interval(0.4, 0.8, curve: Curves.easeOut)
-                    .transform(value)
-                : const Interval(0.4, 0.8, curve: Curves.easeOut)
-                    .transform(value);
-
             return Transform.scale(
               scale: 1 + animValue * 0.02,
               child: Container(
