@@ -12,7 +12,8 @@ class Playlist {
       required this.name,
       required this.imageFilePath,
       required this.userId});
-  factory Playlist.fromJson(Map<String, dynamic> map) {
+  factory Playlist.fromJson(String jsonData) {
+    Map<String, dynamic> map = json.decode(jsonData);
     return Playlist(
         id: map["id"],
         code: map["code"],

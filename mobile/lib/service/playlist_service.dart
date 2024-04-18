@@ -11,4 +11,18 @@ class PlaylistService {
       throw Exception('Failed to load playlists');
     }
   }
+
+  Future<Playlist> createPlaylist(Playlist playlist) async {
+    try {
+      if (playlist.code.isEmpty ||
+          playlist.name.isEmpty ||
+          playlist.imageFilePath.isEmpty) {
+        throw Exception('Playlist cannot be empty!');
+      }
+      return await playlistRepository.createPlaylist(playlist);
+    } catch (e) {
+      print(e);
+      throw Exception('Failed to create playlist!');
+    }
+  }
 }

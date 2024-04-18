@@ -15,4 +15,15 @@ class PlaylistRepository {
       throw Exception('Failed to load playlists!');
     }
   }
+
+  Future<Playlist> createPlaylist(Playlist newPlaylist) async {
+    final response = await client.post(Uri.parse("$baseUrl/all"),
+        headers: {'Content-Type': 'application/json'},
+        body: playlistToJson(newPlaylist));
+    if (response.statusCode == 200) {
+      return Playlist.fromJson(response.body);
+    } else {
+      throw Exception('Failed to create playlist!');
+    }
+  }
 }

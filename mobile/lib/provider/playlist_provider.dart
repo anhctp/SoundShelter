@@ -10,4 +10,20 @@ class PlaylistProvider with ChangeNotifier {
     _playlists = await playlistService.getAllPlaylists();
     notifyListeners();
   }
+
+  Future<void> createPlaylist(Playlist playlist) async {
+    Playlist newPlaylist = await playlistService.createPlaylist(playlist);
+    _playlists.add(newPlaylist);
+    notifyListeners();
+  }
+
+  // void updatePlaylist(int id, String code) async {
+  //   _playlists[_playlists.indexWhere((item) => item.id == id)].code = code;
+  //   notifyListeners();
+  // }
+
+  // void deletePlaylist(int id) async {
+  //   _playlists.removeWhere((item) => item.id == id);
+  //   notifyListeners();
+  // }
 }
