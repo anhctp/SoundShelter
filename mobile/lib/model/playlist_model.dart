@@ -21,6 +21,14 @@ class Playlist {
         imageFilePath: map["image_file_path"],
         userId: map["user_id"]);
   }
+  factory Playlist.fromJsonMap(Map<String, dynamic> map) {
+    return Playlist(
+        id: map["id"],
+        code: map["code"],
+        name: map["name"],
+        imageFilePath: map["image_file_path"],
+        userId: map["user_id"]);
+  }
   Map<String, dynamic> toJson() {
     return {
       "id": id,
@@ -34,7 +42,7 @@ class Playlist {
 
 List<Playlist> playlistFromJson(List<int> jsonData) {
   final data = json.decode(utf8.decode(jsonData));
-  return List<Playlist>.from(data.map((item) => Playlist.fromJson(item)));
+  return List<Playlist>.from(data.map((item) => Playlist.fromJsonMap(item)));
 }
 
 String playlistToJson(Playlist data) {

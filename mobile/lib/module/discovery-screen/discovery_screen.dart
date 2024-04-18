@@ -55,7 +55,7 @@ class DiscoveryScreenState extends State<DiscoveryScreen> {
                   children: [
                     Padding(
                         padding: const EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 5.0),
+                            vertical: 3.0, horizontal: 5.0),
                         child: Flex(direction: Axis.horizontal, children: [
                           const Text(
                             "Đáng chú ý",
@@ -80,7 +80,9 @@ class DiscoveryScreenState extends State<DiscoveryScreen> {
                       fit: BoxFit.fitWidth,
                       child: ExpandingCards(
                         height: 400,
-                        items: playlistProvider.playlists.sublist(0, 6),
+                        items: playlistProvider.playlists.length > 6
+                            ? playlistProvider.playlists.sublist(0, 6)
+                            : playlistProvider.playlists,
                       ),
                     ),
                   ],

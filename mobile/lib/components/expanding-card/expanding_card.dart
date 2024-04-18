@@ -33,17 +33,17 @@ class _ExpandingCardsState extends State<ExpandingCards>
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 450,
+      height: widget.height,
       child: ListView.builder(
         itemCount: widget.items.length,
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 56),
+        padding: const EdgeInsets.only(left: 20),
         addRepaintBoundaries: true,
         itemBuilder: (context, index) {
           final item = widget.items[index % widget.items.length];
           return Padding(
-            padding: const EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.only(right: 20),
             child: AnimatedCardItem(
               key: ValueKey(index),
               title: item.name,
