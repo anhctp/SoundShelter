@@ -3,7 +3,7 @@
 ## Contributors
 - [Cao Thị Phương Anh](https://github.com/ctpanh)
 - [Nguyễn Thị Thanh Thuỷ](https://github.com/NguyenThuy25)
-- [Phạm Minh Tâm](https://github.com/)
+- [Phạm Minh Tâm](https://github.com/21020391)
 
 ## Introduction
 SoundShelter - a multi-platform music social network.
