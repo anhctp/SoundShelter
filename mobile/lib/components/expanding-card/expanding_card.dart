@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/model/playlist_model.dart';
 
 class ExpandingCards extends StatefulWidget {
   final double height;
-  final List<Map<String, dynamic>> items;
+  final List<Playlist> items;
 
   const ExpandingCards({
     super.key,
@@ -45,8 +46,8 @@ class _ExpandingCardsState extends State<ExpandingCards>
             padding: const EdgeInsets.only(right: 16),
             child: AnimatedCardItem(
               key: ValueKey(index),
-              title: item['name'],
-              image: item['image_file_path'],
+              title: item.name,
+              image: item.imageFilePath,
               isExpanded: _selectedIndex == index,
               animation: _controller,
               onTap: () => onExpand(_selectedIndex == index ? -1 : index),
