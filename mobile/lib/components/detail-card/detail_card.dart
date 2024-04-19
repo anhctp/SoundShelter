@@ -13,20 +13,33 @@ class _DetailCardState extends State<DetailCard> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: 235,
       child: ListView.builder(
-        itemCount: widget.items.length,
+        itemCount: (widget.items.length + 2) ~/ 3,
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          final item = widget.items[index % widget.items.length];
+        itemBuilder: (context, pageIndex) {
+          int startIndex = pageIndex * 3;
+          List<Widget> columnItems = [];
+          for (int i = startIndex;
+              i < startIndex + 3 && i < widget.items.length;
+              i++) {
+            final item = widget.items[i];
+            columnItems.add(
+              Expanded(
+                child: AnimatedDetailCard(
+                  key: ValueKey(i),
+                  title: item['title'],
+                  artist: item['artist'],
+                  releaseDate: item['release_date'],
+                  image: item['image_file_path'],
+                ),
+              ),
+            );
+          }
           return SizedBox(
             width: MediaQuery.of(context).size.width / 3 * 2,
-            child: AnimatedDetailCard(
-              key: ValueKey(index),
-              title: item['title'],
-              artist: item['artist'],
-              releaseDate: item['release_date'],
-              image: item['image_file_path'],
+            child: Column(
+              children: columnItems,
             ),
           );
         },
@@ -68,18 +81,18 @@ class _AnimatedDetailCardState extends State<AnimatedDetailCard> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Image.asset(
-                  "assets/guitar.png",
-                  height: 80,
-                  width: 80,
+                Image.network(
+                  widget.image,
+                  height: 60,
+                  width: 60,
                   fit: BoxFit.cover,
                 ),
-                Container(width: 20),
+                Container(width: 10),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Container(height: 5),
+                      Container(height: 4),
                       Text(
                         widget.title,
                         overflow: TextOverflow.ellipsis,
@@ -87,17 +100,19 @@ class _AnimatedDetailCardState extends State<AnimatedDetailCard> {
                             color: Color(0xFFB2572B),
                             fontWeight: FontWeight.bold),
                       ),
-                      Container(height: 5),
+                      Container(height: 3),
                       Text(
                         widget.artist,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(color: Color(0xFFB2572B)),
+                        style: const TextStyle(
+                            color: Color(0xFFB2572B), fontSize: 12),
                       ),
-                      Container(height: 10),
+                      Container(height: 3),
                       Text(
                         widget.releaseDate,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(color: Color(0xFFB2572B)),
+                        style: const TextStyle(
+                            color: Color(0xFFB2572B), fontSize: 12),
                       ),
                     ],
                   ),

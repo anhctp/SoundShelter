@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/model/playlist_model.dart';
 
 class ExpandingCards extends StatefulWidget {
   final double height;
-  final List<Map<String, dynamic>> items;
+  final List<Playlist> items;
 
   const ExpandingCards({
     super.key,
@@ -32,21 +33,21 @@ class _ExpandingCardsState extends State<ExpandingCards>
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 450,
+      height: widget.height,
       child: ListView.builder(
         itemCount: widget.items.length,
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 56),
+        padding: const EdgeInsets.only(left: 20),
         addRepaintBoundaries: true,
         itemBuilder: (context, index) {
           final item = widget.items[index % widget.items.length];
           return Padding(
-            padding: const EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.only(right: 20),
             child: AnimatedCardItem(
               key: ValueKey(index),
-              title: item['name'],
-              image: item['image_file_path'],
+              title: item.name,
+              image: item.imageFilePath,
               isExpanded: _selectedIndex == index,
               animation: _controller,
               onTap: () => onExpand(_selectedIndex == index ? -1 : index),
@@ -137,12 +138,6 @@ class _AnimatedCardItemState extends State<AnimatedCardItem> {
                 ? const Interval(0.2, 0.8, curve: Curves.easeOut)
                     .transform(value)
                 : const Interval(0.2, 0.8, curve: Curves.easeOut)
-                    .transform(value);
-
-            final subtitleValue = widget.isExpanded
-                ? const Interval(0.4, 0.8, curve: Curves.easeOut)
-                    .transform(value)
-                : const Interval(0.4, 0.8, curve: Curves.easeOut)
                     .transform(value);
 
             return Transform.scale(
