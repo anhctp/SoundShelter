@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile/components/input/input.dart';
 import 'package:mobile/module/sign-up-screen/sign_up_screen.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -46,10 +47,8 @@ class SignInScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 40),
                         child: Column(
                           children: <Widget>[
-                            makeInput(
-                              label: "Email",
-                            ),
-                            makeInput(label: "Mật khẩu", obscureText: true),
+                            InputField(label: "Email",obscureText: false,),
+                            InputField(label: "Mật khẩu", obscureText: true),
                           ],
                         ),
                       ),
@@ -93,40 +92,5 @@ class SignInScreen extends StatelessWidget {
                     ],
                   ),
                 ])));
-  }
-
-  Widget makeInput({label, obscureText = false}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(
-          label,
-          style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: Color(0xFFB2572B)),
-        ),
-        const SizedBox(
-          height: 5,
-        ),
-        TextField(
-          style: const TextStyle(color: Color(0xFFB2572B)),
-          obscureText: obscureText,
-          decoration: InputDecoration(
-            fillColor: const Color(0xFFF4F1E7),
-            filled: true,
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xFFB2572B))),
-            border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey.shade400)),
-          ),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
-      ],
-    );
   }
 }
