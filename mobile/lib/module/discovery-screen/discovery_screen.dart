@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/Provider/playlist_provider.dart';
-import 'package:mobile/components/detail-card/detail_card.dart';
+//import 'package:mobile/components/detail-card/detail_card.dart';
 import 'package:mobile/components/expanding-card/expanding_card.dart';
 import 'package:provider/provider.dart';
 

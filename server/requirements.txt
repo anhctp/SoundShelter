@@ -16,3 +16,6 @@ starlette==0.36.3
 typing_extensions==4.10.0
 uvicorn==0.29.0
 wheel==0.41.2
+PyJWT==2.8.0
+passlib==1.7.4
+bcrypt==4.1.2
