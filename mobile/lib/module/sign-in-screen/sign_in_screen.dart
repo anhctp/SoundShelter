@@ -1,35 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile/components/button/button_account.dart';
-import 'package:mobile/components/input/input.dart';
 import 'package:mobile/module/sign-up-screen/sign_up_screen.dart';
-
-final emailController = TextEditingController();
-final passwordController = TextEditingController();
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
-/*
-  Future<String> signIn() async {
-    final email = emailController.text;
-    final password = passwordController.text;
-    final body = {
-      'email': email,
-      'password': password,
-    };
-    final response = await http.post(Uri.parse(Url.login),
-        body: jsonEncode(body), headers: {'Content-Type': 'application/json'});
-    if (response.statusCode == 200) {
-      print(response.body);
-      return response.body;
-    } else {
-      print(response.body);
-      print('Sign in error');
-      throw Exception('Failed to sign in');
-    }
-  }
-*/
-void signIn(){}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,25 +46,31 @@ void signIn(){}
                         padding: const EdgeInsets.symmetric(horizontal: 40),
                         child: Column(
                           children: <Widget>[
-                            InputField(
+                            makeInput(
                               label: "Email",
-                              obscureText: false,
-                              textController: emailController,
                             ),
-                            InputField(
-                              label: "Mật khẩu",
-                              obscureText: true,
-                              textController: passwordController,
-                            ),
+                            makeInput(label: "Mật khẩu", obscureText: true),
                           ],
                         ),
                       ),
                       Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 80),
-                          child: ButtonAccount(
-                            label: "Đăng nhập",
-                            onPressed: signIn,
-                          )),
+                        padding: const EdgeInsets.symmetric(horizontal: 80),
+                        child: MaterialButton(
+                          minWidth: double.infinity,
+                          height: 60,
+                          onPressed: () {},
+                          color: Theme.of(context).colorScheme.primary,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50)),
+                          child: const Text(
+                            "Đăng nhập",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18),
+                          ),
+                        ),
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -99,7 +80,8 @@ void signIn(){}
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => SignUpScreen()));
+                                        builder: (context) =>
+                                            const SignUpScreen()));
                               },
                               child: const Text(
                                 "Đăng ký ngay!",
@@ -111,5 +93,40 @@ void signIn(){}
                     ],
                   ),
                 ])));
+  }
+
+  Widget makeInput({label, obscureText = false}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          label,
+          style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: Color(0xFFB2572B)),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        TextField(
+          style: const TextStyle(color: Color(0xFFB2572B)),
+          obscureText: obscureText,
+          decoration: InputDecoration(
+            fillColor: const Color(0xFFF4F1E7),
+            filled: true,
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+            enabledBorder: const OutlineInputBorder(
+                borderSide: BorderSide(color: Color(0xFFB2572B))),
+            border: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey.shade400)),
+          ),
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+      ],
+    );
   }
 }
