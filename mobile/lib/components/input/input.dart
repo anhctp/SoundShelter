@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class InputField extends StatelessWidget {
   final String label;
   final bool obscureText;
+  final TextEditingController textController;
 
   const InputField({
     super.key,
     required this.label,
     required this.obscureText,
+    required this.textController,
   });
 
   @override
@@ -28,6 +30,7 @@ class InputField extends StatelessWidget {
         TextField(
           style: const TextStyle(color: Color(0xFFB2572B)),
           obscureText: obscureText,
+          controller: textController,
           decoration: InputDecoration(
             fillColor: const Color(0xFFF4F1E7),
             filled: true,

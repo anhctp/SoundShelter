@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ButtonAccount extends StatelessWidget {
+  final String label;
   final Function()? onPressed;
 
-  const ButtonAccount(void Function() signIn, {
+  const ButtonAccount({
     super.key, 
+    required this.label,
     required this.onPressed,
   });
 
@@ -16,8 +18,8 @@ class ButtonAccount extends StatelessWidget {
       onPressed: onPressed,
       color: Theme.of(context).colorScheme.primary,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-      child: const Text(
-        "Đăng nhập",
+      child: Text(
+        label,
         style: TextStyle(
             color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18),
       ),

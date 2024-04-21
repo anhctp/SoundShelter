@@ -1,10 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile/components/button/button_account.dart';
 import 'package:mobile/components/input/input.dart';
 import 'package:mobile/module/sign-in-screen/sign_in_screen.dart';
 
+final nameController = TextEditingController();
+final emailController = TextEditingController();
+final passwordController = TextEditingController();
+
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
+
+  void signUp() {}
 
   @override
   Widget build(BuildContext context) {
@@ -50,31 +57,30 @@ class SignUpScreen extends StatelessWidget {
                                   const EdgeInsets.symmetric(horizontal: 40),
                               child: Column(
                                 children: <Widget>[
-                                  InputField(label: "Tên đăng nhập", obscureText: false,),
-                                  InputField(label: "Email", obscureText: false,),
-                                  InputField(label: "Mật khẩu", obscureText: true),
+                                  InputField(
+                                    label: "Tên đăng nhập",
+                                    obscureText: false,
+                                    textController: nameController,
+                                  ),
+                                  InputField(
+                                    label: "Email",
+                                    obscureText: false,
+                                    textController: emailController,
+                                  ),
+                                  InputField(
+                                    label: "Mật khẩu",
+                                    obscureText: true,
+                                    textController: passwordController,
+                                  ),
                                 ],
                               ),
                             ),
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 80),
-                              child: MaterialButton(
-                                minWidth: double.infinity,
-                                height: 60,
-                                onPressed: () {
-                                  //...
-                                },
-                                color: Theme.of(context).colorScheme.primary,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50)),
-                                child: const Text(
-                                  "Đăng ký",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 18),
-                                ),
+                              child: ButtonAccount(
+                                label: "Đăng ký",
+                                onPressed: signUp,
                               ),
                             ),
                             Row(
@@ -87,7 +93,7 @@ class SignUpScreen extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  const SignInScreen()));
+                                                  SignInScreen()));
                                     },
                                     child: const Text(
                                       "Đăng nhập ngay!",
