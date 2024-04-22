@@ -1,4 +1,5 @@
 //import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/model/song_model.dart';
@@ -13,7 +14,7 @@ class SongProvider with ChangeNotifier {
     _songs = await songService.getSongsRank();
     notifyListeners();
   }
-/*
+
   //current song playing index
   int? _currentSongIndex;
   //getter
@@ -136,6 +137,6 @@ class SongProvider with ChangeNotifier {
   }
 
   //dispose audio player
-  */
+  
 }
 

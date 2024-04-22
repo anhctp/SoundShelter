@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/model/song_model.dart';
+import 'package:mobile/module/hub-screen/song_screen.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -13,12 +14,27 @@ class ChartScreen extends StatefulWidget {
 }
 
 class ChartScreenState extends State<ChartScreen> with SingleTickerProviderStateMixin {
+
+  late final dynamic songProvider;
+
   @override
   void initState() {
     super.initState();
-    final songProvider =
+    songProvider =
         Provider.of<SongProvider>(context, listen: false);
     songProvider.getSongsRank();
+  }
+
+  
+  void goToSong(int songIndex) {
+    //update current song index
+    songProvider.currentSongIndex = songIndex;
+
+    //navigate to song page
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SongScreen()),
+    );
   }
   
   @override
@@ -77,6 +93,7 @@ class ChartScreenState extends State<ChartScreen> with SingleTickerProviderState
                   return Container(
                     child: GestureDetector(
                       onTap: () {
+                        goToSong(index);
                         print('play');
                       },
                       child: Row(
