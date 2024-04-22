@@ -40,6 +40,7 @@ class UserRepository {
         ? {'email': email, 'password': password}
         : {'name': name, 'email': email, 'password': password});
     final response = await client.post(url, headers: headers, body: payload);
+    print(response.body);
     if (response.statusCode == 200) {
       final json = jsonDecode(response.body);
       User user = User.fromJson(json);

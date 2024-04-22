@@ -23,10 +23,15 @@ class UserController:
         db.commit()
         db.refresh(db_user)
         access_token = create_access_token(data={"sub": user.email})
-        db_user.password = "hashed"
+        # db_user.password = "hashed"
         RecommendController.create_recommendation(user_id=db_user.id, db=db)
         return {
-            "user": db_user,
+            "user": {
+                "id": db_user.id,
+                "name": db_user.name,
+                "email": db_user.email,
+                "password": db_user.password,
+            },
             "jwtToken": access_token,
         }
 
@@ -48,7 +53,12 @@ class UserController:
         access_token = create_access_token(data={"sub": user.email})
 
         response = {
-            "user": user,
+            "user": {
+                "id": user.id,
+                "name": user.name,
+                "email": user.email,
+                "password": user.password,
+            },
             "jwtToken": access_token,
         }
         return response
