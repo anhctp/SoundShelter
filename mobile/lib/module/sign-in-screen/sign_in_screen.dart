@@ -2,34 +2,38 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/components/button/button_account.dart';
 import 'package:mobile/components/input/input.dart';
+import 'package:mobile/module/account-screen/account_screen.dart';
 import 'package:mobile/module/sign-up-screen/sign_up_screen.dart';
+import 'package:mobile/provider/user_provider.dart';
+import 'package:provider/provider.dart';
 
 final emailController = TextEditingController();
 final passwordController = TextEditingController();
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
-/*
-  Future<String> signIn() async {
-    final email = emailController.text;
-    final password = passwordController.text;
-    final body = {
-      'email': email,
-      'password': password,
-    };
-    final response = await http.post(Uri.parse(Url.login),
-        body: jsonEncode(body), headers: {'Content-Type': 'application/json'});
-    if (response.statusCode == 200) {
-      print(response.body);
-      return response.body;
+  @override
+  State<StatefulWidget> createState() {
+    return SignInScreenState();
+  }
+}
+
+class SignInScreenState extends State<SignInScreen> {
+  void signIn(BuildContext context) async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    final response =
+        await userProvider.login(emailController.text, passwordController.text);
+    if (response) {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const AccountScreen()));
     } else {
-      print(response.body);
-      print('Sign in error');
-      throw Exception('Failed to sign in');
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("Registration failed, please try again."),
+        backgroundColor: Colors.red,
+      ));
     }
   }
-*/
-void signIn(){}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,7 +92,7 @@ void signIn(){}
                           padding: const EdgeInsets.symmetric(horizontal: 80),
                           child: ButtonAccount(
                             label: "Đăng nhập",
-                            onPressed: signIn,
+                            onPressed: () => signIn(context),
                           )),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
