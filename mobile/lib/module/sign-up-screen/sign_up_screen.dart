@@ -2,16 +2,36 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/components/button/button_account.dart';
 import 'package:mobile/components/input/input.dart';
+import 'package:mobile/module/account-screen/account_screen.dart';
 import 'package:mobile/module/sign-in-screen/sign_in_screen.dart';
+import 'package:mobile/provider/user_provider.dart';
+import 'package:provider/provider.dart';
 
 final nameController = TextEditingController();
 final emailController = TextEditingController();
 final passwordController = TextEditingController();
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
+  @override
+  State<StatefulWidget> createState() {
+    return SignUpScreenState();
+  }
+}
 
-  void signUp() {}
+class SignUpScreenState extends State<SignUpScreen> {
+  void signUp(BuildContext context) async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    final response = await userProvider.signUp(
+        nameController.text, emailController.text, passwordController.text);
+    if (response) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const AccountScreen()));
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Registration failed, please try again.")));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +69,7 @@ class SignUpScreen extends StatelessWidget {
                         Column(
                           children: <Widget>[
                             const Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 20.0),
+                              padding: EdgeInsets.symmetric(vertical: 20.0),
                             ),
                             Padding(
                               padding:
@@ -58,7 +77,7 @@ class SignUpScreen extends StatelessWidget {
                               child: Column(
                                 children: <Widget>[
                                   InputField(
-                                    label: "Tên đăng nhập",
+                                    label: "Họ và tên",
                                     obscureText: false,
                                     textController: nameController,
                                   ),
@@ -80,7 +99,7 @@ class SignUpScreen extends StatelessWidget {
                                   const EdgeInsets.symmetric(horizontal: 80),
                               child: ButtonAccount(
                                 label: "Đăng ký",
-                                onPressed: signUp,
+                                onPressed: () => signUp(context),
                               ),
                             ),
                             Row(
@@ -93,7 +112,7 @@ class SignUpScreen extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  SignInScreen()));
+                                                  const SignInScreen()));
                                     },
                                     child: const Text(
                                       "Đăng nhập ngay!",
