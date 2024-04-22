@@ -5,6 +5,7 @@ from models.history_model import HistoryModel
 from models.song_model import SongModel
 from models.album_model import AlbumModel
 from schemas.history_schema import HistoryCreate
+from controllers.recommend_controller import RecommendController
 
 
 class HistoryController:
@@ -21,6 +22,7 @@ class HistoryController:
         db.add(new_history)
         db.commit()
         db.refresh(new_history)
+        RecommendController.update_recommendation(user_id=history.user_id, db=db)
         return new_history
 
     def get_history_by_id(history_id: int, db: Session):

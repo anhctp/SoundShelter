@@ -6,6 +6,8 @@ from controllers.authentication import reusable_oauth2, bcrypt, create_access_to
 from database import get_database
 from jwt import PyJWTError
 
+from controllers.recommend_controller import RecommendController
+
 
 class UserController:
     def get_user_by_email(email: str, db: Session = Depends(get_database)):
@@ -22,6 +24,7 @@ class UserController:
         db.refresh(db_user)
         access_token = create_access_token(data={"sub": user.email})
         db_user.password = "hashed"
+        RecommendController.create_recommendation(user_id=db_user.id, db=db)
         return {
             "user": db_user,
             "jwtToken": access_token,
