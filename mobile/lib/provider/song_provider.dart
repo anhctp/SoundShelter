@@ -1,4 +1,5 @@
 //import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/model/song_model.dart';
@@ -13,7 +14,7 @@ class SongProvider with ChangeNotifier {
     _songs = await songService.getSongsRank();
     notifyListeners();
   }
-/*
+
   //current song playing index
   int? _currentSongIndex;
   //getter
@@ -39,7 +40,7 @@ class SongProvider with ChangeNotifier {
   Duration _totalDuration = Duration.zero;
   //getter
   Duration get currentDuration => _currentDuration;
-  Duration get totalDuration => _currentDuration;
+  Duration get totalDuration => _totalDuration;
   
   //constructor
   SongProvider(){listenToDuration();}
@@ -53,7 +54,7 @@ class SongProvider with ChangeNotifier {
   void play() async {
     final String path = _songs[_currentSongIndex!].audioFilePath;
     await _audioPlayer.stop(); //stop current song
-    await _audioPlayer.play(AssetSource(path)); //play new song
+    await _audioPlayer.play(UrlSource(path)); //play new song
     _isPlaying = true;
     notifyListeners();
   }
@@ -136,6 +137,6 @@ class SongProvider with ChangeNotifier {
   }
 
   //dispose audio player
-  */
+  
 }
 
