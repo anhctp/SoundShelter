@@ -40,7 +40,7 @@ class SongProvider with ChangeNotifier {
   Duration _totalDuration = Duration.zero;
   //getter
   Duration get currentDuration => _currentDuration;
-  Duration get totalDuration => _currentDuration;
+  Duration get totalDuration => _totalDuration;
   
   //constructor
   SongProvider(){listenToDuration();}
@@ -54,7 +54,7 @@ class SongProvider with ChangeNotifier {
   void play() async {
     final String path = _songs[_currentSongIndex!].audioFilePath;
     await _audioPlayer.stop(); //stop current song
-    await _audioPlayer.play(AssetSource(path)); //play new song
+    await _audioPlayer.play(UrlSource(path)); //play new song
     _isPlaying = true;
     notifyListeners();
   }

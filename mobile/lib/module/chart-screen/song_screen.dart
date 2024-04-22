@@ -6,9 +6,10 @@ import 'package:provider/provider.dart';
 class SongScreen extends StatelessWidget {
   const SongScreen({super.key});
 
-  //convert duratiob into min:sec 
-  String formatTime (Duration duration) {
-    String twoDigiSeconds = duration.inSeconds.remainder(60).toString().padLeft(2, '0');
+  //convert duratiob into min:sec
+  String formatTime(Duration duration) {
+    String twoDigiSeconds =
+        duration.inSeconds.remainder(60).toString().padLeft(2, '0');
     String formattedTime = "${duration.inMinutes}:$twoDigiSeconds";
 
     return formattedTime;
@@ -22,29 +23,38 @@ class SongScreen extends StatelessWidget {
 
       //get current song index
       final currentSong = songs[value.currentSongIndex ?? 0];
-      
+
       return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFECE6D6),
+          leading: IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(Icons.arrow_back),
+          ),
+          title: Text(
+            "Bài hát đang phát",
+            style: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
+                fontWeight: FontWeight.bold),
+          ),
+          actions: const [
+            IconButton(
+              icon: Icon(
+                Icons.search,
+                color: Color(0xFFB2572B),
+              ),
+              tooltip: 'Search',
+              onPressed: null,
+            ),
+          ],
+        ),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                //app bar
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                        onPressed: () => Navigator.pop(context),
-                        icon: Icon(Icons.arrow_back)),
-                    Text('Top Song'),
-                    IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
-                  ],
-                ),
-                const SizedBox(
-                  height: 25,
-                ),
                 //artist
                 Neubox(
                   child: Column(
@@ -59,6 +69,7 @@ class SongScreen extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.all(15.0),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             //song and artist name
                             Column(
@@ -77,8 +88,7 @@ class SongScreen extends StatelessWidget {
 
                             //heart icon
                             Icon(
-                              Icons.favorite,
-                              color: Colors.red,
+                              Icons.favorite_border_outlined,
                             )
                           ],
                         ),
@@ -169,7 +179,8 @@ class SongScreen extends StatelessWidget {
                       child: GestureDetector(
                         onTap: value.pauseOrResume,
                         child: Neubox(
-                          child: Icon(value.isPlaying ? Icons.pause : Icons.play_arrow),
+                          child: Icon(
+                              value.isPlaying ? Icons.pause : Icons.play_arrow),
                         ),
                       ),
                     ),

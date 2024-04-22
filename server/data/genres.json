@@ -7,20 +7,6 @@
     "link": "/the-loai-album/Viet-Nam/IWZ9Z08I.html"
   },
   {
-    "id": "IWZ9Z0BA",
-    "name": "Nhạc Phim",
-    "title": "Nhạc Phim",
-    "alias": "nhac-phim",
-    "link": "/the-loai-album/Nhac-Phim/IWZ9Z0BA.html"
-  },
-  {
-    "id": "IWZ9Z0C8",
-    "name": "R&B Việt",
-    "title": "R&B Việt",
-    "alias": "r-b-viet",
-    "link": "/the-loai-album/R-B-Viet/IWZ9Z0C8.html"
-  },
-  {
     "id": "IWZ97FCD",
     "name": "V-Pop",
     "title": "V-Pop",
@@ -40,6 +26,27 @@
     "title": "EDM Việt",
     "alias": "edm-viet",
     "link": "/the-loai-album/EDM-Viet/IWZ97FCE.html"
+  },
+  {
+    "id": "IWZ9Z0BA",
+    "name": "Nhạc Phim",
+    "title": "Nhạc Phim",
+    "alias": "nhac-phim",
+    "link": "/the-loai-album/Nhac-Phim/IWZ9Z0BA.html"
+  },
+  {
+    "id": "IWZ9Z0C8",
+    "name": "R&B Việt",
+    "title": "R&B Việt",
+    "alias": "r-b-viet",
+    "link": "/the-loai-album/R-B-Viet/IWZ9Z0C8.html"
+  },
+  {
+    "id": "IWZ9Z08B",
+    "name": "Nhạc Trữ Tình",
+    "title": "Nhạc Trữ Tình",
+    "alias": "nhac-tru-tinh",
+    "link": "/the-loai-album/Nhac-Tru-Tinh/IWZ9Z08B.html"
   },
   {
     "id": "IWZ9Z089",
@@ -63,18 +70,11 @@
     "link": "/the-loai-album/Dance-Pop/IWZ9Z09O.html"
   },
   {
-    "id": "IWZ9Z08B",
-    "name": "Nhạc Trữ Tình",
-    "title": "Nhạc Trữ Tình",
-    "alias": "nhac-tru-tinh",
-    "link": "/the-loai-album/Nhac-Tru-Tinh/IWZ9Z08B.html"
-  },
-  {
-    "id": "IWZ9Z08D",
-    "name": "Nhạc Dân Ca - Quê Hương",
-    "title": "Nhạc Dân Ca - Quê Hương",
-    "alias": "nhac-dan-ca-que-huong",
-    "link": "/the-loai-album/Nhac-Dan-Ca-Que-Huong/IWZ9Z08D.html"
+    "id": "IWZ9Z08A",
+    "name": "Rock Việt",
+    "title": "Rock Việt",
+    "alias": "rock-viet",
+    "link": "/the-loai-album/Rock-Viet/IWZ9Z08A.html"
   },
   {
     "id": "IWZ9Z08E",
@@ -84,11 +84,11 @@
     "link": "/the-loai-album/Nhac-Trinh/IWZ9Z08E.html"
   },
   {
-    "id": "IWZ9Z08O",
-    "name": "Âu Mỹ",
-    "title": "Âu Mỹ",
-    "alias": "au-my",
-    "link": "/the-loai-album/Au-My/IWZ9Z08O.html"
+    "id": "IWZ9Z08D",
+    "name": "Nhạc Dân Ca - Quê Hương",
+    "title": "Nhạc Dân Ca - Quê Hương",
+    "alias": "nhac-dan-ca-que-huong",
+    "link": "/the-loai-album/Nhac-Dan-Ca-Que-Huong/IWZ9Z08D.html"
   },
   {
     "id": "IWZ98I0D",
@@ -105,18 +105,18 @@
     "link": "/the-loai-album/Khac/IWZ9Z0CU.html"
   },
   {
+    "id": "IWZ9Z08O",
+    "name": "Âu Mỹ",
+    "title": "Âu Mỹ",
+    "alias": "au-my",
+    "link": "/the-loai-album/Au-My/IWZ9Z08O.html"
+  },
+  {
     "id": "IWZ9Z097",
     "name": "Pop",
     "title": "Pop",
     "alias": "pop",
     "link": "/the-loai-album/Pop/IWZ9Z097.html"
-  },
-  {
-    "id": "IWZ9Z0FZ",
-    "name": "Nhạc Tôn Giáo",
-    "title": "Nhạc Tôn Giáo",
-    "alias": "nhac-ton-giao",
-    "link": "/the-loai-album/Nhac-Ton-Giao/IWZ9Z0FZ.html"
   },
   {
     "id": "IWZ9Z09B",
@@ -126,18 +126,18 @@
     "link": "/the-loai-album/Rap-Hip-Hop/IWZ9Z09B.html"
   },
   {
-    "id": "IWZ9Z0DE",
-    "name": "Christian & Gospel",
-    "title": "Christian & Gospel",
-    "alias": "christian-gospel",
-    "link": "/the-loai-album/Christian-Gospel/IWZ9Z0DE.html"
-  },
-  {
     "id": "IWZ9Z09A",
     "name": "Electronic / Dance",
     "title": "Electronic / Dance",
     "alias": "electronic-dance",
     "link": "/the-loai-album/Electronic-Dance/IWZ9Z09A.html"
+  },
+  {
+    "id": "IWZ97797",
+    "name": "Latin",
+    "title": "Latin",
+    "alias": "latin",
+    "link": "/the-loai-album/Latin/IWZ97797.html"
   },
   {
     "id": "IWZ9Z08C",
@@ -147,6 +147,13 @@
     "link": "/the-loai-album/Nhac-Cach-Mang/IWZ9Z08C.html"
   },
   {
+    "id": "IWZ9Z08F",
+    "name": "Nhạc Thiếu Nhi",
+    "title": "Nhạc Thiếu Nhi",
+    "alias": "nhac-thieu-nhi",
+    "link": "/the-loai-album/Nhac-Thieu-Nhi/IWZ9Z08F.html"
+  },
+  {
     "id": "IWZ98IIZ",
     "name": "Giáng Sinh",
     "title": "Giáng Sinh",
@@ -154,45 +161,17 @@
     "link": "/the-loai-album/Giang-Sinh/IWZ98IIZ.html"
   },
   {
-    "id": "IWZ9Z09C",
-    "name": "Blues / Jazz",
-    "title": "Blues / Jazz",
-    "alias": "blues-jazz",
-    "link": "/the-loai-album/Blues-Jazz/IWZ9Z09C.html"
+    "id": "IWZ9Z0FZ",
+    "name": "Nhạc Tôn Giáo",
+    "title": "Nhạc Tôn Giáo",
+    "alias": "nhac-ton-giao",
+    "link": "/the-loai-album/Nhac-Ton-Giao/IWZ9Z0FZ.html"
   },
   {
-    "id": "IWZ9Z09E",
-    "name": "Folk",
-    "title": "Folk",
-    "alias": "folk",
-    "link": "/the-loai-album/Folk/IWZ9Z09E.html"
-  },
-  {
-    "id": "IWZ9Z09I",
-    "name": "Rap / Hip Hop",
-    "title": "Rap / Hip Hop",
-    "alias": "rap-hip-hop",
-    "link": "/the-loai-album/Rap-Hip-Hop/IWZ9Z09I.html"
-  },
-  {
-    "id": "IWZ9Z098",
-    "name": "New Age / World Music",
-    "title": "New Age / World Music",
-    "alias": "new-age-world-music",
-    "link": "/the-loai-album/New-Age-World-Music/IWZ9Z098.html"
-  },
-  {
-    "id": "IWZ9Z08A",
-    "name": "Rock Việt",
-    "title": "Rock Việt",
-    "alias": "rock-viet",
-    "link": "/the-loai-album/Rock-Viet/IWZ9Z08A.html"
-  },
-  {
-    "id": "IWZ9Z09D",
-    "name": "R&B / Soul",
-    "title": "R&B / Soul",
-    "alias": "r-b-soul",
-    "link": "/the-loai-album/R-B-Soul/IWZ9Z09D.html"
+    "id": "IWZ9Z0DE",
+    "name": "Christian & Gospel",
+    "title": "Christian & Gospel",
+    "alias": "christian-gospel",
+    "link": "/the-loai-album/Christian-Gospel/IWZ9Z0DE.html"
   }
 ]
