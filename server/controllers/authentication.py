@@ -77,4 +77,8 @@ def bcrypt(password: str):
 
 
 def verify(hashed_password, plain_password):
+    print(hashed_password)
+    print("plain_password")
+    print(plain_password)
+    
     return pwd_cxt.verify(plain_password, hashed_password)
