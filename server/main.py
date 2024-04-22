@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import Base, engine
-from routes import user_route, genre_route, album_route, playlist_route, song_route, history_route, favorite_route, data_route
+from routes import user_route, genre_route, album_route, playlist_route, song_route, history_route, favorite_route, recommend_route, data_route
 
 
 Base.metadata.create_all(bind=engine)
@@ -21,4 +21,5 @@ app.include_router(playlist_route.router, prefix="/api")
 app.include_router(song_route.router, prefix="/api")
 app.include_router(history_route.router, prefix="/api")
 app.include_router(favorite_route.router, prefix="/api")
+app.include_router(recommend_route.router, prefix="/api")
 app.include_router(data_route.router, prefix="/api")
