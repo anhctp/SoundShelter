@@ -61,6 +61,8 @@ class SongProvider with ChangeNotifier {
 
   //play
   void play() async {
+    _isRepeat = false;
+    _audioPlayer.setReleaseMode(ReleaseMode.stop);
     final String path = _songs[_currentSongIndex!].audioFilePath;
     await _audioPlayer.stop(); //stop current song
     await _audioPlayer.play(UrlSource(path)); //play new song
@@ -99,13 +101,14 @@ class SongProvider with ChangeNotifier {
   }
 
   //repeat
-  void repeat() async {
+  void repeat() {
     // Toggle repeat mode
     _isRepeat = !_isRepeat;
     print(isRepeat);
     if (_isRepeat) {
       _audioPlayer.setReleaseMode(ReleaseMode.loop);
     } else {
+      _isRepeat = false;
       _audioPlayer.setReleaseMode(ReleaseMode.stop);
     }
     notifyListeners();
@@ -118,7 +121,6 @@ class SongProvider with ChangeNotifier {
 
   //play next song
   void playNextSong() {
-    _isRepeat = false;
     if (_currentSongIndex != null) {
       if (_currentSongIndex! < _songs.length - 1) {
         //go to the next song if it's not last song
@@ -133,11 +135,9 @@ class SongProvider with ChangeNotifier {
   //playNextSong or repeat
   void nextOrRepeat() {
     if (_isRepeat) {
-      repeat();
     } else {
       playNextSong();
     }
-    notifyListeners();
   }
 
   //play prev song
