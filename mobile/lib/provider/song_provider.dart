@@ -1,4 +1,6 @@
 //import 'package:audioplayers/audioplayers.dart';
+import 'dart:math';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,7 @@ class SongProvider with ChangeNotifier {
   //getter
   int? get currentSongIndex => _currentSongIndex;
   //setter
-  set currentSongIndex (int? newIndex) {
+  set currentSongIndex(int? newIndex) {
     //update current song index
     _currentSongIndex = newIndex;
     if (newIndex != null) {
@@ -30,7 +32,7 @@ class SongProvider with ChangeNotifier {
     //update ui
     notifyListeners();
   }
-  
+
   /* audio player */
   //audio player
   final AudioPlayer _audioPlayer = AudioPlayer();
@@ -41,14 +43,21 @@ class SongProvider with ChangeNotifier {
   //getter
   Duration get currentDuration => _currentDuration;
   Duration get totalDuration => _totalDuration;
-  
+
   //constructor
-  SongProvider(){listenToDuration();}
+  SongProvider() {
+    listenToDuration();
+  }
 
   //initially not playing
   bool _isPlaying = false;
   //getter
   bool get isPlaying => _isPlaying;
+
+  //initially not repeat
+  bool _isRepeat = false;
+  //getter
+  bool get isRepeat => _isRepeat;
 
   //play
   void play() async {
@@ -70,7 +79,7 @@ class SongProvider with ChangeNotifier {
   void resume() async {
     await _audioPlayer.resume();
     _isPlaying = true;
-     notifyListeners();
+    notifyListeners();
   }
 
   //pause or resume
@@ -83,6 +92,25 @@ class SongProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  //shuffle
+  void shuffle() {
+    Random r = new Random();
+    currentSongIndex = r.nextInt(_songs.length);
+  }
+
+  //repeat
+  void repeat() async {
+    // Toggle repeat mode
+    _isRepeat = !_isRepeat;
+    print(isRepeat);
+    if (_isRepeat) {
+      _audioPlayer.setReleaseMode(ReleaseMode.loop);
+    } else {
+      _audioPlayer.setReleaseMode(ReleaseMode.stop);
+    }
+    notifyListeners();
+  }
+
   //seek to a specific position in the current song
   void seek(Duration position) async {
     await _audioPlayer.seek(position);
@@ -90,7 +118,8 @@ class SongProvider with ChangeNotifier {
 
   //play next song
   void playNextSong() {
-    if(_currentSongIndex != null) {
+    _isRepeat = false;
+    if (_currentSongIndex != null) {
       if (_currentSongIndex! < _songs.length - 1) {
         //go to the next song if it's not last song
         currentSongIndex = _currentSongIndex! + 1;
@@ -101,12 +130,21 @@ class SongProvider with ChangeNotifier {
     }
   }
 
+  //playNextSong or repeat
+  void nextOrRepeat() {
+    if (_isRepeat) {
+      repeat();
+    } else {
+      playNextSong();
+    }
+    notifyListeners();
+  }
+
   //play prev song
   void playPrevSong() async {
     //>2s load, restart the current song
     if (_currentDuration.inSeconds > 2) {
-
-    } else { 
+    } else {
       if (_currentSongIndex! > 0) {
         currentSongIndex = _currentSongIndex! - 1;
       } else {
@@ -131,12 +169,10 @@ class SongProvider with ChangeNotifier {
     });
 
     //listen for song completion
-    _audioPlayer.onPlayerComplete.listen((event) { 
-      playNextSong();
+    _audioPlayer.onPlayerComplete.listen((event) {
+      nextOrRepeat();
     });
   }
 
   //dispose audio player
-  
 }
-
