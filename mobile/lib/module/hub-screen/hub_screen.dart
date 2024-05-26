@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/hub_cart/genre_name.dart';
 import 'package:mobile/components/hub_cart/grid_cards.dart';
+import 'package:mobile/module/hub-screen/detail_genre_screen.dart';
 import 'package:mobile/provider/genre_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +19,7 @@ class HubScreenState extends State<HubScreen> {
   void initState() {
     super.initState();
     final genreProvider = Provider.of<GenreProvider>(context, listen: false);
-    genreProvider.getAllGenre();
+    genreProvider.getAlbums();
   }
 
   @override
@@ -54,20 +55,21 @@ class HubScreenState extends State<HubScreen> {
               );
             },
             scrollDirection: Axis.vertical,
-            itemCount: genreProvider.genres.length,
+            itemCount: genreProvider.albums.length,
             shrinkWrap: true,
             itemBuilder: (BuildContext context, int index) {
+              final item = genreProvider.albums[index];
               return Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
                 GenreName(
-                  label: genreProvider.genres[index].name,
-                  genreId: genreProvider.genres[index].id,
+                  label: item['genre'].name,
+                  genreId: item['genre'].id,
                 ),
-                /*
                 GridCards(
-                  genreId: genreProvider.genres[index].id,
-                  label: genreProvider.genres[index].name,
-                ),
-                */
+                    items: item['album'],
+                    detailChild: DetailGenreScreen(
+                      label: item['genre'].name,
+                      genreId: item['genre'].id,
+                    ))
               ]);
             },
           ));
