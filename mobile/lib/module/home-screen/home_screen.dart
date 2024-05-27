@@ -4,6 +4,7 @@ import 'package:mobile/module/chart-screen/chart_screen.dart';
 import 'package:mobile/module/hub-screen/hub_screen.dart';
 import 'package:mobile/module/library-screen/library_screen.dart';
 import 'package:mobile/module/account-screen/account_screen.dart';
+import 'package:mobile/module/song-screen/mini_playing_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,8 +34,14 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: widgetOptions.elementAt(selectedIndex),
+      body: Column(
+        children: [
+          // Body Tabbar
+          Expanded(
+            child: widgetOptions.elementAt(selectedIndex),
+          ),
+          MiniPlayingView(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

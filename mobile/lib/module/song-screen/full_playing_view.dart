@@ -3,8 +3,8 @@ import 'package:mobile/components/box/neu_box.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 
-class SongScreen extends StatelessWidget {
-  const SongScreen({super.key});
+class FullPlayingView extends StatelessWidget {
+  const FullPlayingView({super.key});
 
   //convert duratiob into min:sec
   String formatTime(Duration duration) {
@@ -24,13 +24,19 @@ class SongScreen extends StatelessWidget {
       //get current song index
       final currentSong = songs[value.currentSongIndex ?? 0];
 
+      bool isSelected = false;
+
       return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
           backgroundColor: const Color(0xFFECE6D6),
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back),
+            icon: Icon(
+              Icons.arrow_back_ios,
+              size: 20,
+              color: Theme.of(context).colorScheme.primary,
+            ),
           ),
           title: Text(
             "Bài hát đang phát",
@@ -87,9 +93,15 @@ class SongScreen extends StatelessWidget {
                             ),
 
                             //heart icon
-                            Icon(
-                              Icons.favorite_border_outlined,
-                            )
+                            IconButton(
+                              onPressed: () => {
+                                isSelected = !isSelected,
+                                print("isSelected: $isSelected"),
+                              },
+                              icon: (isSelected == true)
+                                  ? Icon(Icons.favorite, color: Colors.red)
+                                  : Icon(Icons.favorite_border),
+                            ),
                           ],
                         ),
                       ),
@@ -116,11 +128,19 @@ class SongScreen extends StatelessWidget {
                               //start time
                               Text(formatTime(value.currentDuration)),
 
-                              //shuffle icon
-                              Icon(Icons.shuffle),
+                              //shuffle
+                              IconButton(
+                                onPressed: value.shuffle,
+                                focusColor: Colors.blue,
+                                icon: Icon(Icons.shuffle),
+                              ),
 
                               //repeat icon
-                              Icon(Icons.repeat),
+                              IconButton(
+                                onPressed: value.repeat,
+                                focusColor: Colors.blue,
+                                icon: Icon(Icons.repeat),
+                              ),
 
                               //end time
                               Text(formatTime(value.totalDuration)),
@@ -136,7 +156,10 @@ class SongScreen extends StatelessWidget {
                             child: Slider(
                               min: 0,
                               max: value.totalDuration.inSeconds.toDouble(),
-                              value: value.currentDuration.inSeconds.toDouble(),
+                              value: value.currentDuration.inSeconds
+                                  .toDouble()
+                                  .clamp(0,
+                                      value.totalDuration.inSeconds.toDouble()),
                               activeColor: Colors.green,
                               onChanged: (double double) {
                                 //during when user is sliding around
