@@ -8,7 +8,8 @@ import 'package:provider/provider.dart';
 import 'module/home-screen/home_screen.dart';
 
 void main() {
-  runApp(MultiProvider(
+  runApp(
+    MultiProvider(
       providers: [
         ChangeNotifierProvider(
           create: (context) => UserProvider(),
@@ -39,5 +40,7 @@ void main() {
             onBackground: const Color(0xFFD6ACAE),
           ),
         ),
-      )));
+      ),
+    ),
+  );
 }
