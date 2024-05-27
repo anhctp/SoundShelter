@@ -3,8 +3,8 @@ import 'package:mobile/components/box/neu_box.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 
-class SongScreen extends StatelessWidget {
-  const SongScreen({super.key});
+class FullPlayingView extends StatelessWidget {
+  const FullPlayingView({super.key});
 
   //convert duratiob into min:sec
   String formatTime(Duration duration) {
@@ -100,7 +100,7 @@ class SongScreen extends StatelessWidget {
                               },
                               icon: (isSelected == true)
                                   ? Icon(Icons.favorite, color: Colors.red)
-                                  : Icon(Icons.favorite_border_outlined),
+                                  : Icon(Icons.favorite_border),
                             ),
                           ],
                         ),

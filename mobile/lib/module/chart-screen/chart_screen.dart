@@ -1,10 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mobile/components/box/neu_box.dart';
 import 'package:mobile/model/song_model.dart';
-import 'package:mobile/module/chart-screen/song_screen.dart';
+import 'package:mobile/module/song-screen/song_screen.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 

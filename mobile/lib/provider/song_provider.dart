@@ -144,6 +144,7 @@ class SongProvider with ChangeNotifier {
   void playPrevSong() async {
     //>2s load, restart the current song
     if (_currentDuration.inSeconds > 2) {
+      currentSongIndex = _currentSongIndex!;
     } else {
       if (_currentSongIndex! > 0) {
         currentSongIndex = _currentSongIndex! - 1;
