@@ -5,7 +5,7 @@ from controllers.user_controller import UserController
 from controllers.authentication import verify_token
 from schemas.user_schema import Register, Login
 from models.user_model import UserModel
-from controllers.uploadController import UploadController
+from controllers.upload_controller import UploadController
 
 router = APIRouter(
     tags=["Upload"],

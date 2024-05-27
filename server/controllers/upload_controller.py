@@ -8,7 +8,6 @@ from dataplane import s3_upload
 from dataplane import s3_download
 
 from models.user_model import UserModel
-from models.upload_model import UploadModel
 from models.song_model import SongModel
 
 load_dotenv()
