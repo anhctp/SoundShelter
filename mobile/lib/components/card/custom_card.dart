@@ -45,6 +45,7 @@ class _CustomCardState extends State<CustomCard> {
               ),
               //insert name
               Container(
+                height: 50,
                 padding: const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
