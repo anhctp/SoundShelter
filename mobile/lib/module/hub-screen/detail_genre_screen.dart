@@ -28,15 +28,21 @@ class _DetailGenreScreenState extends State<DetailGenreScreen> {
       appBar: ScreenHeader(title: widget.label),
       extendBodyBehindAppBar: true,
       body: Consumer<AlbumProvider>(builder: (context, albumProvider, child) {
-        return GridView.count(
-          crossAxisCount: 2,
-          children: List.generate(
-            albumProvider.albums.length,
-            (index) {
-              return CustomCard(
-                  title: albumProvider.albums[index].title,
-                  imgFilePath: albumProvider.albums[index].imageFilePath);
-            },
+        return Container(
+          padding: EdgeInsets.all(10),
+          child: GridView.count(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: 0.9,
+            children: List.generate(
+              albumProvider.albums.length,
+              (index) {
+                return CustomCard(
+                    title: albumProvider.albums[index].title,
+                    imgFilePath: albumProvider.albums[index].imageFilePath);
+              },
+            ),
           ),
         );
       }),

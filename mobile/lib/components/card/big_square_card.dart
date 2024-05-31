@@ -23,35 +23,33 @@ class _BigSquareCardState extends State<BigSquareCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: widget.onTap,
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.width / 2 - 30,
-              width: MediaQuery.of(context).size.width / 2 - 30,
-              decoration: BoxDecoration(
-                color: Colors.red.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Image.network(
-                  widget.imgFilePath,
-                  fit: BoxFit.cover,
-                ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.width / 2 - 30,
+            width: MediaQuery.of(context).size.width / 2 - 30,
+            decoration: BoxDecoration(
+              color: Colors.red.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(5),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.network(
+                widget.imgFilePath,
+                fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(widget.title),
-            Text(widget.subtitle),
-            widget.subtext == true
-                ? const Text("data") //Text(json[index]["subtext"])
-                : Container()
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(widget.title),
+          Text(widget.subtitle),
+          widget.subtext == true
+              ? const Text("data") //Text(json[index]["subtext"])
+              : Container()
+        ],
       ),
     );
   }
