@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mobile/Provider/playlist_provider.dart';
 //import 'package:mobile/components/detail-card/detail_card.dart';
 import 'package:mobile/components/expanding-card/expanding_card.dart';
+import 'package:mobile/components/title/tab_name.dart';
+import 'package:mobile/module/detail-screen/noticeable_screen.dart';
+import 'package:mobile/module/library-screen/new_feature_tab.dart';
+import 'package:mobile/module/library-screen/recent_tab.dart';
+import 'package:mobile/module/library-screen/recommend_tab.dart';
 import 'package:provider/provider.dart';
 
 class DiscoveryScreen extends StatefulWidget {
@@ -53,29 +58,14 @@ class DiscoveryScreenState extends State<DiscoveryScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 3.0, horizontal: 5.0),
-                        child: Flex(direction: Axis.horizontal, children: [
-                          const Text(
-                            "Đáng chú ý",
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                color: Color(0xFFB2572B),
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          IconButton(
-                            icon: const Icon(
-                              Icons.arrow_forward_ios,
-                              size: 20,
-                              color: Color(0xFFB2572B),
-                            ),
-                            onPressed: () {
-                              print("Dang chu y");
-                            },
-                          )
-                        ])),
+                    TabName(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => NoticeableScreen()));
+                        },
+                        name: "Đáng chú ý"),
                     FittedBox(
                       fit: BoxFit.fitWidth,
                       child: ExpandingCards(
@@ -85,6 +75,9 @@ class DiscoveryScreenState extends State<DiscoveryScreen> {
                             : playlistProvider.playlists,
                       ),
                     ),
+                    RecommendTab(),
+                    RecentTab(),
+                    NewFeatureTab()
                   ],
                 ),
                 // Column(
