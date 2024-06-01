@@ -10,7 +10,7 @@ class Song {
   String imageFilePath;
   String releaseDate;
   int? view;
-  String albumsTitle;
+  String? albumsTitle;
 
   Song(
       {this.id,
@@ -22,7 +22,7 @@ class Song {
       required this.imageFilePath,
       required this.releaseDate,
       this.view,
-      required this.albumsTitle});
+      this.albumsTitle});
 
   factory Song.fromJsonMap(Map<String, dynamic> map) {
     return Song(

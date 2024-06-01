@@ -1,4 +1,3 @@
-//import 'package:audioplayers/audioplayers.dart';
 import 'dart:math';
 
 import 'package:audioplayers/audioplayers.dart';
@@ -18,9 +17,15 @@ class SongProvider with ChangeNotifier {
   //getter
   List<Song> get songs => _songs;
 
-  //rank songs by view
+  //rank songs by views
   Future<void> getSongsRank() async {
     _songs = await songService.getSongsRank();
+    notifyListeners();
+  }
+
+  //get newest songs
+  Future<void> getNewestSongs() async {
+    _songs = await songService.getNewestSongs();
     notifyListeners();
   }
 

@@ -47,7 +47,10 @@ class DiscoveryScreenState extends State<DiscoveryScreen> {
                 NoticeableTab(),
                 RecommendTab(),
                 RecentTab(),
-                NewFeatureTab()
+                NewFeatureTab(),
+                SizedBox(
+                  height: 10,
+                ),
               ],
             ),
             // Column(

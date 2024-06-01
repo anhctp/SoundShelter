@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/components/card/custom_card.dart';
+import 'package:mobile/components/card/big_square_card.dart';
 import 'package:mobile/components/title/screen_header.dart';
+import 'package:mobile/model/song_model.dart';
+import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/provider/song_provider.dart';
+import 'package:provider/provider.dart';
 
 class NewFeatureScreen extends StatefulWidget {
-  const NewFeatureScreen({super.key});
+  final List<Song> songs;
+  const NewFeatureScreen({super.key, required this.songs});
 
   @override
   State<NewFeatureScreen> createState() => _NewFeatureScreenState();
@@ -17,21 +22,39 @@ class _NewFeatureScreenState extends State<NewFeatureScreen> {
         title: "Mới phát hành",
       ),
       backgroundColor: const Color(0xFFDCD1B3),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 10),
-        child: GridView.count(
-          crossAxisCount: 2,
-          children: List.generate(
-            10,
-            (index) {
-              return CustomCard(
-                title: "title",
-                imgFilePath:
-                    "https://photo-cms-baophapluat.zadn.vn/w800/Uploaded/2022/ycgvptcc/2019_07_26/b_jpg_GIDP.jpg",
-              );
-            },
-          ),
-        ),
+      body: Consumer<SongProvider>(
+        builder: (context, songProvider, child) {
+          return Container(
+            padding: EdgeInsets.all(10),
+            child: GridView.count(
+              crossAxisSpacing: 15,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              childAspectRatio: 0.75,
+              children: List.generate(
+                widget.songs.length,
+                (index) {
+                  final song = widget.songs[index];
+                  return BigSquareCard(
+                    onTap: () {
+                      songProvider.currentSongIndex = index;
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SongScreen(),
+                        ),
+                      );
+                    },
+                    title: song.title,
+                    subtitle: song.artist,
+                    subtext: false,
+                    imgFilePath: song.imageFilePath,
+                  );
+                },
+              ),
+            ),
+          );
+        },
       ),
     );
   }
