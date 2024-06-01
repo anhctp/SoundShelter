@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/components/button/button_account.dart';
 import 'package:mobile/components/input/input.dart';
+import 'package:mobile/components/title/screen_header.dart';
 import 'package:mobile/module/account-screen/account_screen.dart';
 import 'package:mobile/module/sign-in-screen/sign_in_screen.dart';
 import 'package:mobile/provider/user_provider.dart';
@@ -25,8 +26,8 @@ class SignUpScreenState extends State<SignUpScreen> {
     final response = await userProvider.signUp(
         nameController.text, emailController.text, passwordController.text);
     if (response) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const AccountScreen()));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const AccountScreen()));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Registration failed, please try again.")));
@@ -37,25 +38,7 @@ class SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          backgroundColor: const Color(0xFFECE6D6),
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back_ios,
-              size: 20,
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-          title: Text(
-            "Đăng ký",
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-        ),
+        appBar: ScreenHeader(title: "Đăng ký"),
         body: Container(
             width: double.infinity,
             height: MediaQuery.of(context).size.height,

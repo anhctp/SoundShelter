@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/components/title/custom_appbar.dart';
 import 'package:mobile/module/sign-in-screen/sign_in_screen.dart';
 import 'package:mobile/module/sign-up-screen/sign_up_screen.dart';
 import 'package:mobile/provider/user_provider.dart';
@@ -29,26 +30,7 @@ class AccountScreenState extends State<AccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xFFECE6D6),
-          title: Text(
-            "Cá nhân",
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          actions: const [
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Color(0xFFB2572B),
-              ),
-              tooltip: 'Search',
-              onPressed: null,
-            ),
-          ],
-        ),
+        appBar: CustomAppBar(title: "Cá nhân"),
         body: Consumer<UserProvider>(builder: (context, userProvider, child) {
           return SafeArea(
             child: Container(

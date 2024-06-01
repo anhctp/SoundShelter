@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/components/title/custom_appbar.dart';
 import 'package:mobile/module/library-screen/favorite_tab.dart';
 import 'package:mobile/module/library-screen/personal_tab.dart';
 import 'package:mobile/module/library-screen/recent_tab.dart';
@@ -18,25 +19,7 @@ class LibraryScreenState extends State<LibraryScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFECE6D6),
-        title: Text(
-          "Thư viện",
-          style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
-              fontWeight: FontWeight.bold),
-        ),
-        actions: const [
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Color(0xFFB2572B),
-            ),
-            tooltip: 'Search',
-            onPressed: null,
-          ),
-        ],
-      ),
+      appBar: CustomAppBar(title: "Thư viện"),
       backgroundColor: const Color(0xFFDCD1B3),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 10),

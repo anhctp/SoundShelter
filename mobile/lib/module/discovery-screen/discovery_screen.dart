@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/components/title/custom_appbar.dart';
 //import 'package:mobile/components/detail-card/detail_card.dart';
 import 'package:mobile/module/discovery-screen/noticeable_tab.dart';
 import 'package:mobile/module/library-screen/new_feature_tab.dart';
@@ -18,25 +19,7 @@ class DiscoveryScreenState extends State<DiscoveryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFECE6D6),
-        title: Text(
-          "Khám phá",
-          style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
-              fontWeight: FontWeight.bold),
-        ),
-        actions: const [
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Color(0xFFB2572B),
-            ),
-            tooltip: 'Search',
-            onPressed: null,
-          ),
-        ],
-      ),
+      appBar: CustomAppBar(title: "Khám phá"),
       backgroundColor: const Color(0xFFDCD1B3),
       body: SingleChildScrollView(
         child: Column(
