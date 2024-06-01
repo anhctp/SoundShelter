@@ -22,7 +22,7 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
 
   //playing music
   void showSheetMusicPlayingLayout() {
-    Navigator.push(
+    Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => SongScreen()),
     );
@@ -33,7 +33,7 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
     return Consumer<SongProvider>(builder: (context, value, child) {
       if (value.currentSongIndex != null) {
         //get playlist
-        final songs = value.songs;
+        final songs = value.playingSongs;
 
         //get current song index
         final currentSong = songs[value.currentSongIndex ?? 0];

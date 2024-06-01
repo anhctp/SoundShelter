@@ -16,8 +16,16 @@ class SongProvider with ChangeNotifier {
   RecommendService recommendService = RecommendService();
 
   List<Song> _songs = [];
+  List<Song> _playingSongs = [];
   //getter
   List<Song> get songs => _songs;
+  List<Song> get playingSongs => _playingSongs;
+
+  //setter
+  List<Song> setPlayingSongs() {
+    if (songs.isNotEmpty) _playingSongs = _songs;
+    return _playingSongs;
+  }
 
   //find song by name
   Future<void> findSong(String text) async {
@@ -114,7 +122,7 @@ class SongProvider with ChangeNotifier {
   void play() async {
     _isRepeat = false;
     _audioPlayer.setReleaseMode(ReleaseMode.stop);
-    final String path = _songs[_currentSongIndex!].audioFilePath;
+    final String path = _playingSongs[_currentSongIndex!].audioFilePath;
     await _audioPlayer.stop(); //stop current song
     await _audioPlayer.play(UrlSource(path)); //play new song
     _isPlaying = true;
@@ -148,7 +156,7 @@ class SongProvider with ChangeNotifier {
   //shuffle
   void shuffle() {
     Random r = new Random();
-    currentSongIndex = r.nextInt(_songs.length);
+    currentSongIndex = r.nextInt(_playingSongs.length);
     notifyListeners();
   }
 
@@ -173,7 +181,7 @@ class SongProvider with ChangeNotifier {
   //play next song
   void playNextSong() {
     if (_currentSongIndex != null) {
-      if (_currentSongIndex! < _songs.length - 1) {
+      if (_currentSongIndex! < _playingSongs.length - 1) {
         //go to the next song if it's not last song
         currentSongIndex = _currentSongIndex! + 1;
       } else {
@@ -201,7 +209,7 @@ class SongProvider with ChangeNotifier {
         currentSongIndex = _currentSongIndex! - 1;
       } else {
         //it's the first song, look back to last
-        currentSongIndex = _songs.length - 1;
+        currentSongIndex = _playingSongs.length - 1;
       }
     }
   }

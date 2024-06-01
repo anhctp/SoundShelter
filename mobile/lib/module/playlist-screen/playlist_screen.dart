@@ -87,6 +87,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
                           imgFilePath: song.imageFilePath,
                           artist: song.artist,
                           onTap: () {
+                            songProvider.setPlayingSongs();
                             songProvider.currentSongIndex = index;
                             Navigator.push(
                               context,

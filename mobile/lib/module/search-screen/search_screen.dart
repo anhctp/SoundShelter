@@ -78,6 +78,7 @@ class _SearchScreenState extends State<SearchScreen>
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
+                        songProvider.setPlayingSongs();
                         songProvider.currentSongIndex = index;
                         Navigator.pushReplacement(
                           context,

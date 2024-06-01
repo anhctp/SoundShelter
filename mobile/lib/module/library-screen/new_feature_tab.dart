@@ -61,6 +61,7 @@ class _NewFeatureTabState extends State<NewFeatureTab> {
                         imgFilePath: song.imageFilePath,
                         artist: song.artist,
                         onTap: () {
+                          songProvider.setPlayingSongs();
                           songProvider.currentSongIndex = index;
                           Navigator.push(
                             context,

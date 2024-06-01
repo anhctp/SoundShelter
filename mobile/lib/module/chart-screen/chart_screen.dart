@@ -29,6 +29,7 @@ class ChartScreenState extends State<ChartScreen>
   }
 
   void goToSong(int songIndex) {
+    songProvider.setPlayingSongs();
     //update current song index
     songProvider.currentSongIndex = songIndex;
 

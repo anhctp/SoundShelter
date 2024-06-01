@@ -24,7 +24,7 @@ class _FullPlayingViewState extends State<FullPlayingView> {
   Widget build(BuildContext context) {
     return Consumer<SongProvider>(builder: (context, value, child) {
       //get playlist
-      final songs = value.songs;
+      final songs = value.playingSongs;
 
       //get current song index
       final currentSong = songs[value.currentSongIndex ?? 0];
