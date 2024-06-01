@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/components/card/rectangle_card.dart';
 import 'package:mobile/module/library-screen/favorite_tab.dart';
 import 'package:mobile/module/library-screen/personal_tab.dart';
 import 'package:mobile/module/library-screen/recent_tab.dart';
 import 'package:mobile/module/library-screen/recommend_tab.dart';
-import 'package:mobile/module/playlist-screen/playlist_screen.dart';
 
 class LibraryScreen extends StatefulWidget {
   const LibraryScreen({super.key});
@@ -44,16 +42,6 @@ class LibraryScreenState extends State<LibraryScreen>
         padding: EdgeInsets.symmetric(vertical: 10),
         child: Column(
           children: [
-            RectangleCard(
-                icon: Icons.abc_sharp,
-                title: "Go to Playlist",
-                subtitle: "subtitle",
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => PlayListScreen()),
-                  );
-                }),
             SizedBox(
               height: 5,
             ),

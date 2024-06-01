@@ -17,20 +17,24 @@ class _RecommendScreenState extends State<RecommendScreen> {
         title: "Gợi ý cho bạn",
       ),
       backgroundColor: const Color(0xFFDCD1B3),
-      body: GridView.count(
-        padding: EdgeInsets.only(left: 20, top: 10),
-        shrinkWrap: true,
-        crossAxisCount: 2,
-        childAspectRatio: 0.83,
-        children: List.generate(10, (index) {
-          return BigSquareCard(
-              imgFilePath:
-                  "https://photo-zmp3.zmdcdn.me/cover/c/9/b/3/c9b3c456eeabd9d4e3241666397d71aa.jpg",
-              title: "title",
-              subtitle: "subtitle",
-              subtext: false,
-              onTap: () {});
-        }),
+      body: Container(
+        padding: EdgeInsets.all(10),
+        child: GridView.count(
+          shrinkWrap: true,
+          crossAxisCount: 2,
+          crossAxisSpacing: 15,
+          mainAxisSpacing: 10,
+          childAspectRatio: 0.75,
+          children: List.generate(10, (index) {
+            return BigSquareCard(
+                imgFilePath:
+                    "https://photo-zmp3.zmdcdn.me/cover/c/9/b/3/c9b3c456eeabd9d4e3241666397d71aa.jpg",
+                title: "title",
+                subtitle: "subtitle",
+                subtext: false,
+                onTap: () {});
+          }),
+        ),
       ),
     );
   }

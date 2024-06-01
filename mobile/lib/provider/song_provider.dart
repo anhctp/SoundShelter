@@ -6,12 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:mobile/model/song_model.dart';
 import 'package:mobile/service/album_service.dart';
 import 'package:mobile/service/playlist_service.dart';
+import 'package:mobile/service/recommend_service.dart';
 import 'package:mobile/service/song_service.dart';
 
 class SongProvider with ChangeNotifier {
   SongService songService = SongService();
   AlbumService albumService = AlbumService();
   PlaylistService playlistService = PlaylistService();
+  RecommendService recommendService = RecommendService();
 
   List<Song> _songs = [];
   //getter
@@ -38,6 +40,20 @@ class SongProvider with ChangeNotifier {
   //get songs by playlist id
   Future<void> getSongsByPlaylist(int playlistId) async {
     _songs = await playlistService.getSongsByPlaylist(playlistId);
+    notifyListeners();
+  }
+
+  //get recommendation
+  Future<void> getRecommendation() async {
+    _songs = await recommendService.getRecommendation();
+    notifyListeners();
+  }
+
+  // create or delete favorite
+  void favorites() async {
+    _isFavorite = !_isFavorite;
+    if (_isFavorite) {
+    } else {}
     notifyListeners();
   }
 
@@ -82,6 +98,11 @@ class SongProvider with ChangeNotifier {
   bool _isRepeat = false;
   //getter
   bool get isRepeat => _isRepeat;
+
+  //initially not favorite
+  bool _isFavorite = false;
+  //getter
+  bool get isFavorite => _isFavorite;
 
   //play
   void play() async {

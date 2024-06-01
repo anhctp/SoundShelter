@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/components/button/see_all_button.dart';
 import 'package:mobile/components/card/big_square_card.dart';
 import 'package:mobile/components/title/tab_name.dart';
 import 'package:mobile/module/detail-screen/recommend_screen.dart';
+import 'package:mobile/provider/song_provider.dart';
+import 'package:provider/provider.dart';
 
 class RecommendTab extends StatefulWidget {
   const RecommendTab({super.key});
@@ -12,25 +15,37 @@ class RecommendTab extends StatefulWidget {
 
 class _RecommendTabState extends State<RecommendTab> {
   @override
+  void initState() {
+    super.initState();
+    final songProvider = Provider.of<SongProvider>(context, listen: false);
+    songProvider.getRecommendation();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return //recommend
-        Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TabName(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => RecommendScreen()));
-              },
-              name: "Gợi ý cho bạn"),
-          Container(
-            height: MediaQuery.of(context).size.width / 2 + 20,
-            width: MediaQuery.of(context).size.width,
-            child: _buildListCard(_listTop100, true, 5),
+    return Consumer<SongProvider>(
+      builder: (context, songProvider, child) {
+        return Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TabName(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RecommendScreen()));
+                  },
+                  name: "Gợi ý cho bạn"),
+              Container(
+                height: MediaQuery.of(context).size.width / 2 + 20,
+                width: MediaQuery.of(context).size.width,
+                child: _buildListCard(_listTop100, true, 5),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
@@ -117,46 +132,15 @@ class _RecommendTabState extends State<RecommendTab> {
                   onTap: () {},
                 ),
               if (seeAll == true && index == count)
-                GestureDetector(
+                SeeAllButton(
                   onTap: () {
-                    //
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RecommendScreen(),
+                      ),
+                    );
                   },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 45,
-                          width: 45,
-                          margin: const EdgeInsets.only(bottom: 10),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.withOpacity(0.3),
-                                  offset: const Offset(1, 1),
-                                  blurRadius: 4,
-                                  spreadRadius: 1),
-                            ],
-                            borderRadius: BorderRadius.circular(45),
-                          ),
-                          child: const Icon(
-                            Icons.arrow_forward,
-                            color: Color(0xFFB2572B),
-                            size: 30,
-                          ),
-                        ),
-                        const Text(
-                          "Xem tất cả",
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                  ),
                 ),
             ],
           );
