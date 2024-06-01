@@ -38,8 +38,6 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
         //get current song index
         final currentSong = songs[value.currentSongIndex ?? 0];
 
-        bool isSelected = false;
-
         return Container(
           height: 58,
           color: Theme.of(context).colorScheme.onSecondary,
@@ -103,7 +101,10 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
-                                    Text(currentSong.artist)
+                                    Text(
+                                      currentSong.artist,
+                                      overflow: TextOverflow.ellipsis,
+                                    )
                                   ],
                                 ),
                               ),
@@ -115,11 +116,8 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
                   )),
                   //heart icon
                   IconButton(
-                    onPressed: () => {
-                      isSelected = !isSelected,
-                      print("isSelected: $isSelected"),
-                    },
-                    icon: (isSelected == true)
+                    onPressed: value.favorites,
+                    icon: (value.isFavorite)
                         ? Icon(Icons.favorite, color: Colors.red)
                         : Icon(Icons.favorite_border),
                   ),

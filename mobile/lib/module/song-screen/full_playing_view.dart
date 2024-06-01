@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/components/box/neu_box.dart';
 import 'package:mobile/provider/song_provider.dart';
@@ -20,8 +19,6 @@ class _FullPlayingViewState extends State<FullPlayingView> {
 
     return formattedTime;
   }
-
-  bool isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -99,19 +96,21 @@ class _FullPlayingViewState extends State<FullPlayingView> {
                                     ),
                                   ),
                                 ),
-                                Text(currentSong.artist),
+                                Container(
+                                  width: 240,
+                                  child: Text(
+                                    currentSong.artist,
+                                    overflow: TextOverflow.clip,
+                                    maxLines: 2,
+                                  ),
+                                ),
                               ],
                             ),
 
                             //heart icon
                             IconButton(
-                              onPressed: () => {
-                                setState(() {
-                                  isSelected = !isSelected;
-                                }),
-                                print("isSelected: $isSelected"),
-                              },
-                              icon: (isSelected == true)
+                              onPressed: value.favorites,
+                              icon: (value.isFavorite)
                                   ? Icon(Icons.favorite, color: Colors.red)
                                   : Icon(Icons.favorite_border),
                             ),
