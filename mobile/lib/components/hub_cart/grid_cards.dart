@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/components/button/see_all_button.dart';
 import 'package:mobile/components/card/custom_card.dart';
 import 'package:mobile/model/album_model.dart';
-import 'package:mobile/module/playlist-screen/playlist_screen.dart';
+import 'package:mobile/module/playlist-screen/album_screen.dart';
 
 class GridCards extends StatefulWidget {
   final GestureTapCallback onTap;
@@ -42,8 +42,10 @@ class _GridCardsState extends State<GridCards> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            PlayListScreen(name: item.title, albumId: item.id),
+                        builder: (context) => AlbumScreen(
+                            name: item.title,
+                            imgFilePath: item.imageFilePath,
+                            albumId: item.id),
                       ),
                     );
                   },

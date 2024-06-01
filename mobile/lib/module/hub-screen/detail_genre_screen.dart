@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/card/custom_card.dart';
 import 'package:mobile/components/title/screen_header.dart';
-import 'package:mobile/module/playlist-screen/playlist_screen.dart';
+import 'package:mobile/module/playlist-screen/album_screen.dart';
 import 'package:mobile/provider/album_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -46,15 +46,16 @@ class _DetailGenreScreenState extends State<DetailGenreScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => PlayListScreen(
+                          builder: (context) => AlbumScreen(
                             name: album.title,
                             albumId: album.id,
+                            imgFilePath: album.imageFilePath,
                           ),
                         ),
                       );
                     },
-                    title: albumProvider.albums[index].title,
-                    imgFilePath: albumProvider.albums[index].imageFilePath);
+                    title: album.title,
+                    imgFilePath: album.imageFilePath);
               },
             ),
           ),
