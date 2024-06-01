@@ -122,13 +122,13 @@ class SongProvider with ChangeNotifier {
   void shuffle() {
     Random r = new Random();
     currentSongIndex = r.nextInt(_songs.length);
+    notifyListeners();
   }
 
   //repeat
   void repeat() {
     // Toggle repeat mode
     _isRepeat = !_isRepeat;
-    print(isRepeat);
     if (_isRepeat) {
       _audioPlayer.setReleaseMode(ReleaseMode.loop);
     } else {

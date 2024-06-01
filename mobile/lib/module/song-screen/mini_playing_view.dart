@@ -74,7 +74,6 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
                     },
                     child: Container(
                       color: Colors.white.withOpacity(0),
-                      width: double.infinity,
                       child: Row(
                         children: [
                           Container(
@@ -93,11 +92,13 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
                             children: [
                               Container(
                                 padding: const EdgeInsets.only(left: 10),
+                                width: 180,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       currentSong.title,
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                       ),

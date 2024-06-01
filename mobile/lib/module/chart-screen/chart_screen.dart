@@ -142,13 +142,17 @@ class ChartScreenState extends State<ChartScreen>
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
-                            Text(
-                              "${index + 1}",
-                              style: TextStyle(
-                                color: Colors.primaries[
-                                    Random().nextInt(Colors.primaries.length)],
-                                fontSize: 24,
-                                fontWeight: FontWeight.w600,
+                            Container(
+                              width: 30,
+                              alignment: Alignment.center,
+                              child: Text(
+                                "${index + 1}",
+                                style: TextStyle(
+                                  color: Colors.primaries[Random()
+                                      .nextInt(Colors.primaries.length)],
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ),
                             SizedBox(

@@ -1,11 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/components/box/neu_box.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 
-class FullPlayingView extends StatelessWidget {
+class FullPlayingView extends StatefulWidget {
   const FullPlayingView({super.key});
 
+  @override
+  State<FullPlayingView> createState() => _FullPlayingViewState();
+}
+
+class _FullPlayingViewState extends State<FullPlayingView> {
   //convert duratiob into min:sec
   String formatTime(Duration duration) {
     String twoDigiSeconds =
@@ -15,6 +21,8 @@ class FullPlayingView extends StatelessWidget {
     return formattedTime;
   }
 
+  bool isSelected = false;
+
   @override
   Widget build(BuildContext context) {
     return Consumer<SongProvider>(builder: (context, value, child) {
@@ -23,8 +31,6 @@ class FullPlayingView extends StatelessWidget {
 
       //get current song index
       final currentSong = songs[value.currentSongIndex ?? 0];
-
-      bool isSelected = false;
 
       return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
@@ -81,11 +87,16 @@ class FullPlayingView extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  currentSong.title,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
+                                Container(
+                                  width: 240,
+                                  child: Text(
+                                    currentSong.title,
+                                    overflow: TextOverflow.clip,
+                                    maxLines: 2,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
                                   ),
                                 ),
                                 Text(currentSong.artist),
@@ -95,7 +106,9 @@ class FullPlayingView extends StatelessWidget {
                             //heart icon
                             IconButton(
                               onPressed: () => {
-                                isSelected = !isSelected,
+                                setState(() {
+                                  isSelected = !isSelected;
+                                }),
                                 print("isSelected: $isSelected"),
                               },
                               icon: (isSelected == true)
@@ -132,14 +145,20 @@ class FullPlayingView extends StatelessWidget {
                               IconButton(
                                 onPressed: value.shuffle,
                                 focusColor: Colors.blue,
-                                icon: Icon(Icons.shuffle),
+                                icon: Icon(
+                                  Icons.shuffle,
+                                ),
                               ),
 
                               //repeat icon
                               IconButton(
                                 onPressed: value.repeat,
-                                focusColor: Colors.blue,
-                                icon: Icon(Icons.repeat),
+                                icon: Icon(
+                                  Icons.repeat,
+                                  color: (value.isRepeat)
+                                      ? Colors.blue
+                                      : Colors.black,
+                                ),
                               ),
 
                               //end time
