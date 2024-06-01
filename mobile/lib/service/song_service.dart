@@ -23,4 +23,14 @@ class SongService {
       throw Exception('Failed to load songs!');
     }
   }
+
+  //find song by name
+  Future<List<Song>> findSong(String text) async {
+    try {
+      return await songRepository.findSong(text);
+    } catch (e) {
+      print(e);
+      throw Exception('Failed to load songs!');
+    }
+  }
 }

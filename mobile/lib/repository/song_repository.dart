@@ -14,7 +14,6 @@ class SongRepository {
     );
 
     if (response.statusCode == 200) {
-      print(response.body);
       return songFromJson(response.bodyBytes);
     } else {
       print(response.body);
@@ -30,10 +29,25 @@ class SongRepository {
     );
 
     if (response.statusCode == 200) {
-      print(response.body);
       var jsonResponse = json.decode(utf8.decode(response.bodyBytes));
       var data = jsonResponse['newest_songs'];
       return List<Song>.from(data.map((item) => Song.fromJsonMap(item)));
+    } else {
+      print(response.body);
+      throw Exception('Failed to load songs!');
+    }
+  }
+
+  //find song by name
+  Future<List<Song>> findSong(String text) async {
+    final response = await http.get(
+      Uri.parse("$baseUrl/find?name=${text}"),
+      headers: {'Accept': 'application/json; charset=UTF-8'},
+    );
+
+    if (response.statusCode == 200) {
+      print(response.body);
+      return songFromJson(response.bodyBytes);
     } else {
       print(response.body);
       throw Exception('Failed to load songs!');

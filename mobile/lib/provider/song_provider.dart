@@ -19,6 +19,12 @@ class SongProvider with ChangeNotifier {
   //getter
   List<Song> get songs => _songs;
 
+  //find song by name
+  Future<void> findSong(String text) async {
+    _songs = await songService.findSong(text);
+    notifyListeners();
+  }
+
   //rank songs by views
   Future<void> getSongsRank() async {
     _songs = await songService.getSongsRank();
