@@ -5,15 +5,25 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/model/song_model.dart';
+import 'package:mobile/service/album_service.dart';
 import 'package:mobile/service/song_service.dart';
 
 class SongProvider with ChangeNotifier {
   SongService songService = SongService();
+  AlbumService albumService = AlbumService();
   List<Song> _songs = [];
   //getter
   List<Song> get songs => _songs;
+
+  //rank songs by view
   Future<void> getSongsRank() async {
     _songs = await songService.getSongsRank();
+    notifyListeners();
+  }
+
+  //get songs by album id
+  Future<void> getSongsByAlbum(int? albumId) async {
+    _songs = await albumService.getSongsByAlbum(albumId);
     notifyListeners();
   }
 

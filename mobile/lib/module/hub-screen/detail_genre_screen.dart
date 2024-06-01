@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/card/custom_card.dart';
 import 'package:mobile/components/title/screen_header.dart';
+import 'package:mobile/module/playlist-screen/playlist_screen.dart';
 import 'package:mobile/provider/album_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -34,11 +35,24 @@ class _DetailGenreScreenState extends State<DetailGenreScreen> {
             crossAxisCount: 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            childAspectRatio: 0.9,
+            childAspectRatio: 0.85,
             children: List.generate(
               albumProvider.albums.length,
               (index) {
+                final album = albumProvider.albums[index];
                 return CustomCard(
+                    onTap: () {
+                      print("object");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PlayListScreen(
+                            name: album.title,
+                            albumId: album.id,
+                          ),
+                        ),
+                      );
+                    },
                     title: albumProvider.albums[index].title,
                     imgFilePath: albumProvider.albums[index].imageFilePath);
               },

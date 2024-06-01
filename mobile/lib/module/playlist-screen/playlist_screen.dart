@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/card/music_item.dart';
+import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/provider/song_provider.dart';
+import 'package:provider/provider.dart';
 
 class PlayListScreen extends StatefulWidget {
-  const PlayListScreen({super.key});
+  final String name;
+  final int? albumId;
+  const PlayListScreen({super.key, required this.name, required this.albumId});
 
   @override
   State<PlayListScreen> createState() => _PlayListScreenState();
@@ -10,73 +15,100 @@ class PlayListScreen extends StatefulWidget {
 
 class _PlayListScreenState extends State<PlayListScreen> {
   @override
+  void initState() {
+    super.initState();
+    final songProvider = Provider.of<SongProvider>(context, listen: false);
+    songProvider.getSongsByAlbum(widget.albumId);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Column(
-                children: [
-                  SafeArea(
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: const Icon(Icons.arrow_back_ios_rounded),
+      body: Consumer<SongProvider>(
+        builder: (context, songProvider, child) {
+          return Stack(
+            children: [
+              SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Column(
+                    children: [
+                      SafeArea(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: const Icon(Icons.arrow_back_ios_rounded),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  Center(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.network(
-                        "https://photo-cms-baophapluat.zadn.vn/w800/Uploaded/2022/ycgvptcc/2019_07_26/b_jpg_GIDP.jpg",
-                        fit: BoxFit.cover,
+                      Center(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.network(
+                            songProvider.songs[0].imageFilePath,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: 10),
+                      Text(
+                        widget.name,
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineSmall!
+                            .copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        "${songProvider.songs.length} bài hát",
+                        overflow: TextOverflow.clip,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                        textAlign: TextAlign.center,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: ListView.separated(
+                          separatorBuilder: (context, index) {
+                            return SizedBox(
+                              height: 10,
+                            );
+                          },
+                          itemBuilder: (context, index) {
+                            final song = songProvider.songs[index];
+                            return InkWell(
+                                onTap: () {},
+                                child: MusicItem(
+                                  name: song.title,
+                                  imgFilePath: song.imageFilePath,
+                                  artist: song.artist,
+                                  onTap: () {
+                                    songProvider.currentSongIndex = index;
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => SongScreen(),
+                                      ),
+                                    );
+                                  },
+                                ));
+                          },
+                          itemCount: songProvider
+                              .songs.length, //playlist!.songs!.length
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 10),
-                  Text(
-                    "playlist!.title!",
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineSmall!
-                        .copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    "playlist!.sortDescription!",
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.bodyMedium,
-                    textAlign: TextAlign.center,
-                  ),
-                  ListView.builder(
-                    itemBuilder: (_, index) {
-                      return InkWell(
-                          onTap: () {},
-                          child: MusicItem(
-                            name: "name",
-                            imgFilePath:
-                                "https://photo-cms-baophapluat.zadn.vn/w800/Uploaded/2022/ycgvptcc/2019_07_26/b_jpg_GIDP.jpg",
-                            artist: "artist",
-                            onTap: () {},
-                          ));
-                    },
-                    itemCount: 5, //playlist!.songs!.length
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                  ),
-                ],
+                ),
               ),
-            ),
-          ),
-        ],
+            ],
+          );
+        },
       ),
     );
   }

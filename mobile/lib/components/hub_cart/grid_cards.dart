@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/components/button/see_all_button.dart';
 import 'package:mobile/components/card/custom_card.dart';
 import 'package:mobile/model/album_model.dart';
+import 'package:mobile/module/playlist-screen/playlist_screen.dart';
 
 class GridCards extends StatefulWidget {
   final GestureTapCallback onTap;
@@ -35,7 +36,19 @@ class _GridCardsState extends State<GridCards> {
           //last index button
           return index == 4
               ? SeeAllButton(onTap: widget.onTap)
-              : CustomCard(imgFilePath: item.imageFilePath, title: item.title);
+              : CustomCard(
+                  onTap: () {
+                    print("object");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            PlayListScreen(name: item.title, albumId: item.id),
+                      ),
+                    );
+                  },
+                  imgFilePath: item.imageFilePath,
+                  title: item.title);
         },
       ),
     );
