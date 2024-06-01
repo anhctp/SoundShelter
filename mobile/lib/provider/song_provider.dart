@@ -6,11 +6,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/model/song_model.dart';
 import 'package:mobile/service/album_service.dart';
+import 'package:mobile/service/playlist_service.dart';
 import 'package:mobile/service/song_service.dart';
 
 class SongProvider with ChangeNotifier {
   SongService songService = SongService();
   AlbumService albumService = AlbumService();
+  PlaylistService playlistService = PlaylistService();
+
   List<Song> _songs = [];
   //getter
   List<Song> get songs => _songs;
@@ -24,6 +27,12 @@ class SongProvider with ChangeNotifier {
   //get songs by album id
   Future<void> getSongsByAlbum(int? albumId) async {
     _songs = await albumService.getSongsByAlbum(albumId);
+    notifyListeners();
+  }
+
+  //get songs by playlist id
+  Future<void> getSongsByPlaylist(int playlistId) async {
+    _songs = await playlistService.getSongsByPlaylist(playlistId);
     notifyListeners();
   }
 
