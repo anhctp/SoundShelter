@@ -37,7 +37,7 @@ class _NewFeatureScreenState extends State<NewFeatureScreen> {
                   final song = widget.songs[index];
                   return BigSquareCard(
                     onTap: () {
-                      songProvider.setPlayingSongs();
+                      songProvider.setPlayingSongs(songProvider.newestSongs);
                       songProvider.currentSongIndex = index;
                       Navigator.push(
                         context,

@@ -17,13 +17,15 @@ class SongProvider with ChangeNotifier {
 
   List<Song> _songs = [];
   List<Song> _playingSongs = [];
+  List<Song> _newestSongs = [];
   //getter
   List<Song> get songs => _songs;
+  List<Song> get newestSongs => _newestSongs;
   List<Song> get playingSongs => _playingSongs;
 
   //setter
-  List<Song> setPlayingSongs() {
-    if (songs.isNotEmpty) _playingSongs = _songs;
+  List<Song> setPlayingSongs(List<Song> songs) {
+    if (songs.isNotEmpty) _playingSongs = songs;
     return _playingSongs;
   }
 
@@ -41,7 +43,7 @@ class SongProvider with ChangeNotifier {
 
   //get newest songs
   Future<void> getNewestSongs() async {
-    _songs = await songService.getNewestSongs();
+    _newestSongs = await songService.getNewestSongs();
     notifyListeners();
   }
 

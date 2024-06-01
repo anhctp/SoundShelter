@@ -36,7 +36,7 @@ class _NewFeatureTabState extends State<NewFeatureTab> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => NewFeatureScreen(
-                          songs: songProvider.songs,
+                          songs: songProvider.newestSongs,
                         ),
                       ),
                     );
@@ -53,15 +53,16 @@ class _NewFeatureTabState extends State<NewFeatureTab> {
                   padding: const EdgeInsets.all(2),
                   childAspectRatio: 0.22,
                   children: List.generate(
-                    songProvider.songs.length,
+                    songProvider.newestSongs.length,
                     (index) {
-                      final song = songProvider.songs[index];
+                      final song = songProvider.newestSongs[index];
                       return MusicItem(
                         name: song.title,
                         imgFilePath: song.imageFilePath,
                         artist: song.artist,
                         onTap: () {
-                          songProvider.setPlayingSongs();
+                          songProvider
+                              .setPlayingSongs(songProvider.newestSongs);
                           songProvider.currentSongIndex = index;
                           Navigator.push(
                             context,

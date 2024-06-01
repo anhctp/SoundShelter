@@ -87,7 +87,7 @@ class _AlbumScreenState extends State<AlbumScreen> {
                           imgFilePath: song.imageFilePath,
                           artist: song.artist,
                           onTap: () {
-                            songProvider.setPlayingSongs();
+                            songProvider.setPlayingSongs(songProvider.songs);
                             songProvider.currentSongIndex = index;
                             Navigator.push(
                               context,
