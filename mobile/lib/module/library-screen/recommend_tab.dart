@@ -73,7 +73,8 @@ class _RecommendTabState extends State<RecommendTab> {
                                   );
                                 },
                                 itemBuilder: (context, index) {
-                                  final song = songProvider.songs[index];
+                                  final song =
+                                      songProvider.recommendSongs[index];
                                   return Row(
                                     children: [
                                       (index < 5)
@@ -143,59 +144,6 @@ class _RecommendTabState extends State<RecommendTab> {
           },
         );
       },
-    );
-  }
-
-  Widget _buildListCard(SongProvider songProvider, bool seeAll, int count,
-      {bool subtext = false}) {
-    return Container(
-      height: 180,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.symmetric(horizontal: 10),
-        shrinkWrap: true,
-        separatorBuilder: (context, index) {
-          return SizedBox(
-            width: 15,
-          );
-        },
-        itemBuilder: (context, index) {
-          return Row(
-            children: [
-              if (index < count)
-                BigSquareCard(
-                  imgFilePath: songProvider.songs[index].imageFilePath,
-                  title: songProvider.songs[index].title,
-                  subtitle: songProvider.songs[index].artist,
-                  subtext: subtext,
-                  onTap: () {
-                    songProvider.setPlayingSongs(songProvider.recommendSongs);
-                    songProvider.currentSongIndex = index;
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SongScreen(),
-                      ),
-                    );
-                  },
-                ),
-              if (seeAll == true && index == count)
-                SeeAllButton(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            RecommendScreen(songs: songProvider.recommendSongs),
-                      ),
-                    );
-                  },
-                ),
-            ],
-          );
-        },
-        itemCount: count + 1,
-      ),
     );
   }
 }
