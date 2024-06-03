@@ -46,8 +46,14 @@ class _BigSquareCardState extends State<BigSquareCard> {
             const SizedBox(
               height: 10,
             ),
-            Text(widget.title),
-            Text(widget.subtitle),
+            Text(
+              widget.title,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              widget.subtitle,
+              overflow: TextOverflow.ellipsis,
+            ),
             widget.subtext == true
                 ? const Text("data") //Text(json[index]["subtext"])
                 : Container()

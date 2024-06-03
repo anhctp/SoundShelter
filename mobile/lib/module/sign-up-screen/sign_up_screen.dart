@@ -25,6 +25,7 @@ class SignUpScreenState extends State<SignUpScreen> {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     final response = await userProvider.signUp(
         nameController.text, emailController.text, passwordController.text);
+    if (!context.mounted) return;
     if (response) {
       Navigator.pop(context,
           MaterialPageRoute(builder: (context) => const AccountScreen()));

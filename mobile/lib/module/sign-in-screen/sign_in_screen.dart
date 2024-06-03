@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:mobile/components/button/button_account.dart';
 import 'package:mobile/components/input/input.dart';
 import 'package:mobile/components/title/screen_header.dart';
-import 'package:mobile/module/account-screen/account_screen.dart';
 import 'package:mobile/module/sign-up-screen/sign_up_screen.dart';
 import 'package:mobile/provider/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -24,9 +23,9 @@ class SignInScreenState extends State<SignInScreen> {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     final response =
         await userProvider.login(emailController.text, passwordController.text);
+    if (!context.mounted) return;
     if (response) {
-      Navigator.pop(context,
-          MaterialPageRoute(builder: (context) => const AccountScreen()));
+      Navigator.pop(context);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text("Registration failed, please try again."),
