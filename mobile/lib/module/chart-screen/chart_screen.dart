@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:mobile/components/box/neu_box.dart';
+import 'package:mobile/components/title/custom_appbar.dart';
 import 'package:mobile/model/song_model.dart';
 import 'package:mobile/module/song-screen/song_screen.dart';
 import 'package:mobile/provider/song_provider.dart';
@@ -28,6 +29,7 @@ class ChartScreenState extends State<ChartScreen>
   }
 
   void goToSong(int songIndex) {
+    songProvider.setPlayingSongs(songProvider.songs);
     //update current song index
     songProvider.currentSongIndex = songIndex;
 
@@ -41,24 +43,8 @@ class ChartScreenState extends State<ChartScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFECE6D6),
-        title: Text(
-          "Bảng xếp hạng",
-          style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
-              fontWeight: FontWeight.bold),
-        ),
-        actions: const [
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Color(0xFFB2572B),
-            ),
-            tooltip: 'Search',
-            onPressed: null,
-          ),
-        ],
+      appBar: CustomAppBar(
+        title: "Bảng xếp hạng",
       ),
       backgroundColor: const Color(0xFFDCD1B3),
       body: Consumer<SongProvider>(
@@ -142,13 +128,17 @@ class ChartScreenState extends State<ChartScreen>
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
-                            Text(
-                              "${index + 1}",
-                              style: TextStyle(
-                                color: Colors.primaries[
-                                    Random().nextInt(Colors.primaries.length)],
-                                fontSize: 24,
-                                fontWeight: FontWeight.w600,
+                            Container(
+                              width: 30,
+                              alignment: Alignment.center,
+                              child: Text(
+                                "${index + 1}",
+                                style: TextStyle(
+                                  color: Colors.primaries[Random()
+                                      .nextInt(Colors.primaries.length)],
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ),
                             SizedBox(

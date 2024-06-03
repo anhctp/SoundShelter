@@ -22,7 +22,7 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
 
   //playing music
   void showSheetMusicPlayingLayout() {
-    Navigator.push(
+    Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => SongScreen()),
     );
@@ -33,12 +33,10 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
     return Consumer<SongProvider>(builder: (context, value, child) {
       if (value.currentSongIndex != null) {
         //get playlist
-        final songs = value.songs;
+        final songs = value.playingSongs;
 
         //get current song index
         final currentSong = songs[value.currentSongIndex ?? 0];
-
-        bool isSelected = false;
 
         return Container(
           height: 58,
@@ -74,7 +72,6 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
                     },
                     child: Container(
                       color: Colors.white.withOpacity(0),
-                      width: double.infinity,
                       child: Row(
                         children: [
                           Container(
@@ -93,16 +90,21 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
                             children: [
                               Container(
                                 padding: const EdgeInsets.only(left: 10),
+                                width: 180,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       currentSong.title,
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
-                                    Text(currentSong.artist)
+                                    Text(
+                                      currentSong.artist,
+                                      overflow: TextOverflow.ellipsis,
+                                    )
                                   ],
                                 ),
                               ),
@@ -114,11 +116,8 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
                   )),
                   //heart icon
                   IconButton(
-                    onPressed: () => {
-                      isSelected = !isSelected,
-                      print("isSelected: $isSelected"),
-                    },
-                    icon: (isSelected == true)
+                    onPressed: value.favorites,
+                    icon: (value.isFavorite)
                         ? Icon(Icons.favorite, color: Colors.red)
                         : Icon(Icons.favorite_border),
                   ),

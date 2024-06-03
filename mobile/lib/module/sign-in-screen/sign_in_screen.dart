@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/components/button/button_account.dart';
 import 'package:mobile/components/input/input.dart';
-import 'package:mobile/module/account-screen/account_screen.dart';
+import 'package:mobile/components/title/screen_header.dart';
 import 'package:mobile/module/sign-up-screen/sign_up_screen.dart';
 import 'package:mobile/provider/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -23,9 +23,9 @@ class SignInScreenState extends State<SignInScreen> {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     final response =
         await userProvider.login(emailController.text, passwordController.text);
+    if (!context.mounted) return;
     if (response) {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const AccountScreen()));
+      Navigator.pop(context);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text("Registration failed, please try again."),
@@ -38,25 +38,7 @@ class SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          backgroundColor: const Color(0xFFECE6D6),
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back_ios,
-              size: 20,
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-          title: Text(
-            "Đăng nhập",
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-        ),
+        appBar: ScreenHeader(title: "Đăng nhập"),
         body: Container(
             width: double.infinity,
             height: MediaQuery.of(context).size.height,
@@ -100,7 +82,7 @@ class SignInScreenState extends State<SignInScreen> {
                           const Text("Bạn chưa có tài khoản?"),
                           CupertinoButton(
                               onPressed: () {
-                                Navigator.push(
+                                Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => SignUpScreen()));

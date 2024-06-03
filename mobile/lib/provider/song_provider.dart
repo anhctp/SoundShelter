@@ -1,19 +1,77 @@
-//import 'package:audioplayers/audioplayers.dart';
 import 'dart:math';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/model/song_model.dart';
+import 'package:mobile/service/album_service.dart';
+import 'package:mobile/service/playlist_service.dart';
+import 'package:mobile/service/recommend_service.dart';
 import 'package:mobile/service/song_service.dart';
 
 class SongProvider with ChangeNotifier {
   SongService songService = SongService();
+  AlbumService albumService = AlbumService();
+  PlaylistService playlistService = PlaylistService();
+  RecommendService recommendService = RecommendService();
+
   List<Song> _songs = [];
+  List<Song> _playingSongs = [];
+  List<Song> _newestSongs = [];
+  List<Song> _recommendSongs = [];
   //getter
   List<Song> get songs => _songs;
+  List<Song> get newestSongs => _newestSongs;
+  List<Song> get playingSongs => _playingSongs;
+  List<Song> get recommendSongs => _recommendSongs;
+
+  //setter
+  List<Song> setPlayingSongs(List<Song> songs) {
+    if (songs.isNotEmpty) _playingSongs = songs;
+    return _playingSongs;
+  }
+
+  //find song by name
+  Future<void> findSong(String text) async {
+    _songs = await songService.findSong(text);
+    notifyListeners();
+  }
+
+  //rank songs by views
   Future<void> getSongsRank() async {
     _songs = await songService.getSongsRank();
+    notifyListeners();
+  }
+
+  //get newest songs
+  Future<void> getNewestSongs() async {
+    _newestSongs = await songService.getNewestSongs();
+    notifyListeners();
+  }
+
+  //get songs by album id
+  Future<void> getSongsByAlbum(int? albumId) async {
+    _songs = await albumService.getSongsByAlbum(albumId);
+    notifyListeners();
+  }
+
+  //get songs by playlist id
+  Future<void> getSongsByPlaylist(int playlistId) async {
+    _songs = await playlistService.getSongsByPlaylist(playlistId);
+    notifyListeners();
+  }
+
+  //get recommendation
+  Future<void> getRecommendation(int? userId) async {
+    _recommendSongs = await recommendService.getRecommendation(userId);
+    notifyListeners();
+  }
+
+  // create or delete favorite
+  void favorites() async {
+    _isFavorite = !_isFavorite;
+    if (_isFavorite) {
+    } else {}
     notifyListeners();
   }
 
@@ -59,11 +117,16 @@ class SongProvider with ChangeNotifier {
   //getter
   bool get isRepeat => _isRepeat;
 
+  //initially not favorite
+  bool _isFavorite = false;
+  //getter
+  bool get isFavorite => _isFavorite;
+
   //play
   void play() async {
     _isRepeat = false;
     _audioPlayer.setReleaseMode(ReleaseMode.stop);
-    final String path = _songs[_currentSongIndex!].audioFilePath;
+    final String path = _playingSongs[_currentSongIndex!].audioFilePath;
     await _audioPlayer.stop(); //stop current song
     await _audioPlayer.play(UrlSource(path)); //play new song
     _isPlaying = true;
@@ -97,14 +160,14 @@ class SongProvider with ChangeNotifier {
   //shuffle
   void shuffle() {
     Random r = new Random();
-    currentSongIndex = r.nextInt(_songs.length);
+    currentSongIndex = r.nextInt(_playingSongs.length);
+    notifyListeners();
   }
 
   //repeat
   void repeat() {
     // Toggle repeat mode
     _isRepeat = !_isRepeat;
-    print(isRepeat);
     if (_isRepeat) {
       _audioPlayer.setReleaseMode(ReleaseMode.loop);
     } else {
@@ -122,7 +185,7 @@ class SongProvider with ChangeNotifier {
   //play next song
   void playNextSong() {
     if (_currentSongIndex != null) {
-      if (_currentSongIndex! < _songs.length - 1) {
+      if (_currentSongIndex! < _playingSongs.length - 1) {
         //go to the next song if it's not last song
         currentSongIndex = _currentSongIndex! + 1;
       } else {
@@ -150,7 +213,7 @@ class SongProvider with ChangeNotifier {
         currentSongIndex = _currentSongIndex! - 1;
       } else {
         //it's the first song, look back to last
-        currentSongIndex = _songs.length - 1;
+        currentSongIndex = _playingSongs.length - 1;
       }
     }
   }

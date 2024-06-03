@@ -57,14 +57,6 @@
     ]
   },
   {
-    "code": "ZOEIUO67",
-    "name": "Những Bài Hát Hay Nhất Của Quang Hùng MasterD",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/f/f/4/b/ff4bb74cac2dcd289d7a73522252b8df.jpg",
-    "genreIds": [
-      "IWZ9Z08I"
-    ]
-  },
-  {
     "code": "6B0C9U9I",
     "name": "Những Bài Hát Hay Nhất Của RayO",
     "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/8/3/8/c/838c5e676db47d717f7b94bad7a7c4b1.jpg",
@@ -81,6 +73,24 @@
       "IWZ9Z08I",
       "IWZ9Z088",
       "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZOEIUO67",
+    "name": "Những Bài Hát Hay Nhất Của Quang Hùng MasterD",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/f/f/4/b/ff4bb74cac2dcd289d7a73522252b8df.jpg",
+    "genreIds": [
+      "IWZ9Z08I"
+    ]
+  },
+  {
+    "code": "68F9DOCZ",
+    "name": "Những Bài Hát Hay Nhất Của Kiều Chi",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/2/d/b/1/2db1366c862c747e0ea50fc5398efd6d.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD",
+      "IWZ9Z0C8"
     ]
   },
   {
@@ -105,6 +115,23 @@
     ]
   },
   {
+    "code": "ZO697BC0",
+    "name": "Những Bài Hát Hay Nhất Của Chi Pu",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/7/4/0/a/740af27a5ffb2c801dba5dbee74aee5e.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088"
+    ]
+  },
+  {
+    "code": "6UW9BUZA",
+    "name": "Những Bài Hát Hay Nhất Của Hứa Kim Tuyền",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/7/9/e/a79ec60e81a965bf379dd123ce407735.jpg",
+    "genreIds": [
+      "IWZ9Z08I"
+    ]
+  },
+  {
     "code": "ZODEAZ6C",
     "name": "Những Bài Hát Hay Nhất Của Du Thiên",
     "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/8/2/5/c8250dd13c1b224d63a83399a1379bed.jpg",
@@ -120,16 +147,6 @@
     "genreIds": [
       "IWZ9Z08I",
       "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW9COOB",
-    "name": "Những Bài Hát Hay Nhất Của DatKaa",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/4/9/4/7/4947b3e5912f598363af824e2645d40d.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z0C8",
       "IWZ97FCD"
     ]
   },
@@ -153,11 +170,12 @@
     ]
   },
   {
-    "code": "ZUDICAF0",
-    "name": "Những Bài Hát Hay Nhất Của Jack - J97",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/b/5/2/cb5210a2f85409e2bfb4275b0dfefc26.jpg",
+    "code": "6UW9COOB",
+    "name": "Những Bài Hát Hay Nhất Của DatKaa",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/4/9/4/7/4947b3e5912f598363af824e2645d40d.jpg",
     "genreIds": [
       "IWZ9Z08I",
+      "IWZ9Z0C8",
       "IWZ97FCD"
     ]
   },
@@ -173,27 +191,9 @@
     ]
   },
   {
-    "code": "6UW9COOB",
-    "name": "Những Bài Hát Hay Nhất Của DatKaa",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/4/9/4/7/4947b3e5912f598363af824e2645d40d.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z0C8",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "ZOEIUO67",
-    "name": "Những Bài Hát Hay Nhất Của Quang Hùng MasterD",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/f/f/4/b/ff4bb74cac2dcd289d7a73522252b8df.jpg",
-    "genreIds": [
-      "IWZ9Z08I"
-    ]
-  },
-  {
-    "code": "ZOZAOI8A",
-    "name": "Những Bài Hát Hay Nhất Của Vương Anh Tú",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/7/9/d/4/79d4cb2ee7d80260a10e9a3f94e7f146.jpg",
+    "code": "ZUDICAF0",
+    "name": "Những Bài Hát Hay Nhất Của Jack - J97",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/b/5/2/cb5210a2f85409e2bfb4275b0dfefc26.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ97FCD"
@@ -207,6 +207,26 @@
       "IWZ9Z08I",
       "IWZ9Z089",
       "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW9CUU6",
+    "name": "Những Bài Hát Hay Nhất Của Hades",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/6/5/7/5/657503b4eb5edf84707e917c9ae01bb7.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
+      "IWZ9Z089"
+    ]
+  },
+  {
+    "code": "6UW9BEO0",
+    "name": "Những Bài Hát Hay Nhất Của Yamix Hầu Ca",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/4/6/4/3/4643abbefa06a2825dba78101df7235a.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z089",
+      "IWZ9Z0C8"
     ]
   },
   {
@@ -228,27 +248,9 @@
     ]
   },
   {
-    "code": "ZOZ9FIEB",
-    "name": "Những Bài Hát Hay Nhất Của Trịnh Đình Quang",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/b/b/d/abbde7ab7ebeb12c811a7bb90344f794.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088"
-    ]
-  },
-  {
-    "code": "ZO697BC0",
-    "name": "Những Bài Hát Hay Nhất Của Chi Pu",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/7/4/0/a/740af27a5ffb2c801dba5dbee74aee5e.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088"
-    ]
-  },
-  {
-    "code": "6UW9BUZA",
-    "name": "Những Bài Hát Hay Nhất Của Hứa Kim Tuyền",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/7/9/e/a79ec60e81a965bf379dd123ce407735.jpg",
+    "code": "ZOEIUO67",
+    "name": "Những Bài Hát Hay Nhất Của Quang Hùng MasterD",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/f/f/4/b/ff4bb74cac2dcd289d7a73522252b8df.jpg",
     "genreIds": [
       "IWZ9Z08I"
     ]
@@ -257,6 +259,33 @@
     "code": "ZUO898OZ",
     "name": "Những Bài Hát Hay Nhất Của Lê Chí Trung",
     "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/9/3/8/b/938b45cd4cf4d6ef4aaa6622cca8980e.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZOZAOI8A",
+    "name": "Những Bài Hát Hay Nhất Của Vương Anh Tú",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/7/9/d/4/79d4cb2ee7d80260a10e9a3f94e7f146.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZZ67898D",
+    "name": "Những Bài Hát Hay Nhất Của Hương Ly",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/6/9/9/0699f6bff64a73e4696fa20fc0c44c63.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6BZIEB67",
+    "name": "Những Bài Hát Hay Nhất Của Ngân Ngân",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/a/6/d/ca6d9bab5a91c81797fdba602e8fe60c.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ97FCD"
@@ -281,29 +310,9 @@
     ]
   },
   {
-    "code": "6UW9CUU6",
-    "name": "Những Bài Hát Hay Nhất Của Hades",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/6/5/7/5/657503b4eb5edf84707e917c9ae01bb7.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ9Z089"
-    ]
-  },
-  {
-    "code": "6UW9BEO0",
-    "name": "Những Bài Hát Hay Nhất Của Yamix Hầu Ca",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/4/6/4/3/4643abbefa06a2825dba78101df7235a.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089",
-      "IWZ9Z0C8"
-    ]
-  },
-  {
-    "code": "ZZ67898D",
-    "name": "Những Bài Hát Hay Nhất Của Hương Ly",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/6/9/9/0699f6bff64a73e4696fa20fc0c44c63.jpg",
+    "code": "ZWZBOD6Z",
+    "name": "Những Bài Hát Hay Nhất Của Hồ Việt Trung",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/6/8/7/4/68746a7489828effc2a21b280d8a1000.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ97FCD"
@@ -319,12 +328,12 @@
     ]
   },
   {
-    "code": "6BZIEB67",
-    "name": "Những Bài Hát Hay Nhất Của Ngân Ngân",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/9/4/9/0/9490f570816337196a20429ec0430f9c.jpg",
+    "code": "ZOZ9FIEB",
+    "name": "Những Bài Hát Hay Nhất Của Trịnh Đình Quang",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/b/b/d/abbde7ab7ebeb12c811a7bb90344f794.jpg",
     "genreIds": [
       "IWZ9Z08I",
-      "IWZ97FCD"
+      "IWZ9Z088"
     ]
   },
   {
@@ -346,31 +355,91 @@
     ]
   },
   {
-    "code": "ZWZBOD6Z",
-    "name": "Những Bài Hát Hay Nhất Của Hồ Việt Trung",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/6/8/7/4/68746a7489828effc2a21b280d8a1000.jpg",
+    "code": "ZUO78ZU7",
+    "name": "Những Bài Hát Hay Nhất Của Rum",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/a/7/3/8/a738d8b73c697c738c2bfda9f1296b79.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088"
+    ]
+  },
+  {
+    "code": "6B6C6OIU",
+    "name": "Những Bài Hát Hay Nhất Của DT Tập Rap",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/7/0/5/2/705228f12c5813ff0a3fd621bc96b14b.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z089"
+    ]
+  },
+  {
+    "code": "6AC0D7WB",
+    "name": "Những Bài Hát Hay Nhất Của Phát Lee",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/a/b/0/2/ab028d1922bfcf756158a7eb2a593a56.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ97FCD"
     ]
   },
   {
-    "code": "ZWZB0IAO",
-    "name": "Những Bài Hát Hay Nhất Của Khang Việt",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/7/4/f/1/74f181d8cdde96f126c009e036f136e6.jpg",
+    "code": "6988CZ8B",
+    "name": "Những Bài Hát Hay Nhất Của 93NewG",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/d/8/c/6/d8c68e019145494bddaf42964322dda2.jpg",
     "genreIds": [
       "IWZ9Z08I",
-      "IWZ97FCD",
-      "IWZ9Z0CW"
+      "IWZ9Z089",
+      "IWZ97FCD"
     ]
   },
   {
-    "code": "ZWZBOD66",
-    "name": "Những Bài Hát Hay Nhất Của Châu Khải Phong",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/b/7/5/d/b75d8bc6df555fea6a27f0e517b992ed.jpg",
+    "code": "ZWZ9AAWF",
+    "name": "Những Bài Hát Hay Nhất Của Khánh Phương",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/7/1/7/a7176d4a38fa9fab158cb6314f7f69be.jpg",
+    "genreIds": [
+      "IWZ9Z08I"
+    ]
+  },
+  {
+    "code": "6UW99DWW",
+    "name": "Những Bài Hát Hay Nhất Của Đông Thiên Đức",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/0/c/d/d/0cdd92f529dc6ba776d21d0f38b3df7f.jpg",
     "genreIds": [
       "IWZ9Z08I",
-      "IWZ9Z088",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZWZA6F9Z",
+    "name": "Những Bài Hát Hay Nhất Của Hà Anh Tuấn",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/b/3/a/8b3a98e2f6fbcbc3b175f56e49c355ca.jpg",
+    "genreIds": [
+      "IWZ9Z08I"
+    ]
+  },
+  {
+    "code": "6UW9BE9A",
+    "name": "Những Bài Hát Hay Nhất Của buitruonglinh",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/9/3/3/0933db43e3e9c91e5aab1014f9a0cc66.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW9BBB6",
+    "name": "Những Bài Hát Hay Nhất Của Vũ Phụng Tiên",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/1/0/6/3106a3c68b73ab808f4a144807c261cc.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088"
+    ]
+  },
+  {
+    "code": "6UW9B008",
+    "name": "Những Bài Hát Hay Nhất Của Hà Nhi",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/f/0/c/a/f0ca3df4efc4bd6ed88312947d75b53d.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
       "IWZ97FCD"
     ]
   },
@@ -384,18 +453,9 @@
     ]
   },
   {
-    "code": "ZOZ9FZ8F",
-    "name": "Những Bài Hát Hay Nhất Của Mai Tiến Dũng",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/2/8/f/c28f225adf439b90d512661eab75e480.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z08B"
-    ]
-  },
-  {
-    "code": "ZUO8980A",
-    "name": "Những Bài Hát Hay Nhất Của Emcee L",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/4/6/1/8461c48ac09fe29b2949beb75635c17d.jpg",
+    "code": "6UW9COOB",
+    "name": "Những Bài Hát Hay Nhất Của DatKaa",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/4/9/4/7/4947b3e5912f598363af824e2645d40d.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ9Z0C8",
@@ -420,25 +480,6 @@
       "IWZ9Z0CW",
       "IWZ97FCD",
       "IWZ97FCE"
-    ]
-  },
-  {
-    "code": "6AC0D7WB",
-    "name": "Những Bài Hát Hay Nhất Của Phát Lee",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/a/b/0/2/ab028d1922bfcf756158a7eb2a593a56.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6988CZ8B",
-    "name": "Những Bài Hát Hay Nhất Của 93NewG",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/d/8/c/6/d8c68e019145494bddaf42964322dda2.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089",
-      "IWZ97FCD"
     ]
   },
   {
@@ -469,116 +510,6 @@
     ]
   },
   {
-    "code": "6BBWC6F0",
-    "name": "Những Bài Hát Hay Nhất Của Vũ Thịnh",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/3/3/0/b/330b7f3b2b652e12089cb92288515bb0.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6BF7U97Z",
-    "name": "Những Bài Hát Hay Nhất Của ViAM",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/3/a/b/0/3ab0777248cfd4d8b98188468a8b6abc.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "SBFDD98A",
-    "name": "Những Bài Hát Hay Nhất Của Thành Sơn",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/d/0/e/a/d0eaf306d032e887619aadecb68d4d9f.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "ZWZ9AAWF",
-    "name": "Những Bài Hát Hay Nhất Của Khánh Phương",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/7/1/7/a7176d4a38fa9fab158cb6314f7f69be.jpg",
-    "genreIds": [
-      "IWZ9Z08I"
-    ]
-  },
-  {
-    "code": "6UW99DWW",
-    "name": "Những Bài Hát Hay Nhất Của Đông Thiên Đức",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/0/c/d/d/0cdd92f529dc6ba776d21d0f38b3df7f.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "ZOBAAFW7",
-    "name": "Những Bài Hát Hay Nhất Của Hoàng Yến Chibi",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/5/7/3/0/573052d1fdb430254475d715b543e250.jpg",
-    "genreIds": [
-      "IWZ9Z08I"
-    ]
-  },
-  {
-    "code": "6UW9BDOE",
-    "name": "Những Bài Hát Hay Nhất Của Kiều Thơ Mellow",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/9/6/d/9/96d99079cb8c7638d909786669969599.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "69FDOFWU",
-    "name": "Những Bài Hát Hay Nhất Của HHD",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/f/9/e/7/f9e78c82f440934d9c7568f3355c711a.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z0CW",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW9BFF0",
-    "name": "Những Bài Hát Hay Nhất Của Jin Tuấn Nam",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/6/9/c/0/69c090b6ce050015e77abeac0c105331.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "ZUO78ZU7",
-    "name": "Những Bài Hát Hay Nhất Của Rum",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/a/7/3/8/a738d8b73c697c738c2bfda9f1296b79.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088"
-    ]
-  },
-  {
-    "code": "6B6C6OIU",
-    "name": "Những Bài Hát Hay Nhất Của DT Tập Rap",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/7/0/5/2/705228f12c5813ff0a3fd621bc96b14b.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089"
-    ]
-  },
-  {
-    "code": "ZOEIUUBC",
-    "name": "Những Bài Hát Hay Nhất Của DICKSON",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/f/1/b/0f1b1a06f5bcaa59cddefc740950a514.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088"
-    ]
-  },
-  {
     "code": "ZWZ9DAA6",
     "name": "Những Bài Hát Hay Nhất Của Hồ Quang Hiếu",
     "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/7/e/f/17ef6102d9a45fc2c72220b987ac8e2a.jpg",
@@ -598,47 +529,78 @@
     ]
   },
   {
-    "code": "6UW9B008",
-    "name": "Những Bài Hát Hay Nhất Của Hà Nhi",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/f/0/c/a/f0ca3df4efc4bd6ed88312947d75b53d.jpg",
+    "code": "6UW9BWCO",
+    "name": "Những Bài Hát Hay Nhất Của Phạm Thanh Sang",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/4/8/7/e/487ed74852b34a28a08898a2099979bb.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ97FCD"
     ]
   },
   {
-    "code": "ZWZ9B6Z6",
-    "name": "Những Bài Hát Hay Nhất Của Khởi My",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/e/b/3/0eb3ad51680a27dba663dc0397ee9990.jpg",
+    "code": "6UW9BF8I",
+    "name": "Những Bài Hát Hay Nhất Của YuniBoo",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/3/2/3/d/323d6e067587e51ef8bbc6cc785fdb35.jpg",
     "genreIds": [
       "IWZ9Z08I",
+      "IWZ97FCD",
+      "IWZ97FCE"
+    ]
+  },
+  {
+    "code": "ZWZB0IAO",
+    "name": "Những Bài Hát Hay Nhất Của Khang Việt",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/7/4/f/1/74f181d8cdde96f126c009e036f136e6.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD",
+      "IWZ9Z0CW"
+    ]
+  },
+  {
+    "code": "ZWZBOD66",
+    "name": "Những Bài Hát Hay Nhất Của Châu Khải Phong",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/b/7/5/d/b75d8bc6df555fea6a27f0e517b992ed.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
       "IWZ97FCD"
     ]
   },
   {
-    "code": "ZOEIUUOU",
-    "name": "Những Bài Hát Hay Nhất Của Kaisoul",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/2/8/2/1/2821a7437c1fe1a65efd6981e2c4680a.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089"
-    ]
-  },
-  {
-    "code": "ZOEUZ6AF",
-    "name": "Những Bài Hát Hay Nhất Của Bảo Thạch",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/2/3/9/8239a347bc6da33cb5a4a12cb7c834ce.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088"
-    ]
-  },
-  {
-    "code": "6BDWZDDD",
-    "name": "Những Bài Hát Hay Nhất Của Xuân Định K.Y",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/e/f/7/f/ef7f26bd8a25fdecd4076b164a99b761.jpg",
+    "code": "6UW9BEOB",
+    "name": "Những Bài Hát Hay Nhất Của Khải",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/5/2/b/d52b33864b9375674d77e511d6bd0542.jpg",
     "genreIds": [
       "IWZ9Z08I"
+    ]
+  },
+  {
+    "code": "SBFDD98A",
+    "name": "Những Bài Hát Hay Nhất Của Thành Sơn",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/d/0/e/a/d0eaf306d032e887619aadecb68d4d9f.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6BBWC6F0",
+    "name": "Những Bài Hát Hay Nhất Của Vũ Thịnh",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/3/3/0/b/330b7f3b2b652e12089cb92288515bb0.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6BF7U97Z",
+    "name": "Những Bài Hát Hay Nhất Của ViAM",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/3/a/b/0/3ab0777248cfd4d8b98188468a8b6abc.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
+      "IWZ97FCD"
     ]
   },
   {
@@ -672,6 +634,250 @@
     ]
   },
   {
+    "code": "67W6I8IZ",
+    "name": "Những Bài Hát Hay Nhất Của Thái Học",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/2/8/5/d2859be97f170c8581259351239c6daf.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW9BFF0",
+    "name": "Những Bài Hát Hay Nhất Của Jin Tuấn Nam",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/6/9/c/0/69c090b6ce050015e77abeac0c105331.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z089",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6BZIEB67",
+    "name": "Những Bài Hát Hay Nhất Của Ngân Ngân",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/a/6/d/ca6d9bab5a91c81797fdba602e8fe60c.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZODEAZ6C",
+    "name": "Những Bài Hát Hay Nhất Của Du Thiên",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/8/2/5/c8250dd13c1b224d63a83399a1379bed.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088"
+    ]
+  },
+  {
+    "code": "ZOZ9FZ8F",
+    "name": "Những Bài Hát Hay Nhất Của Mai Tiến Dũng",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/2/8/f/c28f225adf439b90d512661eab75e480.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z08B"
+    ]
+  },
+  {
+    "code": "ZUO8980A",
+    "name": "Những Bài Hát Hay Nhất Của Emcee L",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/4/6/1/8461c48ac09fe29b2949beb75635c17d.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z0C8",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZWZ9B6Z6",
+    "name": "Những Bài Hát Hay Nhất Của Khởi My",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/e/b/3/0eb3ad51680a27dba663dc0397ee9990.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZOEIUUOU",
+    "name": "Những Bài Hát Hay Nhất Của Kaisoul",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/2/8/2/1/2821a7437c1fe1a65efd6981e2c4680a.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z089"
+    ]
+  },
+  {
+    "code": "ZOEUZ6AF",
+    "name": "Những Bài Hát Hay Nhất Của Bảo Thạch",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/2/3/9/8239a347bc6da33cb5a4a12cb7c834ce.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088"
+    ]
+  },
+  {
+    "code": "6UW9B8BB",
+    "name": "Những Bài Hát Hay Nhất Của T.R.I",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/5/8/4/15849ff8efdf3b4ba39e57ed9a5b814f.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z0C8",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZOBAAFW7",
+    "name": "Những Bài Hát Hay Nhất Của Hoàng Yến Chibi",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/5/7/3/0/573052d1fdb430254475d715b543e250.jpg",
+    "genreIds": [
+      "IWZ9Z08I"
+    ]
+  },
+  {
+    "code": "S7FB9EF6",
+    "name": "Những Bài Hát Hay Nhất Của Thành Đạt",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/e/a/f/deaff6ed7c21cba1a57192d7fb476398.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZOEIUUBC",
+    "name": "Những Bài Hát Hay Nhất Của DICKSON",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/f/1/b/0f1b1a06f5bcaa59cddefc740950a514.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088"
+    ]
+  },
+  {
+    "code": "6UW9CW9I",
+    "name": "Những Bài Hát Hay Nhất Của Doãn Hiếu",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/3/1/9/83195ab87f214823cfbaf07dd8844796.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZZ67898D",
+    "name": "Những Bài Hát Hay Nhất Của Hương Ly",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/6/9/9/0699f6bff64a73e4696fa20fc0c44c63.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "69FDOFWU",
+    "name": "Những Bài Hát Hay Nhất Của HHD",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/f/9/e/7/f9e78c82f440934d9c7568f3355c711a.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z0CW",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW9BFF0",
+    "name": "Những Bài Hát Hay Nhất Của Jin Tuấn Nam",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/6/9/c/0/69c090b6ce050015e77abeac0c105331.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z089",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW9CWWB",
+    "name": "Những Bài Hát Hay Nhất Của Diệu Kiên",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/e/8/1/ce8156c35c31f0efbc052fc7ecf442eb.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZOEWEZCO",
+    "name": "Những Bài Hát Hay Nhất Của Khải Đăng",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/b/a/3/b/ba3bcb60d4c058b719b8ba8e114dae16.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6BDWZDDD",
+    "name": "Những Bài Hát Hay Nhất Của Xuân Định K.Y",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/e/f/7/f/ef7f26bd8a25fdecd4076b164a99b761.jpg",
+    "genreIds": [
+      "IWZ9Z08I"
+    ]
+  },
+  {
+    "code": "6BZIEB67",
+    "name": "Những Bài Hát Hay Nhất Của Ngân Ngân",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/a/6/d/ca6d9bab5a91c81797fdba602e8fe60c.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZWZ9DADB",
+    "name": "Những Bài Hát Hay Nhất Của Nhật Kim Anh",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/d/c/e/f/dcefd8fcbb25ae904428267887607895.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088"
+    ]
+  },
+  {
+    "code": "6B7WAO8E",
+    "name": "Những Bài Hát Hay Nhất Của Whee!",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/a/e/1/aae1065414555f0bfaeed872a5999223.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z08A",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW9B8IW",
+    "name": "Những Bài Hát Hay Nhất Của Nguyên.",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/4/2/6/2/42622b7bc9cc3b82bbf372e56bb208ba.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD",
+      "IWZ9Z089",
+      "IWZ9Z0C8"
+    ]
+  },
+  {
+    "code": "6BEWEAIZ",
+    "name": "Những Bài Hát Hay Nhất Của Aric",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/d/3/9/4/d3948b183b1e4f3aaa3e38a886c82a6b.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW9BDOE",
+    "name": "Những Bài Hát Hay Nhất Của Kiều Thơ Mellow",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/9/6/d/9/96d99079cb8c7638d909786669969599.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
+      "IWZ97FCD"
+    ]
+  },
+  {
     "code": "68EOUC6O",
     "name": "Những Bài Hát Hay Nhất Của Cần Vinh",
     "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/f/6/6/7/f667d199bcb74a2638991764044cb344.jpg",
@@ -701,99 +907,6 @@
     ]
   },
   {
-    "code": "6BBWC6F0",
-    "name": "Những Bài Hát Hay Nhất Của Vũ Thịnh",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/3/3/0/b/330b7f3b2b652e12089cb92288515bb0.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6BF7U97Z",
-    "name": "Những Bài Hát Hay Nhất Của ViAM",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/3/a/b/0/3ab0777248cfd4d8b98188468a8b6abc.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW9B0CW",
-    "name": "Những Bài Hát Hay Nhất Của Quang Đăng Trần",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/4/6/0/8/46088d1e73d648d26ec20a0203b0092c.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088"
-    ]
-  },
-  {
-    "code": "ZWZ9DADB",
-    "name": "Những Bài Hát Hay Nhất Của Nhật Kim Anh",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/d/c/e/f/dcefd8fcbb25ae904428267887607895.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088"
-    ]
-  },
-  {
-    "code": "ZOEWEZCO",
-    "name": "Những Bài Hát Hay Nhất Của Khải Đăng",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/b/a/3/b/ba3bcb60d4c058b719b8ba8e114dae16.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW9BWCO",
-    "name": "Những Bài Hát Hay Nhất Của Phạm Thanh Sang",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/4/0/b/3/40b354feef03732baf4bdc4fc02722b5.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088"
-    ]
-  },
-  {
-    "code": "6UW9BF8I",
-    "name": "Những Bài Hát Hay Nhất Của YuniBoo",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/3/2/3/d/323d6e067587e51ef8bbc6cc785fdb35.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD",
-      "IWZ97FCE"
-    ]
-  },
-  {
-    "code": "ZODEAZ6C",
-    "name": "Những Bài Hát Hay Nhất Của Du Thiên",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/8/2/5/c8250dd13c1b224d63a83399a1379bed.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088"
-    ]
-  },
-  {
-    "code": "6UW9CW9I",
-    "name": "Những Bài Hát Hay Nhất Của Doãn Hiếu",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/3/1/9/83195ab87f214823cfbaf07dd8844796.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "S7FB9EF6",
-    "name": "Những Bài Hát Hay Nhất Của Thành Đạt",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/e/a/f/deaff6ed7c21cba1a57192d7fb476398.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
     "code": "6BDWZDDD",
     "name": "Những Bài Hát Hay Nhất Của Xuân Định K.Y",
     "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/e/f/7/f/ef7f26bd8a25fdecd4076b164a99b761.jpg",
@@ -811,9 +924,67 @@
     ]
   },
   {
-    "code": "6UW9ACW8",
-    "name": "Những Bài Hát Hay Nhất Của Khắc Hưng",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/2/9/9/129920e1051a05a86853200785a7b3f8.jpg",
+    "code": "6B6F0IUZ",
+    "name": "Những Bài Hát Hay Nhất Của Kuun Đức Nam",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/2/2/8/7/22873927d8be4c7961749277326aac25.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZZ7F60I7",
+    "name": "Những Bài Hát Hay Nhất Của AMEE",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/b/d/8/f/bd8f47abd69c1bb6d291344e4550203c.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZWZBOD66",
+    "name": "Những Bài Hát Hay Nhất Của Châu Khải Phong",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/b/7/5/d/b75d8bc6df555fea6a27f0e517b992ed.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "69U9W6B0",
+    "name": "Những Bài Hát Hay Nhất Của aespa",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/a/3/e/3a3ef6c8257b72b5022b3f2dc5e0465c.jpg",
+    "genreIds": [
+      "IWZ9Z08W",
+      "IWZ9Z09I",
+      "IWZ9Z09W",
+      "IWZ9Z09O"
+    ]
+  },
+  {
+    "code": "6B0C9U9I",
+    "name": "Những Bài Hát Hay Nhất Của RayO",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/8/3/8/c/838c5e676db47d717f7b94bad7a7c4b1.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6B7WAIC0",
+    "name": "Những Bài Hát Hay Nhất Của Huỳnh Văn",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/a/6/6/3/a663290631c11ec8cc0f351e7255ece6.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6C0BFO0F",
+    "name": "Những Bài Hát Hay Nhất Của PiaLinh",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/d/5/c/ad5cbc9b029ccbee08a6da1a6fd438ba.jpg",
     "genreIds": [
       "IWZ9Z08I"
     ]
@@ -821,65 +992,37 @@
   {
     "code": "6B7WAWB7",
     "name": "Những Bài Hát Hay Nhất Của Phát Hồ",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/4/c/1/e/4c1e5f4675bf509076e75742e5fcccfe.jpg",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/7/3/5/c/735c61cabf012c1ab335aadead4bb62d.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ97FCD"
     ]
   },
   {
-    "code": "S7FB9EF6",
-    "name": "Những Bài Hát Hay Nhất Của Thành Đạt",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/e/a/f/deaff6ed7c21cba1a57192d7fb476398.jpg",
+    "code": "6UW9CW9I",
+    "name": "Những Bài Hát Hay Nhất Của Doãn Hiếu",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/3/1/9/83195ab87f214823cfbaf07dd8844796.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ97FCD"
     ]
   },
   {
-    "code": "67W6I8IZ",
-    "name": "Những Bài Hát Hay Nhất Của Thái Học",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/2/8/5/d2859be97f170c8581259351239c6daf.jpg",
+    "code": "6BBWC6F0",
+    "name": "Những Bài Hát Hay Nhất Của Vũ Thịnh",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/3/3/0/b/330b7f3b2b652e12089cb92288515bb0.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6BF7U97Z",
+    "name": "Những Bài Hát Hay Nhất Của ViAM",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/3/a/b/0/3ab0777248cfd4d8b98188468a8b6abc.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6ACWIBZ0",
-    "name": "Những Bài Hát Hay Nhất Của Đạt Long Vinh",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/c/5/5/ac557916d8a083d948305c3e2f0247e4.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "ZWZ9DAD8",
-    "name": "Những Bài Hát Hay Nhất Của Lâm Chấn Khang",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/6/9/7/5/6975a8da3459a25ede148a1d5d9317eb.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW99DWW",
-    "name": "Những Bài Hát Hay Nhất Của Đông Thiên Đức",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/0/c/d/d/0cdd92f529dc6ba776d21d0f38b3df7f.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "ZWZCU80C",
-    "name": "Những Bài Hát Hay Nhất Của Hòa Minzy",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/5/a/0/9/5a09a6a2980c854da934547f997f2c34.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
       "IWZ97FCD"
     ]
   },
@@ -906,30 +1049,42 @@
     ]
   },
   {
-    "code": "6BZIEB67",
-    "name": "Những Bài Hát Hay Nhất Của Ngân Ngân",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/9/4/9/0/9490f570816337196a20429ec0430f9c.jpg",
+    "code": "6UW9BUUU",
+    "name": "Những Bài Hát Hay Nhất Của GREY D",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/e/3/e/ce3e879ece7cd5b931b6e649bac45cf9.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW9B860",
+    "name": "Những Bài Hát Hay Nhất Của Trungg I.U",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/a/1/a/5/a1a516235374b60c9ed35630b3495c03.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ97FCD"
     ]
   },
   {
-    "code": "6B6F0IUZ",
-    "name": "Những Bài Hát Hay Nhất Của Kuun Đức Nam",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/2/2/8/7/22873927d8be4c7961749277326aac25.jpg",
+    "code": "ZWZ9DAC6",
+    "name": "Những Bài Hát Hay Nhất Của Minh Vương M4U",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/0/c/4/d0c429980ccd39ad62b5316516f72bda.jpg",
     "genreIds": [
       "IWZ9Z08I",
-      "IWZ97FCD"
+      "IWZ9Z088"
     ]
   },
   {
-    "code": "ZZ67898D",
-    "name": "Những Bài Hát Hay Nhất Của Hương Ly",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/6/9/9/0699f6bff64a73e4696fa20fc0c44c63.jpg",
+    "code": "6UW9CWC9",
+    "name": "Những Bài Hát Hay Nhất Của ACV",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/4/4/5/9/445914982fb82b5b7eb4976b5989ba2f.jpg",
     "genreIds": [
       "IWZ9Z08I",
-      "IWZ97FCD"
+      "IWZ9Z0CW",
+      "IWZ97FCD",
+      "IWZ97FCE"
     ]
   },
   {
@@ -972,71 +1127,22 @@
     ]
   },
   {
-    "code": "6UW9CUAZ",
-    "name": "Những Bài Hát Hay Nhất Của An Vũ",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/5/9/9/8/59983c9dcfdddce886115a66dfce174a.jpg",
+    "code": "6UW9BFE0",
+    "name": "Những Bài Hát Hay Nhất Của Khả Hiệp",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/8/d/d/b/8ddba9720d6749be5ac04055a578cf71.jpg",
     "genreIds": [
       "IWZ9Z08I",
+      "IWZ9Z088",
       "IWZ97FCD"
     ]
   },
   {
-    "code": "6B7WABC6",
-    "name": "Những Bài Hát Hay Nhất Của Sino",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/b/5/d/0/b5d00240043fa8dbb183db7c7dec33df.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089"
-    ]
-  },
-  {
-    "code": "ZOB9UBIO",
-    "name": "Những Bài Hát Hay Nhất Của Đạt G",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/5/2/6/15269d20a801b343bd04552157aef18c.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "ZODEFA66",
-    "name": "Những Bài Hát Hay Nhất Của Phan Duy Anh",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/0/e/1/a0e183ed11726d6502fb9a3c7bb65e41.jpg",
+    "code": "6ACWIBZ0",
+    "name": "Những Bài Hát Hay Nhất Của Đạt Long Vinh",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/c/5/5/ac557916d8a083d948305c3e2f0247e4.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW9CWC9",
-    "name": "Những Bài Hát Hay Nhất Của ACV",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/4/4/5/9/445914982fb82b5b7eb4976b5989ba2f.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z0CW",
-      "IWZ97FCD",
-      "IWZ97FCE"
-    ]
-  },
-  {
-    "code": "ZWZ9DAC6",
-    "name": "Những Bài Hát Hay Nhất Của Minh Vương M4U",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/0/c/4/d0c429980ccd39ad62b5316516f72bda.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088"
-    ]
-  },
-  {
-    "code": "6UW9CWC9",
-    "name": "Những Bài Hát Hay Nhất Của ACV",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/4/4/5/9/445914982fb82b5b7eb4976b5989ba2f.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z0CW",
-      "IWZ97FCD",
-      "IWZ97FCE"
     ]
   },
   {
@@ -1054,6 +1160,107 @@
     "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/0/c/d/d/0cdd92f529dc6ba776d21d0f38b3df7f.jpg",
     "genreIds": [
       "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW9ACW8",
+    "name": "Những Bài Hát Hay Nhất Của Khắc Hưng",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/2/9/9/129920e1051a05a86853200785a7b3f8.jpg",
+    "genreIds": [
+      "IWZ9Z08I"
+    ]
+  },
+  {
+    "code": "6UW9B860",
+    "name": "Những Bài Hát Hay Nhất Của Trungg I.U",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/a/1/a/5/a1a516235374b60c9ed35630b3495c03.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW9CW6I",
+    "name": "Những Bài Hát Hay Nhất Của CZEE",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/e/f/2/3/ef23440cb443dfb5a3a4901394ace17e.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z0C8",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "S7FB9EF6",
+    "name": "Những Bài Hát Hay Nhất Của Thành Đạt",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/e/a/f/deaff6ed7c21cba1a57192d7fb476398.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6B7W9W8I",
+    "name": "Những Bài Hát Hay Nhất Của Hùng Quân",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/8/8/f/5/88f5cb91a34b09685fe343924c57883c.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW99DBW",
+    "name": "Những Bài Hát Hay Nhất Của Quý nhỏ",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/d/b/0/d/db0daf776881c7204d5353fc22144973.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z089"
+    ]
+  },
+  {
+    "code": "ZWZ9DAD8",
+    "name": "Những Bài Hát Hay Nhất Của Lâm Chấn Khang",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/6/9/7/5/6975a8da3459a25ede148a1d5d9317eb.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW99DWW",
+    "name": "Những Bài Hát Hay Nhất Của Đông Thiên Đức",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/0/c/d/d/0cdd92f529dc6ba776d21d0f38b3df7f.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "ZWZCU80C",
+    "name": "Những Bài Hát Hay Nhất Của Hòa Minzy",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/5/a/0/9/5a09a6a2980c854da934547f997f2c34.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ97FCD"
+    ]
+  },
+  {
+    "code": "6UW9B0CW",
+    "name": "Những Bài Hát Hay Nhất Của Quang Đăng Trần",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/4/6/0/8/46088d1e73d648d26ec20a0203b0092c.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088"
+    ]
+  },
+  {
+    "code": "6UW9BFE0",
+    "name": "Những Bài Hát Hay Nhất Của Khả Hiệp",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/8/d/d/b/8ddba9720d6749be5ac04055a578cf71.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
+      "IWZ9Z088",
       "IWZ97FCD"
     ]
   },
@@ -1077,32 +1284,41 @@
     ]
   },
   {
-    "code": "6B0C9U9I",
-    "name": "Những Bài Hát Hay Nhất Của RayO",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/8/3/8/c/838c5e676db47d717f7b94bad7a7c4b1.jpg",
+    "code": "ZODEFA66",
+    "name": "Những Bài Hát Hay Nhất Của Phan Duy Anh",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/0/0/6/c006f6991626e4b5e3420e4c6dcb5c50.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ97FCD"
     ]
   },
   {
-    "code": "6B7WAIC0",
-    "name": "Những Bài Hát Hay Nhất Của Huỳnh Văn",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/a/6/6/3/a663290631c11ec8cc0f351e7255ece6.jpg",
+    "code": "6UW9CWC9",
+    "name": "Những Bài Hát Hay Nhất Của ACV",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/4/4/5/9/445914982fb82b5b7eb4976b5989ba2f.jpg",
     "genreIds": [
       "IWZ9Z08I",
-      "IWZ9Z088",
+      "IWZ9Z0CW",
+      "IWZ97FCD",
+      "IWZ97FCE"
+    ]
+  },
+  {
+    "code": "6UW9CUAZ",
+    "name": "Những Bài Hát Hay Nhất Của An Vũ",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/5/9/9/8/59983c9dcfdddce886115a66dfce174a.jpg",
+    "genreIds": [
+      "IWZ9Z08I",
       "IWZ97FCD"
     ]
   },
   {
-    "code": "ZUO88FII",
-    "name": "Những Bài Hát Hay Nhất Của Đinh Tùng Huy",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/e/5/f/0e5f901889f2817591b3d5296183fc79.jpg",
+    "code": "6B7WABC6",
+    "name": "Những Bài Hát Hay Nhất Của Sino",
+    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/b/5/d/0/b5d00240043fa8dbb183db7c7dec33df.jpg",
     "genreIds": [
       "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
+      "IWZ9Z089"
     ]
   },
   {
@@ -1118,231 +1334,6 @@
     "code": "689U9D76",
     "name": "Những Bài Hát Hay Nhất Của Phát Huy T4",
     "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/c/d/e/3cde250351db16f9231d80830ad3d7a8.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW9B860",
-    "name": "Những Bài Hát Hay Nhất Của Trungg I.U",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/7/e/4/2/7e42db8c447af0b4ae28d82196bd5a3f.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW9CW6I",
-    "name": "Những Bài Hát Hay Nhất Của CZEE",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/e/f/2/3/ef23440cb443dfb5a3a4901394ace17e.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z0C8",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6B6U6F98",
-    "name": "Những Bài Hát Hay Nhất Của Double2T",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/1/7/b/d17b24b9c60344bba0514d8e578b60b7.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW9BFE0",
-    "name": "Những Bài Hát Hay Nhất Của Khả Hiệp",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/8/d/d/b/8ddba9720d6749be5ac04055a578cf71.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6B7W9W8I",
-    "name": "Những Bài Hát Hay Nhất Của Hùng Quân",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/8/8/f/5/88f5cb91a34b09685fe343924c57883c.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW99DBW",
-    "name": "Những Bài Hát Hay Nhất Của Quý nhỏ",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/d/b/0/d/db0daf776881c7204d5353fc22144973.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089"
-    ]
-  },
-  {
-    "code": "6Z6EIIED",
-    "name": "Những Bài Hát Hay Nhất Của Minh Huy",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/b/8/b/3b8b141ff9c3ffbbf5df0191fc20d55a.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "68ECZD6I",
-    "name": "Những Bài Hát Hay Nhất Của IT'S HUY",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/9/5/2/3/95234ea5f93795d762e2d0be73f5ddaf.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089"
-    ]
-  },
-  {
-    "code": "6UW9BFE0",
-    "name": "Những Bài Hát Hay Nhất Của Khả Hiệp",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/8/d/d/b/8ddba9720d6749be5ac04055a578cf71.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "69WICC09",
-    "name": "Những Bài Hát Hay Nhất Của Nguyễn Phi Hải",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/b/e/5/6/be5619c98ecdfe58267ce6e7f1aef339.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6C0OWA89",
-    "name": "Những Bài Hát Hay Nhất Của ILLIT",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/a/6/1/b/a61bc71f7b5a348cb2b4318f27591dd6.jpg",
-    "genreIds": [
-      "IWZ9Z08W",
-      "IWZ9Z09O"
-    ]
-  },
-  {
-    "code": "68U6IB0C",
-    "name": "Những Bài Hát Hay Nhất Của Khánh Cường",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/4/c/8/d/4c8d6e917ef96aa75e5e31605c077c18.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW9A8BE",
-    "name": "Những Bài Hát Hay Nhất Của Đỗ Hoàng Dương",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/3/0/8/03085685e412e2817573f5b6648912a8.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088"
-    ]
-  },
-  {
-    "code": "SBDF99C8",
-    "name": "Những Bài Hát Hay Nhất Của BABYMONSTER",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/c/e/3/3ce3a8e00ccd1b50b6b071042b2573c0.jpg",
-    "genreIds": [
-      "IWZ9Z08W",
-      "IWZ9Z09O"
-    ]
-  },
-  {
-    "code": "ZOZ9FWW7",
-    "name": "Những Bài Hát Hay Nhất Của ERIK",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/5/2/c/352c00e31a53faff535fbc9d58de0657.jpg",
-    "genreIds": [
-      "IWZ9Z08I"
-    ]
-  },
-  {
-    "code": "6UW9B999",
-    "name": "Những Bài Hát Hay Nhất Của Freaky",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/7/1/4/e/714ea03b28eb6bd3b9dec58bbd9bff08.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z089"
-    ]
-  },
-  {
-    "code": "6UW9A0AU",
-    "name": "Những Bài Hát Hay Nhất Của Lưu Hưng",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/d/2/e/e/d2eec9ac0f9878a12b1c4b20c470d71f.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW99DWW",
-    "name": "Những Bài Hát Hay Nhất Của Đông Thiên Đức",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/avatars/0/c/d/d/0cdd92f529dc6ba776d21d0f38b3df7f.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "ZOZAOIEU",
-    "name": "Những Bài Hát Hay Nhất Của Kai Đinh",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/5/0/2/3/502387e02101dec6d35965b50108e345.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "6UW9BUUU",
-    "name": "Những Bài Hát Hay Nhất Của GREY D",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/e/3/e/ce3e879ece7cd5b931b6e649bac45cf9.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "ZOZ9678O",
-    "name": "Những Bài Hát Hay Nhất Của Hoàng Thùy Linh",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/e/2/c/e/e2cef78e01149e8c1bbb07113de37963.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "69BI9OZB",
-    "name": "Những Bài Hát Hay Nhất Của Oanh Tạ",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/9/4/5/8/9458076d43985a5a87d6aabda97850f5.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z0CW",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "67W6I8IZ",
-    "name": "Những Bài Hát Hay Nhất Của Thái Học",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/2/8/5/d2859be97f170c8581259351239c6daf.jpg",
-    "genreIds": [
-      "IWZ9Z08I",
-      "IWZ9Z088",
-      "IWZ97FCD"
-    ]
-  },
-  {
-    "code": "S7FB9EF6",
-    "name": "Những Bài Hát Hay Nhất Của Thành Đạt",
-    "image_file_path": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/e/a/f/deaff6ed7c21cba1a57192d7fb476398.jpg",
     "genreIds": [
       "IWZ9Z08I",
       "IWZ97FCD"

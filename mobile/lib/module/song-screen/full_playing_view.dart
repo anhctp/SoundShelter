@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/box/neu_box.dart';
+import 'package:mobile/components/title/screen_header.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 
-class FullPlayingView extends StatelessWidget {
+class FullPlayingView extends StatefulWidget {
   const FullPlayingView({super.key});
 
+  @override
+  State<FullPlayingView> createState() => _FullPlayingViewState();
+}
+
+class _FullPlayingViewState extends State<FullPlayingView> {
   //convert duratiob into min:sec
   String formatTime(Duration duration) {
     String twoDigiSeconds =
@@ -19,42 +25,14 @@ class FullPlayingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<SongProvider>(builder: (context, value, child) {
       //get playlist
-      final songs = value.songs;
+      final songs = value.playingSongs;
 
       //get current song index
       final currentSong = songs[value.currentSongIndex ?? 0];
 
-      bool isSelected = false;
-
       return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
-        appBar: AppBar(
-          backgroundColor: const Color(0xFFECE6D6),
-          leading: IconButton(
-            onPressed: () => Navigator.pop(context),
-            icon: Icon(
-              Icons.arrow_back_ios,
-              size: 20,
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-          title: Text(
-            "Bài hát đang phát",
-            style: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
-                fontWeight: FontWeight.bold),
-          ),
-          actions: const [
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Color(0xFFB2572B),
-              ),
-              tooltip: 'Search',
-              onPressed: null,
-            ),
-          ],
-        ),
+        appBar: ScreenHeader(title: "Bài hát đang phát"),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
@@ -81,24 +59,33 @@ class FullPlayingView extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  currentSong.title,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
+                                Container(
+                                  width: 240,
+                                  child: Text(
+                                    currentSong.title,
+                                    overflow: TextOverflow.clip,
+                                    maxLines: 2,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
                                   ),
                                 ),
-                                Text(currentSong.artist),
+                                Container(
+                                  width: 240,
+                                  child: Text(
+                                    currentSong.artist,
+                                    overflow: TextOverflow.clip,
+                                    maxLines: 2,
+                                  ),
+                                ),
                               ],
                             ),
 
                             //heart icon
                             IconButton(
-                              onPressed: () => {
-                                isSelected = !isSelected,
-                                print("isSelected: $isSelected"),
-                              },
-                              icon: (isSelected == true)
+                              onPressed: value.favorites,
+                              icon: (value.isFavorite)
                                   ? Icon(Icons.favorite, color: Colors.red)
                                   : Icon(Icons.favorite_border),
                             ),
@@ -132,14 +119,20 @@ class FullPlayingView extends StatelessWidget {
                               IconButton(
                                 onPressed: value.shuffle,
                                 focusColor: Colors.blue,
-                                icon: Icon(Icons.shuffle),
+                                icon: Icon(
+                                  Icons.shuffle,
+                                ),
                               ),
 
                               //repeat icon
                               IconButton(
                                 onPressed: value.repeat,
-                                focusColor: Colors.blue,
-                                icon: Icon(Icons.repeat),
+                                icon: Icon(
+                                  Icons.repeat,
+                                  color: (value.isRepeat)
+                                      ? Colors.blue
+                                      : Colors.black,
+                                ),
                               ),
 
                               //end time

@@ -7,14 +7,16 @@ class Album {
   String releaseDate;
   String artist;
   int genreId;
+  int? id;
 
   Album({
     required this.title,
     required this.code,
     required this.imageFilePath,
     required this.releaseDate,
-    required this.artist, 
+    required this.artist,
     required this.genreId,
+    this.id,
   });
 
   factory Album.fromJsonMap(Map<String, dynamic> map) {
@@ -24,7 +26,8 @@ class Album {
       imageFilePath: map["image_file_path"],
       releaseDate: map["release_date"],
       artist: map["artist"],
-      genreId: map["genre_id"]
+      genreId: map["genre_id"],
+      id: map["id"],
     );
   }
 }
