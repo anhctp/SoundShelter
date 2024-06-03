@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/box/neu_box.dart';
+import 'package:mobile/components/title/screen_header.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -31,33 +32,7 @@ class _FullPlayingViewState extends State<FullPlayingView> {
 
       return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
-        appBar: AppBar(
-          backgroundColor: const Color(0xFFECE6D6),
-          leading: IconButton(
-            onPressed: () => Navigator.pop(context),
-            icon: Icon(
-              Icons.arrow_back_ios,
-              size: 20,
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-          title: Text(
-            "Bài hát đang phát",
-            style: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
-                fontWeight: FontWeight.bold),
-          ),
-          actions: const [
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Color(0xFFB2572B),
-              ),
-              tooltip: 'Search',
-              onPressed: null,
-            ),
-          ],
-        ),
+        appBar: ScreenHeader(title: "Bài hát đang phát"),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),

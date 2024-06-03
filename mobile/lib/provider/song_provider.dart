@@ -18,10 +18,12 @@ class SongProvider with ChangeNotifier {
   List<Song> _songs = [];
   List<Song> _playingSongs = [];
   List<Song> _newestSongs = [];
+  List<Song> _recommendSongs = [];
   //getter
   List<Song> get songs => _songs;
   List<Song> get newestSongs => _newestSongs;
   List<Song> get playingSongs => _playingSongs;
+  List<Song> get recommendSongs => _recommendSongs;
 
   //setter
   List<Song> setPlayingSongs(List<Song> songs) {
@@ -60,8 +62,8 @@ class SongProvider with ChangeNotifier {
   }
 
   //get recommendation
-  Future<void> getRecommendation() async {
-    _songs = await recommendService.getRecommendation();
+  Future<void> getRecommendation(int? userId) async {
+    _recommendSongs = await recommendService.getRecommendation(userId);
     notifyListeners();
   }
 

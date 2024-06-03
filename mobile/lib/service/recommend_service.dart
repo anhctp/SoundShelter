@@ -5,9 +5,9 @@ class RecommendService {
   RecommendRepository recommendRepository = RecommendRepository();
 
   //get recommendation
-  Future<List<Song>> getRecommendation() async {
+  Future<List<Song>> getRecommendation(int? userId) async {
     try {
-      return await recommendRepository.getRecommendation();
+      return await recommendRepository.getRecommendation(userId);
     } catch (e) {
       print(e);
       throw Exception('Failed to load songs!');

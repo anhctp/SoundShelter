@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/card/big_square_card.dart';
 import 'package:mobile/components/title/screen_header.dart';
+import 'package:mobile/model/song_model.dart';
+import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/provider/song_provider.dart';
+import 'package:provider/provider.dart';
 
 class RecommendScreen extends StatefulWidget {
-  const RecommendScreen({super.key});
+  final List<Song> songs;
+  const RecommendScreen({super.key, required this.songs});
 
   @override
   State<RecommendScreen> createState() => _RecommendScreenState();
@@ -17,24 +22,41 @@ class _RecommendScreenState extends State<RecommendScreen> {
         title: "Gợi ý cho bạn",
       ),
       backgroundColor: const Color(0xFFDCD1B3),
-      body: Container(
-        padding: EdgeInsets.all(10),
-        child: GridView.count(
-          shrinkWrap: true,
-          crossAxisCount: 2,
-          crossAxisSpacing: 15,
-          mainAxisSpacing: 10,
-          childAspectRatio: 0.75,
-          children: List.generate(10, (index) {
-            return BigSquareCard(
-                imgFilePath:
-                    "https://photo-zmp3.zmdcdn.me/cover/c/9/b/3/c9b3c456eeabd9d4e3241666397d71aa.jpg",
-                title: "title",
-                subtitle: "subtitle",
-                subtext: false,
-                onTap: () {});
-          }),
-        ),
+      body: Consumer<SongProvider>(
+        builder: (context, songProvider, child) {
+          return Container(
+            padding: EdgeInsets.all(10),
+            child: GridView.count(
+              shrinkWrap: true,
+              crossAxisCount: 2,
+              crossAxisSpacing: 15,
+              mainAxisSpacing: 10,
+              childAspectRatio: 0.75,
+              children: List.generate(
+                widget.songs.length,
+                (index) {
+                  final song = widget.songs[index];
+                  return BigSquareCard(
+                    onTap: () {
+                      songProvider.setPlayingSongs(songProvider.recommendSongs);
+                      songProvider.currentSongIndex = index;
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SongScreen(),
+                        ),
+                      );
+                    },
+                    title: song.title,
+                    subtitle: song.artist,
+                    subtext: false,
+                    imgFilePath: song.imageFilePath,
+                  );
+                },
+              ),
+            ),
+          );
+        },
       ),
     );
   }
