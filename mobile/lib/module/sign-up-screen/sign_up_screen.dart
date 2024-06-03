@@ -26,7 +26,7 @@ class SignUpScreenState extends State<SignUpScreen> {
     final response = await userProvider.signUp(
         nameController.text, emailController.text, passwordController.text);
     if (response) {
-      Navigator.push(context,
+      Navigator.pop(context,
           MaterialPageRoute(builder: (context) => const AccountScreen()));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -91,7 +91,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                                 const Text("Bạn đã có tài khoản?"),
                                 CupertinoButton(
                                     onPressed: () {
-                                      Navigator.push(
+                                      Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>

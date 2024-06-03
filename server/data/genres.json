@@ -28,13 +28,6 @@
     "link": "/the-loai-album/EDM-Viet/IWZ97FCE.html"
   },
   {
-    "id": "IWZ9Z089",
-    "name": "Rap Việt",
-    "title": "Rap Việt",
-    "alias": "rap-viet",
-    "link": "/the-loai-album/Rap-Viet/IWZ9Z089.html"
-  },
-  {
     "id": "IWZ9Z0C8",
     "name": "R&B Việt",
     "title": "R&B Việt",
@@ -47,6 +40,13 @@
     "title": "Nhạc Phim",
     "alias": "nhac-phim",
     "link": "/the-loai-album/Nhac-Phim/IWZ9Z0BA.html"
+  },
+  {
+    "id": "IWZ9Z089",
+    "name": "Rap Việt",
+    "title": "Rap Việt",
+    "alias": "rap-viet",
+    "link": "/the-loai-album/Rap-Viet/IWZ9Z089.html"
   },
   {
     "id": "IWZ9Z08B",
@@ -70,13 +70,6 @@
     "link": "/the-loai-album/Han-Quoc/IWZ9Z08W.html"
   },
   {
-    "id": "IWZ9Z09O",
-    "name": "Dance Pop",
-    "title": "Dance Pop",
-    "alias": "dance-pop",
-    "link": "/the-loai-album/Dance-Pop/IWZ9Z09O.html"
-  },
-  {
     "id": "IWZ9Z09I",
     "name": "Rap / Hip Hop",
     "title": "Rap / Hip Hop",
@@ -89,6 +82,13 @@
     "title": "Pop/Pop Ballad",
     "alias": "pop-pop-ballad",
     "link": "/the-loai-album/Pop-Pop-Ballad/IWZ9Z09W.html"
+  },
+  {
+    "id": "IWZ9Z09O",
+    "name": "Dance Pop",
+    "title": "Dance Pop",
+    "alias": "dance-pop",
+    "link": "/the-loai-album/Dance-Pop/IWZ9Z09O.html"
   },
   {
     "id": "IWZ98I0D",
@@ -126,6 +126,13 @@
     "link": "/the-loai-album/Rap-Hip-Hop/IWZ9Z09B.html"
   },
   {
+    "id": "IWZ9Z0FZ",
+    "name": "Nhạc Tôn Giáo",
+    "title": "Nhạc Tôn Giáo",
+    "alias": "nhac-ton-giao",
+    "link": "/the-loai-album/Nhac-Ton-Giao/IWZ9Z0FZ.html"
+  },
+  {
     "id": "IWZ9Z0DE",
     "name": "Christian & Gospel",
     "title": "Christian & Gospel",
@@ -138,19 +145,5 @@
     "title": "Electronic / Dance",
     "alias": "electronic-dance",
     "link": "/the-loai-album/Electronic-Dance/IWZ9Z09A.html"
-  },
-  {
-    "id": "IWZ9Z0FZ",
-    "name": "Nhạc Tôn Giáo",
-    "title": "Nhạc Tôn Giáo",
-    "alias": "nhac-ton-giao",
-    "link": "/the-loai-album/Nhac-Ton-Giao/IWZ9Z0FZ.html"
-  },
-  {
-    "id": "IWZ98IIZ",
-    "name": "Giáng Sinh",
-    "title": "Giáng Sinh",
-    "alias": "giang-sinh",
-    "link": "/the-loai-album/Giang-Sinh/IWZ98IIZ.html"
   }
 ]

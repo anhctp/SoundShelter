@@ -5,6 +5,8 @@ import 'package:mobile/module/hub-screen/hub_screen.dart';
 import 'package:mobile/module/library-screen/library_screen.dart';
 import 'package:mobile/module/account-screen/account_screen.dart';
 import 'package:mobile/module/song-screen/mini_playing_view.dart';
+import 'package:mobile/provider/user_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,6 +18,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    userProvider.checkLoginStatus();
+  }
+
   int selectedIndex = 0;
   static const List<Widget> widgetOptions = <Widget>[
     DiscoveryScreen(),
@@ -34,14 +43,18 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          // Body Tabbar
-          Expanded(
-            child: widgetOptions.elementAt(selectedIndex),
-          ),
-          MiniPlayingView(),
-        ],
+      body: Consumer<UserProvider>(
+        builder: (context, userProvider, child) {
+          return Column(
+            children: [
+              // Body Tabbar
+              Expanded(
+                child: widgetOptions.elementAt(selectedIndex),
+              ),
+              MiniPlayingView(),
+            ],
+          );
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

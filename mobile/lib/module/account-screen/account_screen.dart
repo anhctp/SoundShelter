@@ -15,13 +15,6 @@ class AccountScreen extends StatefulWidget {
 }
 
 class AccountScreenState extends State<AccountScreen> {
-  @override
-  void initState() {
-    super.initState();
-    final userProvider = Provider.of<UserProvider>(context, listen: false);
-    userProvider.checkLoginStatus();
-  }
-
   void logout() async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     await userProvider.logout();
