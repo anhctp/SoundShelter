@@ -1,10 +1,12 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, Date
+from sqlalchemy import Column, ForeignKey, Integer, String, Date, Boolean
 from database import Base
 
 
 class SongModel(Base):
     __tablename__ = "songs"
     id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+    is_uploaded = Column(Boolean, default=False)
     code = Column(String(20), unique=True)
     title = Column(String(100))
     artist = Column(String(100))
