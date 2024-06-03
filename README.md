@@ -16,7 +16,7 @@ The key features are:
 - Personalization:
   - Upload music. (in process)
   - Favorite music.
-  - Playlist. (in process)
+  - Playlist.
   - Interaction (like, comment, share). (in process)
   - Offline music (mobile). (in process)
 - Recommendations.
