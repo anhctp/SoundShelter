@@ -20,6 +20,7 @@ class _SmallSquareCardState extends State<SmallSquareCard> {
     return GestureDetector(
       onTap: widget.onTap,
       child: Container(
+        width: 95,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -38,7 +39,10 @@ class _SmallSquareCardState extends State<SmallSquareCard> {
             const SizedBox(
               height: 15,
             ),
-            Text(widget.title)
+            Text(
+              widget.title,
+              overflow: TextOverflow.ellipsis,
+            )
           ],
         ),
       ),

@@ -20,6 +20,7 @@ class _CircleCardState extends State<CircleCard> {
     return GestureDetector(
       onTap: widget.onTap,
       child: Container(
+        width: 95,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -38,7 +39,10 @@ class _CircleCardState extends State<CircleCard> {
             const SizedBox(
               height: 15,
             ),
-            Text(widget.title),
+            Text(
+              widget.title,
+              overflow: TextOverflow.ellipsis,
+            ),
           ],
         ),
       ),
