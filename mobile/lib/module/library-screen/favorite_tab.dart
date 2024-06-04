@@ -1,7 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/components/card/music_item.dart';
 import 'package:mobile/components/title/tab_name.dart';
+import 'package:mobile/module/detail-screen/favorite_screen.dart';
+import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/provider/song_provider.dart';
+import 'package:mobile/provider/user_provider.dart';
+import 'package:provider/provider.dart';
 
 class FavoriteTab extends StatefulWidget {
   const FavoriteTab({super.key});
@@ -13,38 +17,96 @@ class FavoriteTab extends StatefulWidget {
 class _FavoriteTabState extends State<FavoriteTab>
     with TickerProviderStateMixin {
   @override
+  void initState() {
+    super.initState();
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    final songProvider = Provider.of<SongProvider>(context, listen: false);
+    songProvider.getFavorite(userProvider.currentUser?.token ?? '');
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TabName(onPressed: () {}, name: "Bài hát yêu thích"),
-        Container(
-          height: 300,
-          width: double.maxFinite,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: ListView.separated(
-              padding: EdgeInsets.all(10.0),
-              separatorBuilder: (context, index) {
-                return SizedBox(
-                  height: 10,
-                );
-              },
-              scrollDirection: Axis.vertical,
-              itemCount: 5,
-              shrinkWrap: true,
-              itemBuilder: (BuildContext context, int index) {
-                return MusicItem(
-                  name: "Music ${index}",
-                  imgFilePath:
-                      "https://photo-cms-baophapluat.zadn.vn/w800/Uploaded/2022/ycgvptcc/2019_07_26/b_jpg_GIDP.jpg",
-                  artist: "artist",
-                  onTap: () {},
-                );
-              },
-            ),
-          ),
-        ),
-      ],
+    return Consumer<SongProvider>(
+      builder: (context, songProvider, child) {
+        return Consumer<UserProvider>(
+          builder: (context, userProvider, child) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TabName(
+                    onPressed: () {
+                      if (userProvider.currentUser != null) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FavoriteScreen(
+                              songs: songProvider.favoriteSongs,
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                    name: "Bài hát yêu thích"),
+                Container(
+                  constraints: BoxConstraints(
+                      minHeight: 0,
+                      maxWidth: MediaQuery.of(context).size.width,
+                      maxHeight: 300),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: (userProvider.currentUser != null)
+                      ? ListView.separated(
+                          padding: EdgeInsets.all(10.0),
+                          separatorBuilder: (context, index) {
+                            return SizedBox(
+                              height: 10,
+                            );
+                          },
+                          scrollDirection: Axis.vertical,
+                          itemCount: songProvider.favoriteSongs.length,
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, int index) {
+                            final song = songProvider.favoriteSongs[index];
+                            return MusicItem(
+                              name: song.title,
+                              imgFilePath: song.imageFilePath,
+                              artist: song.artist,
+                              onTap: () {
+                                songProvider.getRecommendation(
+                                    userProvider.currentUser!.id);
+                                songProvider.createHistory(
+                                    userProvider.currentUser!.id, song.id!);
+                                songProvider.setPlayingSongs(
+                                    songProvider.favoriteSongs);
+                                //update current song index
+                                songProvider.currentSongIndex = index;
+
+                                //navigate to song page
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SongScreen()),
+                                );
+                              },
+                            );
+                          },
+                        )
+                      : Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: Text(
+                            "Bạn cần đăng nhập để sử dụng tính năng này.",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                ),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 }
