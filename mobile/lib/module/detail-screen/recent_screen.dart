@@ -1,11 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mobile/components/card/music_item.dart';
 import 'package:mobile/components/title/screen_header.dart';
+import 'package:mobile/model/song_model.dart';
+import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/provider/song_provider.dart';
+import 'package:mobile/provider/user_provider.dart';
+import 'package:provider/provider.dart';
 
 class RecentScreen extends StatefulWidget {
-  const RecentScreen({super.key});
+  final List<Song> songs;
+  const RecentScreen({super.key, required this.songs});
 
   @override
   State<RecentScreen> createState() => _RecentScreenState();
@@ -19,28 +23,49 @@ class _RecentScreenState extends State<RecentScreen> {
         title: "Nghe gần đây",
       ),
       backgroundColor: const Color(0xFFDCD1B3),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-        child: ListView.separated(
-          padding: EdgeInsets.all(10.0),
-          separatorBuilder: (context, index) {
-            return SizedBox(
-              height: 10,
-            );
-          },
-          scrollDirection: Axis.vertical,
-          itemCount: 10,
-          shrinkWrap: true,
-          itemBuilder: (BuildContext context, int index) {
-            return MusicItem(
-              name: "Music ${index}",
-              imgFilePath:
-                  "https://avatar-ex-swe.nixcdn.com/playlist/share/2020/11/06/9/d/6/c/1604632166306.jpg",
-              artist: "artist",
-              onTap: () {},
-            );
-          },
-        ),
+      body: Consumer<SongProvider>(
+        builder: (context, songProvider, child) {
+          return Consumer<UserProvider>(
+            builder: (context, userProvider, child) {
+              return Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                child: ListView.separated(
+                  padding: EdgeInsets.all(10.0),
+                  separatorBuilder: (context, index) {
+                    return SizedBox(
+                      height: 10,
+                    );
+                  },
+                  scrollDirection: Axis.vertical,
+                  itemCount: widget.songs.length,
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext context, int index) {
+                    final song = widget.songs[index];
+                    return MusicItem(
+                      name: song.title,
+                      imgFilePath: song.imageFilePath,
+                      artist: song.artist,
+                      onTap: () {
+                        songProvider
+                            .getRecommendation(userProvider.currentUser!.id);
+                        songProvider.createHistory(
+                            userProvider.currentUser!.id, song.id!);
+                        songProvider.setPlayingSongs(songProvider.historySongs);
+                        songProvider.currentSongIndex = index;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SongScreen(),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
+              );
+            },
+          );
+        },
       ),
     );
   }

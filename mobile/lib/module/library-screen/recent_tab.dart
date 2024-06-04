@@ -4,6 +4,10 @@ import 'package:mobile/components/card/circle_card.dart';
 import 'package:mobile/components/card/small_square_card.dart';
 import 'package:mobile/components/title/tab_name.dart';
 import 'package:mobile/module/detail-screen/recent_screen.dart';
+import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/provider/song_provider.dart';
+import 'package:mobile/provider/user_provider.dart';
+import 'package:provider/provider.dart';
 
 class RecentTab extends StatefulWidget {
   const RecentTab({super.key});
@@ -14,65 +18,145 @@ class RecentTab extends StatefulWidget {
 
 class _RecentTabState extends State<RecentTab> {
   @override
+  void initState() {
+    super.initState();
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    final songProvider = Provider.of<SongProvider>(context, listen: false);
+    songProvider.getHistory(userProvider.currentUser?.id ?? 0);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return //recent
-        Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TabName(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => RecentScreen()));
-              },
-              name: "Nghe gần đây"),
-          Container(
-            height: 150,
-            width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              separatorBuilder: (context, index) {
-                return SizedBox(
-                  width: 10,
-                );
-              },
-              itemBuilder: (context, index) {
-                return Row(
-                  children: [
-                    if (index % 2 != 0 && index < 6)
-                      SmallSquareCard(
-                        title: "title",
-                        imgFilePath:
-                            "https://photo-cms-baophapluat.zadn.vn/w800/Uploaded/2022/ycgvptcc/2019_07_26/b_jpg_GIDP.jpg",
-                        onTap: () {},
-                      ),
-                    if (index % 2 == 0 && index < 6)
-                      CircleCard(
-                        title: "title",
-                        imgFilePath:
-                            "https://avatar-ex-swe.nixcdn.com/topic/share/2020/11/05/c/8/6/1/1604568785929.jpg",
-                        onTap: () {},
-                      ),
-                    if (index == 6)
-                      SeeAllButton(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RecentScreen(),
+    return Consumer<SongProvider>(
+      builder: (context, songProvider, child) {
+        return Consumer<UserProvider>(
+          builder: (context, userProvider, child) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TabName(
+                    onPressed: () {
+                      if (userProvider.currentUser != null) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RecentScreen(
+                              songs: songProvider.historySongs,
                             ),
-                          );
-                        },
-                      ),
-                  ],
-                );
-              },
-              itemCount: 7,
-            ),
-          ),
-        ],
-      ),
+                          ),
+                        );
+                      }
+                    },
+                    name: "Nghe gần đây"),
+                Container(
+                  constraints: BoxConstraints(
+                      minHeight: 0,
+                      maxWidth: MediaQuery.of(context).size.width,
+                      maxHeight: 130),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: (userProvider.currentUser != null)
+                      ? ((songProvider.historySongs.isNotEmpty)
+                          ? ListView.separated(
+                              scrollDirection: Axis.horizontal,
+                              separatorBuilder: (context, index) {
+                                return SizedBox(
+                                  width: 10,
+                                );
+                              },
+                              itemBuilder: (context, index) {
+                                final song = songProvider.historySongs[index];
+                                return Row(
+                                  children: [
+                                    if (index % 2 != 0 && index < 6)
+                                      SmallSquareCard(
+                                        title: song.title,
+                                        imgFilePath: song.imageFilePath,
+                                        onTap: () {
+                                          songProvider.getRecommendation(
+                                              userProvider.currentUser!.id);
+                                          songProvider.createHistory(
+                                              userProvider.currentUser!.id,
+                                              song.id!);
+                                          songProvider.setPlayingSongs(
+                                              songProvider.historySongs);
+                                          songProvider.currentSongIndex = index;
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  SongScreen(),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    if (index % 2 == 0 && index < 6)
+                                      CircleCard(
+                                        title: song.title,
+                                        imgFilePath: song.imageFilePath,
+                                        onTap: () {
+                                          songProvider.getRecommendation(
+                                              userProvider.currentUser!.id);
+                                          songProvider.createHistory(
+                                              userProvider.currentUser!.id,
+                                              song.id!);
+                                          songProvider.setPlayingSongs(
+                                              songProvider.historySongs);
+                                          songProvider.currentSongIndex = index;
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  SongScreen(),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    if (index == 6)
+                                      SeeAllButton(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  RecentScreen(
+                                                      songs: songProvider
+                                                          .historySongs),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                  ],
+                                );
+                              },
+                              itemCount: (songProvider.historySongs.length > 7)
+                                  ? 7
+                                  : songProvider.historySongs.length,
+                            )
+                          : Text(
+                              "Chưa thể đưa ra gợi ý.",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ))
+                      : Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: Text(
+                            "Bạn cần đăng nhập để sử dụng tính năng này.",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                ),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 }

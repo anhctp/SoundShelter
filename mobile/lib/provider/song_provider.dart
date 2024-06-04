@@ -3,8 +3,12 @@ import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile/model/favorite_model.dart';
+import 'package:mobile/model/history_model.dart';
 import 'package:mobile/model/song_model.dart';
 import 'package:mobile/service/album_service.dart';
+import 'package:mobile/service/favorite_service.dart';
+import 'package:mobile/service/history_service.dart';
 import 'package:mobile/service/playlist_service.dart';
 import 'package:mobile/service/recommend_service.dart';
 import 'package:mobile/service/song_service.dart';
@@ -14,16 +18,23 @@ class SongProvider with ChangeNotifier {
   AlbumService albumService = AlbumService();
   PlaylistService playlistService = PlaylistService();
   RecommendService recommendService = RecommendService();
+  HistoryService historyService = HistoryService();
+  FavoriteService favoriteService = FavoriteService();
 
   List<Song> _songs = [];
   List<Song> _playingSongs = [];
   List<Song> _newestSongs = [];
   List<Song> _recommendSongs = [];
+  List<Song> _historySongs = [];
+  List<Song> _favoriteSongs = [];
+
   //getter
   List<Song> get songs => _songs;
   List<Song> get newestSongs => _newestSongs;
   List<Song> get playingSongs => _playingSongs;
   List<Song> get recommendSongs => _recommendSongs;
+  List<Song> get historySongs => _historySongs;
+  List<Song> get favoriteSongs => _favoriteSongs;
 
   //setter
   List<Song> setPlayingSongs(List<Song> songs) {
@@ -64,6 +75,41 @@ class SongProvider with ChangeNotifier {
   //get recommendation
   Future<void> getRecommendation(int? userId) async {
     _recommendSongs = await recommendService.getRecommendation(userId);
+    notifyListeners();
+  }
+
+  //create heard song
+  Future<void> createHistory(int userId, int songId) async {
+    DateTime now = new DateTime.timestamp();
+    print(now.toString());
+    final history =
+        History(userId: userId, songId: songId, playDate: now.toString());
+    await historyService.createHistory(history);
+    getHistory(userId);
+    notifyListeners();
+  }
+
+  //get recently heard songs
+  Future<void> getHistory(int userId) async {
+    _historySongs = await historyService.getHistory(userId);
+    notifyListeners();
+  }
+
+  //create favorite
+  Future<void> createFavorite(Favorite favorite) async {
+    await favoriteService.createFavorite(favorite);
+    notifyListeners();
+  }
+
+  //get favorite
+  Future<void> getFavorite(String token) async {
+    _favoriteSongs = await favoriteService.getFavorite(token);
+    notifyListeners();
+  }
+
+  //delete favorite
+  Future<void> deleteFavorite(int songId, String token) async {
+    await favoriteService.delelteFavorite(songId, token);
     notifyListeners();
   }
 
