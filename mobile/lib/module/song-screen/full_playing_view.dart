@@ -82,12 +82,12 @@ class _FullPlayingViewState extends State<FullPlayingView> {
                               ],
                             ),
 
-                            //heart icon
+                            //more icon
                             IconButton(
-                              onPressed: value.favorites,
-                              icon: (value.isFavorite)
-                                  ? Icon(Icons.favorite, color: Colors.red)
-                                  : Icon(Icons.favorite_border),
+                              onPressed: () {
+                                print('more');
+                              },
+                              icon: Icon(Icons.more_vert),
                             ),
                           ],
                         ),
@@ -212,6 +212,52 @@ class _FullPlayingViewState extends State<FullPlayingView> {
                         ),
                       ),
                     ),
+                  ],
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        //like
+                        IconButton(
+                          onPressed: value.favorites,
+                          icon: (value.isFavorite)
+                              ? Icon(Icons.favorite, color: Colors.red)
+                              : Icon(Icons.favorite_border),
+                        ),
+                        Text(
+                          "1",
+                        )
+                      ],
+                    ),
+                    Expanded(child: Container()),
+                    //share
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.share_rounded)),
+                    //comment
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.comment_outlined)),
+                    /*
+                    Expanded(child: Container()),
+                    GestureDetector(
+                      child: Row(
+                        children: [
+                          const Text(
+                            "DANH SÁCH PHÁT",
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.queue_music_rounded))
+                        ],
+                      ),
+                    )*/
                   ],
                 ),
               ],

@@ -114,12 +114,10 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
                       ),
                     ),
                   )),
-                  //heart icon
+                  //skip prev
                   IconButton(
-                    onPressed: value.favorites,
-                    icon: (value.isFavorite)
-                        ? Icon(Icons.favorite, color: Colors.red)
-                        : Icon(Icons.favorite_border),
+                    onPressed: value.playPrevSong,
+                    icon: Icon(Icons.skip_previous),
                   ),
                   //play pause
                   IconButton(
