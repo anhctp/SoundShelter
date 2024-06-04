@@ -3,7 +3,6 @@ import 'package:mobile/components/button/see_all_button.dart';
 import 'package:mobile/components/card/big_square_card.dart';
 import 'package:mobile/components/title/tab_name.dart';
 import 'package:mobile/module/detail-screen/recommend_screen.dart';
-import 'package:mobile/module/sign-in-screen/sign_in_screen.dart';
 import 'package:mobile/module/song-screen/song_screen.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:mobile/provider/user_provider.dart';
@@ -45,27 +44,21 @@ class _RecommendTabState extends State<RecommendTab> {
                             ),
                           ),
                         );
-                      } else {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SignInScreen(),
-                          ),
-                        ).then((value) => songProvider
-                            .getRecommendation(userProvider.currentUser!.id));
                       }
                     },
                     name: "Gợi ý cho bạn"),
                 Container(
-                  height: MediaQuery.of(context).size.width / 2 + 20,
-                  width: MediaQuery.of(context).size.width,
+                  constraints: BoxConstraints(
+                      minHeight: 0,
+                      maxWidth: MediaQuery.of(context).size.width,
+                      maxHeight: MediaQuery.of(context).size.width / 2 + 20),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: (userProvider.currentUser != null)
                       ? ((songProvider.recommendSongs.isNotEmpty)
                           ? Container(
                               height: 180,
                               child: ListView.separated(
                                 scrollDirection: Axis.horizontal,
-                                padding: EdgeInsets.symmetric(horizontal: 10),
                                 shrinkWrap: true,
                                 separatorBuilder: (context, index) {
                                   return SizedBox(
@@ -85,6 +78,14 @@ class _RecommendTabState extends State<RecommendTab> {
                                                 subtitle: song.artist,
                                                 subtext: false,
                                                 onTap: () {
+                                                  songProvider
+                                                      .getRecommendation(
+                                                          userProvider
+                                                              .currentUser!.id);
+                                                  songProvider.createHistory(
+                                                      userProvider
+                                                          .currentUser!.id,
+                                                      song.id!);
                                                   songProvider.setPlayingSongs(
                                                       songProvider
                                                           .recommendSongs);
