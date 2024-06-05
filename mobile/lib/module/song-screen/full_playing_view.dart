@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:mobile/components/box/neu_box.dart';
 import 'package:mobile/components/title/screen_header.dart';
+import 'package:mobile/module/comment/comment_modal.dart';
 import 'package:mobile/module/timer-picker/timer_picker.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
@@ -37,10 +38,10 @@ class _FullPlayingViewState extends State<FullPlayingView> {
         backgroundColor: Theme.of(context).colorScheme.background,
         appBar: ScreenHeader(title: "Bài hát đang phát"),
         body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
+          child: SingleChildScrollView(
+            padding:
+                const EdgeInsets.only(left: 25, right: 25, bottom: 25, top: 25),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 //song detail
                 Neubox(
@@ -88,7 +89,10 @@ class _FullPlayingViewState extends State<FullPlayingView> {
                             //more icon
                             IconButton(
                               onPressed: () {
-                                print('more');
+                                showModalBottomSheet(
+                                  context: context,
+                                  builder: (context) => Container(),
+                                );
                               },
                               icon: Icon(Icons.more_vert),
                             ),
@@ -249,9 +253,7 @@ class _FullPlayingViewState extends State<FullPlayingView> {
                         onPressed: () {},
                         icon: const Icon(Icons.share_rounded)),
                     //comment
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.comment_outlined)),
+                    CommentModal(),
                     /*
                     Expanded(child: Container()),
                     GestureDetector(
