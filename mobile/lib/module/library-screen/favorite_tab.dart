@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/components/card/music_item.dart';
 import 'package:mobile/components/title/tab_name.dart';
 import 'package:mobile/module/detail-screen/favorite_screen.dart';
-import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/module/song-screen/full_playing_view.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:mobile/provider/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -54,42 +54,52 @@ class _FavoriteTabState extends State<FavoriteTab>
                       maxHeight: 300),
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   child: (userProvider.currentUser != null)
-                      ? ListView.separated(
-                          padding: EdgeInsets.all(10.0),
-                          separatorBuilder: (context, index) {
-                            return SizedBox(
-                              height: 10,
-                            );
-                          },
-                          scrollDirection: Axis.vertical,
-                          itemCount: songProvider.favoriteSongs.length,
-                          shrinkWrap: true,
-                          itemBuilder: (BuildContext context, int index) {
-                            final song = songProvider.favoriteSongs[index];
-                            return MusicItem(
-                              name: song.title,
-                              imgFilePath: song.imageFilePath,
-                              artist: song.artist,
-                              onTap: () {
-                                songProvider.getRecommendation(
-                                    userProvider.currentUser!.id);
-                                songProvider.createHistory(
-                                    userProvider.currentUser!.id, song.id!);
-                                songProvider.setPlayingSongs(
-                                    songProvider.favoriteSongs);
-                                //update current song index
-                                songProvider.currentSongIndex = index;
-
-                                //navigate to song page
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SongScreen()),
+                      ? ((songProvider.historySongs.isNotEmpty)
+                          ? ListView.separated(
+                              padding: EdgeInsets.all(10.0),
+                              separatorBuilder: (context, index) {
+                                return SizedBox(
+                                  height: 10,
                                 );
                               },
-                            );
-                          },
-                        )
+                              scrollDirection: Axis.vertical,
+                              itemCount: songProvider.favoriteSongs.length,
+                              shrinkWrap: true,
+                              itemBuilder: (BuildContext context, int index) {
+                                final song = songProvider.favoriteSongs[index];
+                                return MusicItem(
+                                  name: song.title,
+                                  imgFilePath: song.imageFilePath,
+                                  artist: song.artist,
+                                  onTap: () {
+                                    songProvider.getRecommendation(
+                                        userProvider.currentUser!.id);
+                                    songProvider.createHistory(
+                                        userProvider.currentUser!.id, song.id!);
+                                    songProvider.setPlayingSongs(
+                                        songProvider.favoriteSongs);
+                                    //update current song index
+                                    songProvider.currentSongIndex = index;
+
+                                    //navigate to song page
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              FullPlayingView()),
+                                    );
+                                  },
+                                );
+                              },
+                            )
+                          : Text(
+                              "Bạn chưa có bài hát yêu thích nào.",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ))
                       : Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10),
                           child: Text(

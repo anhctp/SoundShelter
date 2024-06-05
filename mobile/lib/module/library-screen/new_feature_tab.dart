@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/components/card/music_item.dart';
 import 'package:mobile/components/title/tab_name.dart';
 import 'package:mobile/module/detail-screen/new_feature_screen.dart';
-import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/module/song-screen/full_playing_view.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:mobile/provider/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -64,17 +64,19 @@ class _NewFeatureTabState extends State<NewFeatureTab> {
                             imgFilePath: song.imageFilePath,
                             artist: song.artist,
                             onTap: () {
-                              songProvider.getRecommendation(
-                                  userProvider.currentUser!.id);
-                              songProvider.createHistory(
-                                  userProvider.currentUser!.id, song.id!);
+                              if (userProvider.currentUser != null) {
+                                songProvider.getRecommendation(
+                                    userProvider.currentUser!.id);
+                                songProvider.createHistory(
+                                    userProvider.currentUser!.id, song.id!);
+                              }
                               songProvider
                                   .setPlayingSongs(songProvider.newestSongs);
                               songProvider.currentSongIndex = index;
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => SongScreen(),
+                                  builder: (context) => FullPlayingView(),
                                 ),
                               );
                             },

@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:mobile/components/box/neu_box.dart';
 import 'package:mobile/components/title/screen_header.dart';
+import 'package:mobile/module/timer-picker/timer_picker.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +42,7 @@ class _FullPlayingViewState extends State<FullPlayingView> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                //artist
+                //song detail
                 Neubox(
                   child: Column(
                     children: [
@@ -156,6 +159,7 @@ class _FullPlayingViewState extends State<FullPlayingView> {
                               activeColor: Colors.green,
                               onChanged: (double double) {
                                 //during when user is sliding around
+                                value.seek(Duration(seconds: double.toInt()));
                               },
                               onChangeEnd: (double double) {
                                 //sliding has finished, go to the position in song duration
@@ -217,6 +221,7 @@ class _FullPlayingViewState extends State<FullPlayingView> {
                 SizedBox(
                   height: 25,
                 ),
+                //like,share,cmt
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -235,6 +240,10 @@ class _FullPlayingViewState extends State<FullPlayingView> {
                       ],
                     ),
                     Expanded(child: Container()),
+                    //set time
+                    TimerPicker(
+                      value: value,
+                    ),
                     //share
                     IconButton(
                         onPressed: () {},

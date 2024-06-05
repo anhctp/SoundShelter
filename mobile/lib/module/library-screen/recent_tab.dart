@@ -4,7 +4,7 @@ import 'package:mobile/components/card/circle_card.dart';
 import 'package:mobile/components/card/small_square_card.dart';
 import 'package:mobile/components/title/tab_name.dart';
 import 'package:mobile/module/detail-screen/recent_screen.dart';
-import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/module/song-screen/full_playing_view.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:mobile/provider/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -65,67 +65,71 @@ class _RecentTabState extends State<RecentTab> {
                               },
                               itemBuilder: (context, index) {
                                 final song = songProvider.historySongs[index];
-                                return Row(
-                                  children: [
-                                    if (index % 2 != 0 && index < 6)
-                                      SmallSquareCard(
-                                        title: song.title,
-                                        imgFilePath: song.imageFilePath,
-                                        onTap: () {
-                                          songProvider.getRecommendation(
-                                              userProvider.currentUser!.id);
-                                          songProvider.createHistory(
-                                              userProvider.currentUser!.id,
-                                              song.id!);
-                                          songProvider.setPlayingSongs(
-                                              songProvider.historySongs);
-                                          songProvider.currentSongIndex = index;
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  SongScreen(),
-                                            ),
-                                          );
-                                        },
-                                      ),
-                                    if (index % 2 == 0 && index < 6)
-                                      CircleCard(
-                                        title: song.title,
-                                        imgFilePath: song.imageFilePath,
-                                        onTap: () {
-                                          songProvider.getRecommendation(
-                                              userProvider.currentUser!.id);
-                                          songProvider.createHistory(
-                                              userProvider.currentUser!.id,
-                                              song.id!);
-                                          songProvider.setPlayingSongs(
-                                              songProvider.historySongs);
-                                          songProvider.currentSongIndex = index;
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  SongScreen(),
-                                            ),
-                                          );
-                                        },
-                                      ),
-                                    if (index == 6)
-                                      SeeAllButton(
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  RecentScreen(
-                                                      songs: songProvider
-                                                          .historySongs),
-                                            ),
-                                          );
-                                        },
-                                      ),
-                                  ],
+                                return FittedBox(
+                                  child: Row(
+                                    children: [
+                                      if (index % 2 != 0 && index < 6)
+                                        SmallSquareCard(
+                                          title: song.title,
+                                          imgFilePath: song.imageFilePath,
+                                          onTap: () {
+                                            songProvider.getRecommendation(
+                                                userProvider.currentUser!.id);
+                                            songProvider.createHistory(
+                                                userProvider.currentUser!.id,
+                                                song.id!);
+                                            songProvider.setPlayingSongs(
+                                                songProvider.historySongs);
+                                            songProvider.currentSongIndex =
+                                                index;
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    FullPlayingView(),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      if (index % 2 == 0 && index < 6)
+                                        CircleCard(
+                                          title: song.title,
+                                          imgFilePath: song.imageFilePath,
+                                          onTap: () {
+                                            songProvider.getRecommendation(
+                                                userProvider.currentUser!.id);
+                                            songProvider.createHistory(
+                                                userProvider.currentUser!.id,
+                                                song.id!);
+                                            songProvider.setPlayingSongs(
+                                                songProvider.historySongs);
+                                            songProvider.currentSongIndex =
+                                                index;
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    FullPlayingView(),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      if (index == 6)
+                                        SeeAllButton(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    RecentScreen(
+                                                        songs: songProvider
+                                                            .historySongs),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                    ],
+                                  ),
                                 );
                               },
                               itemCount: (songProvider.historySongs.length > 7)
@@ -133,7 +137,7 @@ class _RecentTabState extends State<RecentTab> {
                                   : songProvider.historySongs.length,
                             )
                           : Text(
-                              "Chưa thể đưa ra gợi ý.",
+                              "Bạn chưa nghe bài hát nào gần đây.",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: 16,

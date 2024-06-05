@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/components/card/music_item.dart';
 import 'package:mobile/components/title/screen_header.dart';
 import 'package:mobile/model/song_model.dart';
-import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/module/song-screen/full_playing_view.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:mobile/provider/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -55,7 +55,7 @@ class _RecentScreenState extends State<RecentScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SongScreen(),
+                            builder: (context) => FullPlayingView(),
                           ),
                         );
                       },

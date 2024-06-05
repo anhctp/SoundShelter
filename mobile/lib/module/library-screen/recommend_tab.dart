@@ -3,7 +3,7 @@ import 'package:mobile/components/button/see_all_button.dart';
 import 'package:mobile/components/card/big_square_card.dart';
 import 'package:mobile/components/title/tab_name.dart';
 import 'package:mobile/module/detail-screen/recommend_screen.dart';
-import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/module/song-screen/full_playing_view.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:mobile/provider/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -95,7 +95,7 @@ class _RecommendTabState extends State<RecommendTab> {
                                                     context,
                                                     MaterialPageRoute(
                                                       builder: (context) =>
-                                                          SongScreen(),
+                                                          FullPlayingView(),
                                                     ),
                                                   );
                                                 },

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/module/song-screen/full_playing_view.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:mobile/provider/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -91,7 +91,7 @@ class _SearchScreenState extends State<SearchScreen>
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => SongScreen(),
+                                builder: (context) => FullPlayingView(),
                               ),
                             );
                           },

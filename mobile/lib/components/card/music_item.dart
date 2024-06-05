@@ -72,6 +72,7 @@ class _MusicItemState extends State<MusicItem> {
                   ),
                   Text(
                     widget.artist,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(fontSize: 16, color: Colors.black54),
                   )
                 ],
