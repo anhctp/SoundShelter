@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:audioplayers/audioplayers.dart';
@@ -119,6 +120,35 @@ class SongProvider with ChangeNotifier {
     if (_isFavorite) {
     } else {}
     notifyListeners();
+  }
+
+  //set time
+
+  Timer? timer;
+  int? selectedTime;
+
+  @override
+  void dispose() {
+    _audioPlayer.dispose();
+    timer?.cancel();
+    super.dispose();
+  }
+
+  void onSelectedTime(int time) {
+    selectedTime = time;
+    startTimer();
+    notifyListeners();
+  }
+
+  void startTimer() {
+    if (selectedTime != null) {
+      timer?.cancel();
+      timer = Timer(Duration(seconds: selectedTime!), () {
+        print('Timer finished');
+        pause();
+      });
+      notifyListeners();
+    }
   }
 
   //current song playing index

@@ -45,12 +45,14 @@ for (let i = 0; i < songs.length; i++) {
           image_file_path: res.data.thumbnailM,
           genreIds: res.data.genreIds,
         };
-        for (let a = 0; a < res.data.genres.length; a++) {
-          const isUnique = !genres.some(
-            (item) => item.id === res.data.genres[a].id
-          );
-          if (isUnique && res.data.genres[a]) {
-            genres.push(res.data.genres[a]);
+        if (res.data.genres) {
+          for (let a = 0; a < res.data.genres.length; a++) {
+            const isUnique = !genres.some(
+              (item) => item.id === res.data.genres[a].id
+            );
+            if (isUnique && res.data.genres[a]) {
+              genres.push(res.data.genres[a]);
+            }
           }
         }
         playlists.push(playlist);
@@ -63,13 +65,13 @@ for (let i = 0; i < songs.length; i++) {
             image_file_path: arr[i].thumbnailM,
             album: arr[i].album
               ? {
-                  code: arr[i].album.encodeId,
-                  title: arr[i].album.title,
-                  release_date: arr[i].album.releaseDate,
-                  artist: arr[i].album.artistsNames,
-                  image_file_path: arr[i].album.thumbnail,
-                  genre: arr[i].album.genreIds,
-                }
+                code: arr[i].album.encodeId,
+                title: arr[i].album.title,
+                release_date: arr[i].album.releaseDate,
+                artist: arr[i].album.artistsNames,
+                image_file_path: arr[i].album.thumbnail,
+                genre: arr[i].album.genreIds,
+              }
               : {},
             playlist_id: id_playlists[j],
             release_date: arr[i].releaseDate,
