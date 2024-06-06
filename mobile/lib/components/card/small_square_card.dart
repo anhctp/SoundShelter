@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/model/song_model.dart';
+import 'package:mobile/module/playlist-screen/create_playlist_modal.dart';
 import 'package:mobile/module/song-screen/full_playing_view.dart';
 
 class SmallSquareCard extends StatefulWidget {
@@ -35,52 +36,10 @@ class _SmallSquareCardState extends State<SmallSquareCard> {
       onLongPress: () {
         showModalBottomSheet(
           context: context,
-          builder: (context) => Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            width: double.infinity,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 10),
-                //add favorite
-                InkWell(
-                  onTap: () {
-                    widget.songProvider.createFavorite(widget.song.id!);
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey.shade300),
-                    width: double.infinity,
-                    child: Text(
-                      'Thêm vào danh sách yêu thích',
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                //add your playlist
-                InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey.shade300),
-                    width: double.infinity,
-                    child: Text(
-                      'Thêm vào playlist',
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          builder: (context) => CreatePlaylistModal(
+            currentSong: widget.song,
+            songProvider: widget.songProvider,
+            add: true,
           ),
         );
       },
