@@ -13,7 +13,6 @@ class AlbumRepository {
     );
 
     if (response.statusCode == 200) {
-      print(response.body);
       return albumFromJson(response.bodyBytes);
     } else {
       print(response.body);
@@ -29,7 +28,6 @@ class AlbumRepository {
     );
 
     if (response.statusCode == 200) {
-      print(response.body);
       return songFromJson(response.bodyBytes);
     } else {
       print(response.body);

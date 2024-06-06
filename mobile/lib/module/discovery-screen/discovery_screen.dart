@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/components/title/custom_appbar.dart';
 //import 'package:mobile/components/detail-card/detail_card.dart';
 import 'package:mobile/module/discovery-screen/noticeable_tab.dart';
-import 'package:mobile/module/library-screen/new_feature_tab.dart';
+import 'package:mobile/module/discovery-screen/new_feature_tab.dart';
 import 'package:mobile/module/library-screen/recent_tab.dart';
 import 'package:mobile/module/library-screen/recommend_tab.dart';
 

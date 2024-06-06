@@ -11,7 +11,6 @@ class GenreRepository {
     );
 
     if (response.statusCode == 200) {
-      print(response.body);
       return genreFromJson(response.bodyBytes);
     } else {
       print(response.body);
@@ -26,7 +25,6 @@ class GenreRepository {
     );
 
     if (response.statusCode == 200) {
-      print(response.body);
       return genreByIdFromJson(response.bodyBytes);
     } else {
       print(response.body);

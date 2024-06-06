@@ -42,7 +42,6 @@ class _DetailGenreScreenState extends State<DetailGenreScreen> {
                 final album = albumProvider.albums[index];
                 return CustomCard(
                     onTap: () {
-                      print("object");
                       Navigator.push(
                         context,
                         MaterialPageRoute(

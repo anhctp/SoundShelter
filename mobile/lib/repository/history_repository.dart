@@ -26,7 +26,6 @@ class HistoryRepository {
       headers: {'Accept': 'application/json; charset=UTF-8'},
     );
     if (response.statusCode == 200) {
-      print(response.body);
       return songFromJson(response.bodyBytes);
     } else {
       print(response.body);

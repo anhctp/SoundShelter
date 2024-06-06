@@ -31,7 +31,6 @@ class _NoticeableScreenState extends State<NoticeableScreen> {
               final playlist = widget.playlists[index];
               return CustomCard(
                   onTap: () {
-                    print("object");
                     Navigator.push(
                       context,
                       MaterialPageRoute(
