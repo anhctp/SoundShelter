@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/model/favorite_model.dart';
 import 'package:mobile/model/history_model.dart';
 import 'package:mobile/model/song_model.dart';
+import 'package:mobile/model/user_model.dart';
 import 'package:mobile/service/album_service.dart';
 import 'package:mobile/service/favorite_service.dart';
 import 'package:mobile/service/history_service.dart';
@@ -74,43 +75,48 @@ class SongProvider with ChangeNotifier {
   }
 
   //get recommendation
-  Future<void> getRecommendation(int? userId) async {
-    _recommendSongs = await recommendService.getRecommendation(userId);
+  Future<void> getRecommendation() async {
+    _recommendSongs = await recommendService.getRecommendation(_user!.id);
     notifyListeners();
   }
 
   //create heard song
-  Future<void> createHistory(int userId, int songId) async {
+  Future<void> createHistory() async {
     DateTime now = new DateTime.timestamp();
-    print(now.toString());
-    final history =
-        History(userId: userId, songId: songId, playDate: now.toString());
+    final history = History(
+        userId: _user!.id,
+        songId: _playingSongs[currentSongIndex!].id!,
+        playDate: now.toString());
     await historyService.createHistory(history);
-    getHistory(userId);
+    getHistory();
+    getRecommendation();
     notifyListeners();
   }
 
   //get recently heard songs
-  Future<void> getHistory(int userId) async {
-    _historySongs = await historyService.getHistory(userId);
+  Future<void> getHistory() async {
+    _historySongs = await historyService.getHistory(_user!.id);
     notifyListeners();
   }
 
   //create favorite
-  Future<void> createFavorite(Favorite favorite) async {
-    await favoriteService.createFavorite(favorite);
+  Future<void> createFavorite(int songId) async {
+    await favoriteService
+        .createFavorite(Favorite(userId: _user!.id, songId: songId));
+    getFavorite();
     notifyListeners();
   }
 
   //get favorite
-  Future<void> getFavorite(String token) async {
-    _favoriteSongs = await favoriteService.getFavorite(token);
+  Future<void> getFavorite() async {
+    _favoriteSongs = await favoriteService.getFavorite(_user!.token);
     notifyListeners();
   }
 
   //delete favorite
-  Future<void> deleteFavorite(int songId, String token) async {
-    await favoriteService.delelteFavorite(songId, token);
+  Future<void> deleteFavorite(int songId) async {
+    await favoriteService.delelteFavorite(songId, _user!.token);
+    getFavorite();
     notifyListeners();
   }
 
@@ -123,16 +129,8 @@ class SongProvider with ChangeNotifier {
   }
 
   //set time
-
   Timer? timer;
   int? selectedTime;
-
-  @override
-  void dispose() {
-    _audioPlayer.dispose();
-    timer?.cancel();
-    super.dispose();
-  }
 
   void onSelectedTime(int time) {
     selectedTime = time;
@@ -161,10 +159,18 @@ class SongProvider with ChangeNotifier {
     _currentSongIndex = newIndex;
     if (newIndex != null) {
       play(); //play the new index song
+      if (user != null) createHistory();
     }
 
     //update ui
     notifyListeners();
+  }
+
+  //current user
+  User? _user;
+  User? get user => _user;
+  set user(User? user) {
+    if (user != null) _user = user;
   }
 
   /* audio player */
@@ -315,4 +321,10 @@ class SongProvider with ChangeNotifier {
   }
 
   //dispose audio player
+  @override
+  void dispose() {
+    _audioPlayer.dispose();
+    timer?.cancel();
+    super.dispose();
+  }
 }

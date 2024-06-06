@@ -27,7 +27,6 @@ class FavoriteRepository {
       HttpHeaders.authorizationHeader: 'Bearer $token'
     });
     if (response.statusCode == 200) {
-      print(response.body);
       return songFromJson(response.bodyBytes);
     } else {
       print(response.body);
@@ -37,7 +36,7 @@ class FavoriteRepository {
 
   //delete favorite
   Future<dynamic> deleteFavorite(int songId, String token) async {
-    final response = await http.post(
+    final response = await http.delete(
       Uri.parse("$baseUrl/delete/$songId"),
       headers: {
         'Content-Type': 'application/json',
