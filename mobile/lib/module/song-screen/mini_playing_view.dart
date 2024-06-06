@@ -22,7 +22,7 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
 
   //playing music
   void showSheetMusicPlayingLayout() {
-    Navigator.pushReplacement(
+    Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => FullPlayingView()),
     );
