@@ -14,12 +14,14 @@ class ScreenHeader extends StatelessWidget implements PreferredSizeWidget {
             color: Theme.of(context).colorScheme.primary,
             fontWeight: FontWeight.bold),
       ),
-      leading: IconButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        icon: const Icon(Icons.arrow_back_ios_rounded),
-        color: Theme.of(context).colorScheme.primary,
+      leading: Builder(
+        builder: (context) => IconButton(
+          onPressed: () {
+            Navigator.of(context).maybePop();
+          },
+          icon: const Icon(Icons.arrow_back_ios_rounded),
+          color: Theme.of(context).colorScheme.primary,
+        ),
       ),
     );
   }

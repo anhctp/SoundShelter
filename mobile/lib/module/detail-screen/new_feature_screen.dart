@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mobile/components/card/big_square_card.dart';
 import 'package:mobile/components/title/screen_header.dart';
 import 'package:mobile/model/song_model.dart';
-import 'package:mobile/module/song-screen/song_screen.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -36,20 +35,10 @@ class _NewFeatureScreenState extends State<NewFeatureScreen> {
                 (index) {
                   final song = widget.songs[index];
                   return BigSquareCard(
-                    onTap: () {
-                      songProvider.setPlayingSongs(songProvider.newestSongs);
-                      songProvider.currentSongIndex = index;
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SongScreen(),
-                        ),
-                      );
-                    },
-                    title: song.title,
-                    subtitle: song.artist,
-                    subtext: false,
-                    imgFilePath: song.imageFilePath,
+                    song: song,
+                    songProvider: songProvider,
+                    index: index,
+                    playlist: widget.songs,
                   );
                 },
               ),

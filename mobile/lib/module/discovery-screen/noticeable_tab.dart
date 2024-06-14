@@ -39,18 +39,14 @@ class _NoticeableTabState extends State<NoticeableTab> {
                   );
                 },
                 name: "Đáng chú ý"),
-            Consumer<PlaylistProvider>(
-              builder: (context, playlistProvider, child) {
-                return FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: ExpandingCards(
-                    height: 400,
-                    items: playlistProvider.playlists.length > 6
-                        ? playlistProvider.playlists.sublist(0, 6)
-                        : playlistProvider.playlists,
-                  ),
-                );
-              },
+            FittedBox(
+              fit: BoxFit.fitWidth,
+              child: ExpandingCards(
+                height: 400,
+                items: playlistProvider.playlists.length > 6
+                    ? playlistProvider.playlists.sublist(0, 6)
+                    : playlistProvider.playlists,
+              ),
             ),
           ],
         );

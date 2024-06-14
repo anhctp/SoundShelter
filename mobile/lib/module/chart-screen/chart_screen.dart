@@ -2,9 +2,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:mobile/components/box/neu_box.dart';
+import 'package:mobile/components/card/music_item.dart';
 import 'package:mobile/components/title/custom_appbar.dart';
 import 'package:mobile/model/song_model.dart';
-import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/module/playlist-screen/create_playlist_modal.dart';
+import 'package:mobile/module/song-screen/full_playing_view.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +22,6 @@ class ChartScreen extends StatefulWidget {
 class ChartScreenState extends State<ChartScreen>
     with SingleTickerProviderStateMixin {
   late final dynamic songProvider;
-
   @override
   void initState() {
     super.initState();
@@ -36,7 +37,7 @@ class ChartScreenState extends State<ChartScreen>
     //navigate to song page
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => SongScreen()),
+      MaterialPageRoute(builder: (context) => FullPlayingView()),
     );
   }
 
@@ -63,7 +64,19 @@ class ChartScreenState extends State<ChartScreen>
               final Song song = songProvider.songs[index];
               return index == 0
                   ? GestureDetector(
-                      onTap: () => goToSong(index),
+                      onTap: () {
+                        goToSong(index);
+                      },
+                      onLongPress: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (context) => CreatePlaylistModal(
+                            currentSong: song,
+                            songProvider: songProvider,
+                            add: true,
+                          ),
+                        );
+                      },
                       child: Neubox(
                         child: Column(
                           children: [
@@ -107,7 +120,15 @@ class ChartScreenState extends State<ChartScreen>
                                   ),
                                   IconButton(
                                     onPressed: () {
-                                      print('more');
+                                      showModalBottomSheet(
+                                        context: context,
+                                        builder: (context) =>
+                                            CreatePlaylistModal(
+                                          currentSong: song,
+                                          songProvider: songProvider,
+                                          add: true,
+                                        ),
+                                      );
                                     },
                                     icon: Icon(Icons.more_vert),
                                   ),
@@ -119,90 +140,34 @@ class ChartScreenState extends State<ChartScreen>
                       ),
                     )
                   //rest of list
-                  : Container(
-                      child: GestureDetector(
-                        onTap: () {
-                          goToSong(index);
-                          print('play');
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: <Widget>[
-                            Container(
-                              width: 30,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "${index + 1}",
-                                style: TextStyle(
-                                  color: Colors.primaries[Random()
-                                      .nextInt(Colors.primaries.length)],
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
+                  : Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: <Widget>[
+                        Container(
+                          width: 35,
+                          alignment: Alignment.center,
+                          child: Text(
+                            "${index + 1}",
+                            style: TextStyle(
+                              color: Colors.primaries[
+                                  Random().nextInt(Colors.primaries.length)],
+                              fontSize: 24,
+                              fontWeight: FontWeight.w600,
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            SizedBox(
-                              height: 70,
-                              //insert img
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color:
-                                      Theme.of(context).colorScheme.background,
-                                  borderRadius: BorderRadius.circular(12),
-                                  boxShadow: [
-                                    //darker shadow on bottom right
-                                    BoxShadow(
-                                      color: Colors.grey.shade500,
-                                      blurRadius: 15,
-                                      offset: const Offset(4, 4),
-                                    ),
-
-                                    //lighter shadow on top left
-                                    BoxShadow(
-                                      color: Colors.white,
-                                      blurRadius: 15,
-                                      offset: const Offset(-4, -4),
-                                    ),
-                                  ],
-                                ),
-                                child: Image.network(song.imageFilePath),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    song.title,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                  Text(
-                                    song.artist,
-                                    style: TextStyle(
-                                        fontSize: 16, color: Colors.black54),
-                                  )
-                                ],
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                print('more');
-                              },
-                              icon: Icon(Icons.more_vert),
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: MusicItem(
+                              songProvider: songProvider,
+                              song: song,
+                              add: true,
+                              index: index,
+                              playlist: songProvider.songs),
+                        )
+                      ],
                     );
             },
           );

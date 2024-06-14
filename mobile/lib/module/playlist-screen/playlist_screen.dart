@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/card/music_item.dart';
-import 'package:mobile/module/song-screen/song_screen.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -83,20 +82,11 @@ class _PlayListScreenState extends State<PlayListScreen> {
                       itemBuilder: (context, index) {
                         final song = songProvider.songs[index];
                         return MusicItem(
-                          name: song.title,
-                          imgFilePath: song.imageFilePath,
-                          artist: song.artist,
-                          onTap: () {
-                            songProvider.setPlayingSongs(songProvider.songs);
-                            songProvider.currentSongIndex = index;
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SongScreen(),
-                              ),
-                            );
-                          },
-                        );
+                            songProvider: songProvider,
+                            song: song,
+                            add: true,
+                            index: index,
+                            playlist: songProvider.songs);
                       },
                       itemCount:
                           songProvider.songs.length, //playlist!.songs!.length

@@ -56,13 +56,6 @@
     "link": "/the-loai-album/Nhac-Tru-Tinh/IWZ9Z08B.html"
   },
   {
-    "id": "IWZ9Z08A",
-    "name": "Rock Việt",
-    "title": "Rock Việt",
-    "alias": "rock-viet",
-    "link": "/the-loai-album/Rock-Viet/IWZ9Z08A.html"
-  },
-  {
     "id": "IWZ9Z08W",
     "name": "Hàn Quốc",
     "title": "Hàn Quốc",
@@ -89,6 +82,13 @@
     "title": "Dance Pop",
     "alias": "dance-pop",
     "link": "/the-loai-album/Dance-Pop/IWZ9Z09O.html"
+  },
+  {
+    "id": "IWZ9Z08A",
+    "name": "Rock Việt",
+    "title": "Rock Việt",
+    "alias": "rock-viet",
+    "link": "/the-loai-album/Rock-Viet/IWZ9Z08A.html"
   },
   {
     "id": "IWZ98I0D",

@@ -38,7 +38,6 @@ class _GridCardsState extends State<GridCards> {
               ? SeeAllButton(onTap: widget.onTap)
               : CustomCard(
                   onTap: () {
-                    print("object");
                     Navigator.push(
                       context,
                       MaterialPageRoute(

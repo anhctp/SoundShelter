@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/module/song-screen/song_screen.dart';
+import 'package:mobile/module/song-screen/full_playing_view.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -22,9 +22,9 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
 
   //playing music
   void showSheetMusicPlayingLayout() {
-    Navigator.pushReplacement(
+    Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => SongScreen()),
+      MaterialPageRoute(builder: (context) => FullPlayingView()),
     );
   }
 
@@ -114,12 +114,10 @@ class _MiniPlayingViewState extends State<MiniPlayingView> {
                       ),
                     ),
                   )),
-                  //heart icon
+                  //skip prev
                   IconButton(
-                    onPressed: value.favorites,
-                    icon: (value.isFavorite)
-                        ? Icon(Icons.favorite, color: Colors.red)
-                        : Icon(Icons.favorite_border),
+                    onPressed: value.playPrevSong,
+                    icon: Icon(Icons.skip_previous),
                   ),
                   //play pause
                   IconButton(

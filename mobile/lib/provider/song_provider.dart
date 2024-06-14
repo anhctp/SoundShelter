@@ -1,10 +1,16 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile/model/favorite_model.dart';
+import 'package:mobile/model/history_model.dart';
 import 'package:mobile/model/song_model.dart';
+import 'package:mobile/model/user_model.dart';
 import 'package:mobile/service/album_service.dart';
+import 'package:mobile/service/favorite_service.dart';
+import 'package:mobile/service/history_service.dart';
 import 'package:mobile/service/playlist_service.dart';
 import 'package:mobile/service/recommend_service.dart';
 import 'package:mobile/service/song_service.dart';
@@ -14,16 +20,23 @@ class SongProvider with ChangeNotifier {
   AlbumService albumService = AlbumService();
   PlaylistService playlistService = PlaylistService();
   RecommendService recommendService = RecommendService();
+  HistoryService historyService = HistoryService();
+  FavoriteService favoriteService = FavoriteService();
 
   List<Song> _songs = [];
   List<Song> _playingSongs = [];
   List<Song> _newestSongs = [];
   List<Song> _recommendSongs = [];
+  List<Song> _historySongs = [];
+  List<Song> _favoriteSongs = [];
+
   //getter
   List<Song> get songs => _songs;
   List<Song> get newestSongs => _newestSongs;
   List<Song> get playingSongs => _playingSongs;
   List<Song> get recommendSongs => _recommendSongs;
+  List<Song> get historySongs => _historySongs;
+  List<Song> get favoriteSongs => _favoriteSongs;
 
   //setter
   List<Song> setPlayingSongs(List<Song> songs) {
@@ -62,8 +75,48 @@ class SongProvider with ChangeNotifier {
   }
 
   //get recommendation
-  Future<void> getRecommendation(int? userId) async {
-    _recommendSongs = await recommendService.getRecommendation(userId);
+  Future<void> getRecommendation() async {
+    _recommendSongs = await recommendService.getRecommendation(_user!.id);
+    notifyListeners();
+  }
+
+  //create heard song
+  Future<void> createHistory() async {
+    DateTime now = new DateTime.timestamp();
+    final history = History(
+        userId: _user!.id,
+        songId: _playingSongs[currentSongIndex!].id!,
+        playDate: now.toString());
+    await historyService.createHistory(history);
+    getHistory();
+    getRecommendation();
+    notifyListeners();
+  }
+
+  //get recently heard songs
+  Future<void> getHistory() async {
+    _historySongs = await historyService.getHistory(_user!.id);
+    notifyListeners();
+  }
+
+  //create favorite
+  Future<void> createFavorite(int songId) async {
+    await favoriteService
+        .createFavorite(Favorite(userId: _user!.id, songId: songId));
+    getFavorite();
+    notifyListeners();
+  }
+
+  //get favorite
+  Future<void> getFavorite() async {
+    _favoriteSongs = await favoriteService.getFavorite(_user!.token);
+    notifyListeners();
+  }
+
+  //delete favorite
+  Future<void> deleteFavorite(int songId) async {
+    await favoriteService.delelteFavorite(songId, _user!.token);
+    getFavorite();
     notifyListeners();
   }
 
@@ -73,6 +126,27 @@ class SongProvider with ChangeNotifier {
     if (_isFavorite) {
     } else {}
     notifyListeners();
+  }
+
+  //set time
+  Timer? timer;
+  int? selectedTime;
+
+  void onSelectedTime(int time) {
+    selectedTime = time;
+    startTimer();
+    notifyListeners();
+  }
+
+  void startTimer() {
+    if (selectedTime != null) {
+      timer?.cancel();
+      timer = Timer(Duration(seconds: selectedTime!), () {
+        print('Timer finished');
+        pause();
+      });
+      notifyListeners();
+    }
   }
 
   //current song playing index
@@ -85,10 +159,18 @@ class SongProvider with ChangeNotifier {
     _currentSongIndex = newIndex;
     if (newIndex != null) {
       play(); //play the new index song
+      if (user != null) createHistory();
     }
 
     //update ui
     notifyListeners();
+  }
+
+  //current user
+  User? _user;
+  User? get user => _user;
+  set user(User? user) {
+    if (user != null) _user = user;
   }
 
   /* audio player */
@@ -239,4 +321,10 @@ class SongProvider with ChangeNotifier {
   }
 
   //dispose audio player
+  @override
+  void dispose() {
+    _audioPlayer.dispose();
+    timer?.cancel();
+    super.dispose();
+  }
 }
