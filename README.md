@@ -17,10 +17,10 @@ The key features are:
   - Upload music. (in process)
   - Favorite music.
   - Playlist.
-  - Interaction (like, comment, share). (in process)
+  - Interaction (like, comment, share). (api)
   - Offline music (mobile). (in process)
 - Recommendations.
-- Sleep timer. (in process)
+- Sleep timer.
 - Charts.
 
 ## Technology
