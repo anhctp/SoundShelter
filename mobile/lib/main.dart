@@ -30,6 +30,7 @@ void main() {
       child: MaterialApp(
         title: 'SoundShelter',
         home: const HomeScreen(),
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: const Color(0xFFB2572B),
           colorScheme: ColorScheme.fromSwatch().copyWith(
