@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, Response, UploadFile
 from sqlalchemy.orm import Session
 from dataplane import s3_upload
 from dataplane import s3_download
-
+from datetime import datetime
 from models.user_model import UserModel
 from models.song_model import SongModel
 
@@ -74,6 +74,9 @@ class UploadController:
             db_upload = SongModel(
                 title=title,
                 audio_file_path=f"/{folder_name}/{mp3_file.filename}",
+                image_file_path="https://uploads.dailydot.com/2018/10/olli-the-polite-cat.jpg?auto=compress&fm=pjpg",
+                artist=current_user.name,
+                release_date=datetime.today().strftime('%Y-%m-%d'),
                 is_uploaded=True,
                 user_id=current_user.id
             )
