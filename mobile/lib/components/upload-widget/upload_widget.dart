@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:http/http.dart' as http;
 import 'package:mobile/model/upload_song_model.dart';
 import 'package:mobile/provider/upload_provider.dart';
 import 'package:mobile/provider/user_provider.dart';

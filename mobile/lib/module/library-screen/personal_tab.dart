@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/card/rectangle_card.dart';
+import 'package:mobile/module/detail-screen/personal_screen.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:mobile/module/library-screen/personal_screen/upload_screen.dart';
 
 class PersonalTab extends StatefulWidget {
@@ -10,6 +12,25 @@ class PersonalTab extends StatefulWidget {
 }
 
 class _PersonalTabState extends State<PersonalTab> {
+  @override
+  void initState() {
+    super.initState();
+    requestPermissions();
+  }
+
+  Future<void> requestPermissions() async {
+    PermissionStatus status = await Permission.storage.request();
+    if (status.isGranted) {
+      print("Quyền truy cập bộ nhớ đã được cấp.");
+    } else if (status.isDenied) {
+      print("Quyền truy cập bộ nhớ không được cấp.");
+      openAppSettings();
+    } else if (status.isPermanentlyDenied) {
+      // Notification permissions permanently denied, open app settings
+      await openAppSettings();
+    }
+  }
+
   final List<dynamic> items = [
     {
       'icon': Icons.favorite,
@@ -20,8 +41,15 @@ class _PersonalTabState extends State<PersonalTab> {
     {
       'icon': Icons.download,
       'title': 'Đã tải',
-      'subtitle': '',
-      'onTap': () {},
+      'subtitle': '', //songProvider.downloadedSongs.length.toString(),
+      'onTap': (context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PersonalScreen(),
+          ),
+        );
+      },
     },
     {
       'icon': Icons.cloud_upload_outlined,
@@ -39,13 +67,12 @@ class _PersonalTabState extends State<PersonalTab> {
   ];
   @override
   Widget build(BuildContext context) {
-    return //personal
-        Container(
+    return Container(
       height: 110,
       width: double.maxFinite,
       padding: EdgeInsets.symmetric(vertical: 10),
       child: ListView.builder(
-          itemCount: 3,
+          itemCount: items.length,
           padding: EdgeInsets.symmetric(horizontal: 10),
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,

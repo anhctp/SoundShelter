@@ -14,6 +14,13 @@
     "link": "/the-loai-album/V-Pop/IWZ97FCD.html"
   },
   {
+    "id": "IWZ9Z0C8",
+    "name": "R&B Việt",
+    "title": "R&B Việt",
+    "alias": "r-b-viet",
+    "link": "/the-loai-album/R-B-Viet/IWZ9Z0C8.html"
+  },
+  {
     "id": "IWZ9Z0CW",
     "name": "Dance Việt",
     "title": "Dance Việt",
@@ -26,20 +33,6 @@
     "title": "EDM Việt",
     "alias": "edm-viet",
     "link": "/the-loai-album/EDM-Viet/IWZ97FCE.html"
-  },
-  {
-    "id": "IWZ9Z0C8",
-    "name": "R&B Việt",
-    "title": "R&B Việt",
-    "alias": "r-b-viet",
-    "link": "/the-loai-album/R-B-Viet/IWZ9Z0C8.html"
-  },
-  {
-    "id": "IWZ9Z08B",
-    "name": "Nhạc Trữ Tình",
-    "title": "Nhạc Trữ Tình",
-    "alias": "nhac-tru-tinh",
-    "link": "/the-loai-album/Nhac-Tru-Tinh/IWZ9Z08B.html"
   },
   {
     "id": "IWZ9Z089",
@@ -56,11 +49,11 @@
     "link": "/the-loai-album/Nhac-Phim/IWZ9Z0BA.html"
   },
   {
-    "id": "IWZ9Z08W",
-    "name": "Hàn Quốc",
-    "title": "Hàn Quốc",
-    "alias": "han-quoc",
-    "link": "/the-loai-album/Han-Quoc/IWZ9Z08W.html"
+    "id": "IWZ9Z08B",
+    "name": "Nhạc Trữ Tình",
+    "title": "Nhạc Trữ Tình",
+    "alias": "nhac-tru-tinh",
+    "link": "/the-loai-album/Nhac-Tru-Tinh/IWZ9Z08B.html"
   },
   {
     "id": "IWZ9Z08A",
@@ -75,13 +68,6 @@
     "title": "Tết",
     "alias": "tet",
     "link": "/the-loai-album/Tet/IWZ98I0D.html"
-  },
-  {
-    "id": "IWZ98IIZ",
-    "name": "Giáng Sinh",
-    "title": "Giáng Sinh",
-    "alias": "giang-sinh",
-    "link": "/the-loai-album/Giang-Sinh/IWZ98IIZ.html"
   },
   {
     "id": "IWZ9Z08D",
@@ -105,11 +91,11 @@
     "link": "/the-loai-album/Khac/IWZ9Z0CU.html"
   },
   {
-    "id": "IWZ9Z08E",
-    "name": "Nhạc Trịnh",
-    "title": "Nhạc Trịnh",
-    "alias": "nhac-trinh",
-    "link": "/the-loai-album/Nhac-Trinh/IWZ9Z08E.html"
+    "id": "IWZ98IIZ",
+    "name": "Giáng Sinh",
+    "title": "Giáng Sinh",
+    "alias": "giang-sinh",
+    "link": "/the-loai-album/Giang-Sinh/IWZ98IIZ.html"
   },
   {
     "id": "IWZ9Z08O",
@@ -119,18 +105,18 @@
     "link": "/the-loai-album/Au-My/IWZ9Z08O.html"
   },
   {
-    "id": "IWZ9Z097",
-    "name": "Pop",
-    "title": "Pop",
-    "alias": "pop",
-    "link": "/the-loai-album/Pop/IWZ9Z097.html"
-  },
-  {
     "id": "IWZ9Z09B",
     "name": "Rap / Hip Hop",
     "title": "Rap / Hip Hop",
     "alias": "rap-hip-hop",
     "link": "/the-loai-album/Rap-Hip-Hop/IWZ9Z09B.html"
+  },
+  {
+    "id": "IWZ9Z08E",
+    "name": "Nhạc Trịnh",
+    "title": "Nhạc Trịnh",
+    "alias": "nhac-trinh",
+    "link": "/the-loai-album/Nhac-Trinh/IWZ9Z08E.html"
   },
   {
     "id": "IWZ9Z0FZ",

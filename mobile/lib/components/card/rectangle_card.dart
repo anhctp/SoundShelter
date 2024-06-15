@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class RectangleCard extends StatefulWidget {
   final IconData icon;
   final String title;
-  final String subtitle;
+  final dynamic subtitle;
   final GestureTapCallback? onTap;
   const RectangleCard(
       {super.key,

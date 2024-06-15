@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:io';
 import 'dart:math';
 
 import 'package:audioplayers/audioplayers.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/model/favorite_model.dart';
@@ -14,6 +16,8 @@ import 'package:mobile/service/history_service.dart';
 import 'package:mobile/service/playlist_service.dart';
 import 'package:mobile/service/recommend_service.dart';
 import 'package:mobile/service/song_service.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:http/http.dart' as http;
 
 class SongProvider with ChangeNotifier {
   SongService songService = SongService();
@@ -29,6 +33,7 @@ class SongProvider with ChangeNotifier {
   List<Song> _recommendSongs = [];
   List<Song> _historySongs = [];
   List<Song> _favoriteSongs = [];
+  List<Song> _downloadedSongs = [];
 
   //getter
   List<Song> get songs => _songs;
@@ -37,6 +42,7 @@ class SongProvider with ChangeNotifier {
   List<Song> get recommendSongs => _recommendSongs;
   List<Song> get historySongs => _historySongs;
   List<Song> get favoriteSongs => _favoriteSongs;
+  List<Song> get downloadedSongs => _downloadedSongs;
 
   //setter
   List<Song> setPlayingSongs(List<Song> songs) {
@@ -210,7 +216,7 @@ class SongProvider with ChangeNotifier {
     _audioPlayer.setReleaseMode(ReleaseMode.stop);
     final String path = _playingSongs[_currentSongIndex!].audioFilePath;
     await _audioPlayer.stop(); //stop current song
-    await _audioPlayer.play(UrlSource(path)); //play new song
+    await _audioPlayer.play(DeviceFileSource(path)); //play new song
     _isPlaying = true;
     notifyListeners();
   }
@@ -326,5 +332,32 @@ class SongProvider with ChangeNotifier {
     _audioPlayer.dispose();
     timer?.cancel();
     super.dispose();
+  }
+
+  // download song
+  Future<void> downloadSong(Song song) async {
+    // Tải hình ảnh từ URL và lưu trữ vào bộ nhớ cache
+    CachedNetworkImageProvider(song.imageFilePath)
+        .resolve(ImageConfiguration.empty);
+
+    // Tạo thư mục để lưu trữ file nhạc
+    Directory appDocDir = await getApplicationDocumentsDirectory();
+    String appDocPath = appDocDir.path;
+
+    // Tạo file nhạc từ URL
+    http.Response response = await http.get(Uri.parse(song.audioFilePath));
+    File file = File('$appDocPath/${song.title.replaceAll(' ', '_')}.mp3');
+    await file.writeAsBytes(response.bodyBytes);
+
+    song.audioFilePath = file.path;
+    print(song.audioFilePath);
+    // Thêm bài hát vào danh sách đã tải xuống
+    _downloadedSongs.add(song);
+    print(_downloadedSongs[0].audioFilePath);
+    notifyListeners();
+
+    // Nếu cần, có thể sử dụng audioplayers để phát nhạc từ file đã tải về
+    //AudioPlayer audioPlayer = AudioPlayer();
+    //await _audioPlayer.play(UrlSource(file.path));
   }
 }
