@@ -4,6 +4,7 @@ import 'package:mobile/module/detail-screen/personal_screen.dart';
 import 'package:mobile/provider/song_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
+import 'package:mobile/module/library-screen/personal_screen/upload_screen.dart';
 
 class PersonalTab extends StatefulWidget {
   const PersonalTab({super.key});
@@ -31,6 +32,33 @@ class _PersonalTabState extends State<PersonalTab> {
     }
   }
 
+  final List<dynamic> items = [
+    {
+      'icon': Icons.favorite,
+      'title': 'Yêu thích',
+      'subtitle': '',
+      'onTap': () {},
+    },
+    {
+      'icon': Icons.download,
+      'title': 'Đã tải',
+      'subtitle': '',
+      'onTap': () {},
+    },
+    {
+      'icon': Icons.cloud_upload_outlined,
+      'title': 'Tải lên',
+      'subtitle': '',
+      'onTap': (context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const UploadScreen(),
+          ),
+        );
+      },
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Consumer<SongProvider>(
@@ -48,19 +76,10 @@ class _PersonalTabState extends State<PersonalTab> {
                 return Container(
                   margin: EdgeInsets.only(right: 20),
                   child: RectangleCard(
-                    icon: Icons.download,
-                    title: "Bài hát đã tải",
-                    subtitle: songProvider.downloadedSongs.length.toString(),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => PersonalScreen(
-                            songProvider: songProvider,
-                          ),
-                        ),
-                      );
-                    },
+                    icon: items[index]['icon'],
+                    title: items[index]['title'],
+                    subtitle: items[index]['subtitle'],
+                    onTap: () => items[index]['onTap'](context),
                   ),
                 );
               }),

@@ -16,11 +16,11 @@ The key features are:
 - Personalization:
   - Upload music. (in process)
   - Favorite music.
-  - Playlist. (in process)
-  - Interaction (like, comment, share). (in process)
+  - Playlist.
+  - Interaction (like, comment, share). (api)
   - Offline music (mobile). (in process)
 - Recommendations.
-- Sleep timer. (in process)
+- Sleep timer.
 - Charts.
 
 ## Technology
