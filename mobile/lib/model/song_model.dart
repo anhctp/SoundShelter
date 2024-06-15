@@ -11,11 +11,13 @@ class Song {
   String releaseDate;
   int? view;
   String? albumsTitle;
+  bool? isUploaded;
 
   Song(
       {this.id,
       this.albumId,
       this.playlistId,
+      this.isUploaded,
       required this.title,
       required this.artist,
       required this.audioFilePath,
@@ -29,6 +31,7 @@ class Song {
         id: map["id"],
         albumId: map["album_id"],
         playlistId: map["playlist_id"],
+        isUploaded: map["is_uploaded"],
         title: map["title"],
         artist: map["artist"],
         audioFilePath: map["audio_file_path"],
@@ -42,4 +45,20 @@ class Song {
 List<Song> songFromJson(List<int> jsonData) {
   final data = json.decode(utf8.decode(jsonData));
   return List<Song>.from(data.map((item) => Song.fromJsonMap(item)));
+}
+
+Song songFromJsonString(String jsonData) {
+  final data = json.decode(jsonData);
+  return Song(
+      id: data["id"],
+      albumId: data["album_id"],
+      playlistId: data["playlist_id"],
+      isUploaded: data["is_uploaded"],
+      title: "title",
+      artist: "artist",
+      audioFilePath: data["audio_file_path"],
+      imageFilePath: "image_file_path",
+      releaseDate: "release_date",
+      view: data["view"],
+      albumsTitle: data["albums_title"]);
 }

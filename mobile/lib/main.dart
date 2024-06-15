@@ -3,6 +3,7 @@ import 'package:mobile/Provider/playlist_provider.dart';
 import 'package:mobile/provider/album_provider.dart';
 import 'package:mobile/provider/genre_provider.dart';
 import 'package:mobile/provider/song_provider.dart';
+import 'package:mobile/provider/upload_provider.dart';
 import 'package:mobile/provider/user_provider.dart';
 import 'package:provider/provider.dart';
 import 'module/home-screen/home_screen.dart';
@@ -25,6 +26,9 @@ void main() {
         ),
         ChangeNotifierProvider(
           create: (context) => AlbumProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => UploadProvider(),
         ),
       ],
       child: MaterialApp(
