@@ -36,25 +36,26 @@ class _FileUploadWidgetState extends State<FileUploadWidget> {
         uploadSong, userProvider.currentUser!.token);
     if (!context.mounted) return;
     if (!response) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Upload song failed, please try again.")));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text("Upload song failed, please try again.")));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 100,
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            if (_file != null)
-              Text('Selected file: ${_file!.path.split("/").last}'),
-            SizedBox(height: 20),
+            _file != null
+                ? Flexible(child: Text(_file!.path.split("/").last))
+                : const Flexible(child: Text("")),
             ElevatedButton(
               onPressed: () => _pickFile(context),
-              child: Text('Pick File'),
+              child: const Text('Chọn file'),
             ),
           ],
         ),
