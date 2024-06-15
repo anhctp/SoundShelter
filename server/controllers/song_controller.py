@@ -74,18 +74,34 @@ class SongController:
         for song in ranked_songs:
             album = db.query(AlbumModel).filter(
                 AlbumModel.id == song.album_id).first()
-            song_info = {
-                "id": song.id,
-                "album_id": song.album_id,
-                "playlist_id": song.playlist_id,
-                "title": song.title,
-                "artist": song.artist,
-                "audio_file_path": song.audio_file_path,
-                "image_file_path": song.image_file_path,
-                "release_date": song.release_date,
-                "views": song.views,
-                "albums_title": album.title,
-            }
+            print(album)
+            if (album is None):
+                song_info = {
+                    "id": song.id,
+                    "album_id": song.album_id,
+                    "playlist_id": song.playlist_id,
+                    "title": song.title,
+                    "artist": song.artist,
+                    "audio_file_path": song.audio_file_path,
+                    "image_file_path": song.image_file_path,
+                    "release_date": song.release_date,
+                    "views": song.views,
+                    "albums_title": "album title",
+                }
+            else:
+                song_info = {
+                    "id": song.id,
+                    "album_id": song.album_id,
+                    "playlist_id": song.playlist_id,
+                    "title": song.title,
+                    "artist": song.artist,
+                    "audio_file_path": song.audio_file_path,
+                    "image_file_path": song.image_file_path,
+                    "release_date": song.release_date,
+                    "views": song.views,
+                    "albums_title": album.title,
+                }
+
             result.append(song_info)
 
         return result

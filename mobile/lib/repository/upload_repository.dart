@@ -25,8 +25,8 @@ class UploadRepository {
 
   Future<List<Song>> getAllUploadSong(int userId) async {
     Uri uri = Uri.parse(baseUrl)
-        .replace(path: '/get_uploaded_song', queryParameters: {
-      'user_id': userId,
+        .replace(path: 'api/get_uploaded_song', queryParameters: {
+      'user_id': userId.toString(),
     });
     final response = await http.get(uri, headers: {
       'Accept': 'application/json; charset=UTF-8',

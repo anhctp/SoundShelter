@@ -44,6 +44,7 @@ class Song {
 
 List<Song> songFromJson(List<int> jsonData) {
   final data = json.decode(utf8.decode(jsonData));
+
   return List<Song>.from(data.map((item) => Song.fromJsonMap(item)));
 }
 
@@ -54,11 +55,11 @@ Song songFromJsonString(String jsonData) {
       albumId: data["album_id"],
       playlistId: data["playlist_id"],
       isUploaded: data["is_uploaded"],
-      title: "title",
-      artist: "artist",
+      title: data["title"],
+      artist: data["artist"],
       audioFilePath: data["audio_file_path"],
-      imageFilePath: "image_file_path",
-      releaseDate: "release_date",
+      imageFilePath: data["image_file_path"],
+      releaseDate: data["release_date"],
       view: data["view"],
       albumsTitle: data["albums_title"]);
 }
