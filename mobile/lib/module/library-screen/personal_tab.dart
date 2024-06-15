@@ -24,6 +24,7 @@ class _PersonalTabState extends State<PersonalTab> {
       print("Quyền truy cập bộ nhớ đã được cấp.");
     } else if (status.isDenied) {
       print("Quyền truy cập bộ nhớ không được cấp.");
+      openAppSettings();
     } else if (status.isPermanentlyDenied) {
       // Notification permissions permanently denied, open app settings
       await openAppSettings();

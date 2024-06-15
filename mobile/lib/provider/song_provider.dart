@@ -216,7 +216,7 @@ class SongProvider with ChangeNotifier {
     _audioPlayer.setReleaseMode(ReleaseMode.stop);
     final String path = _playingSongs[_currentSongIndex!].audioFilePath;
     await _audioPlayer.stop(); //stop current song
-    await _audioPlayer.play(UrlSource(path)); //play new song
+    await _audioPlayer.play(DeviceFileSource(path)); //play new song
     _isPlaying = true;
     notifyListeners();
   }
