@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile/components/notification/my_alert.dart';
 
 class TimerPicker extends StatefulWidget {
   final dynamic value;
@@ -36,6 +37,14 @@ class _TimerPickerState extends State<TimerPicker> {
                   onTap: () {
                     widget.value.onSelectedTime(10 * 60);
                     Navigator.pop(context);
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          Future.delayed(Duration(seconds: 1), () {
+                            Navigator.of(context).pop(true);
+                          });
+                          return MyAlert(content: 'Dừng phát sau 10 phút');
+                        });
                   },
                   child: Container(
                     padding: const EdgeInsets.all(10),
@@ -55,6 +64,14 @@ class _TimerPickerState extends State<TimerPicker> {
                   onTap: () {
                     widget.value.onSelectedTime(15 * 60);
                     Navigator.pop(context);
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          Future.delayed(Duration(seconds: 1), () {
+                            Navigator.of(context).pop(true);
+                          });
+                          return MyAlert(content: 'Dừng phát sau 15 phút');
+                        });
                   },
                   child: Container(
                     padding: const EdgeInsets.all(10),
@@ -74,6 +91,14 @@ class _TimerPickerState extends State<TimerPicker> {
                   onTap: () {
                     widget.value.onSelectedTime(30 * 60);
                     Navigator.pop(context);
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          Future.delayed(Duration(seconds: 1), () {
+                            Navigator.of(context).pop(true);
+                          });
+                          return MyAlert(content: 'Dừng phát sau 30 phút');
+                        });
                   },
                   child: Container(
                     padding: const EdgeInsets.all(10),
@@ -93,6 +118,14 @@ class _TimerPickerState extends State<TimerPicker> {
                   onTap: () {
                     widget.value.onSelectedTime(60 * 60);
                     Navigator.pop(context);
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          Future.delayed(Duration(seconds: 1), () {
+                            Navigator.of(context).pop(true);
+                          });
+                          return MyAlert(content: 'Dừng phát sau 1 giờ');
+                        });
                   },
                   child: Container(
                     padding: const EdgeInsets.all(10),
@@ -181,6 +214,17 @@ class _TimerPickerState extends State<TimerPicker> {
                                           selectedTime.inSeconds);
                                     });
                                     Navigator.pop(context);
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          Future.delayed(Duration(seconds: 1),
+                                              () {
+                                            Navigator.of(context).pop(true);
+                                          });
+                                          return MyAlert(
+                                              content:
+                                                  'Dừng phát sau ${selectedTime.inHours} giờ ${selectedTime.inMinutes} phút ${selectedTime.inSeconds} giây');
+                                        });
                                   },
                                   style: ButtonStyle(
                                       backgroundColor:

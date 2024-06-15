@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/box/neu_box.dart';
+import 'package:mobile/components/notification/my_alert.dart';
 import 'package:mobile/components/title/screen_header.dart';
 import 'package:mobile/module/comment/comment_modal.dart';
 import 'package:mobile/module/song-screen/duration_progress.dart';
@@ -16,6 +17,7 @@ class FullPlayingView extends StatefulWidget {
 }
 
 class _FullPlayingViewState extends State<FullPlayingView> {
+  int i = 1;
   @override
   Widget build(BuildContext context) {
     return Consumer<SongProvider>(
@@ -99,13 +101,19 @@ class _FullPlayingViewState extends State<FullPlayingView> {
                         children: [
                           //like
                           IconButton(
-                            onPressed: value.favorites,
+                            onPressed: () {
+                              value.favorites();
+                              if (value.isFavorite)
+                                i++;
+                              else
+                                i--;
+                            },
                             icon: (value.isFavorite)
                                 ? Icon(Icons.favorite, color: Colors.red)
                                 : Icon(Icons.favorite_border),
                           ),
                           Text(
-                            "1",
+                            i.toString(),
                           )
                         ],
                       ),
@@ -116,7 +124,17 @@ class _FullPlayingViewState extends State<FullPlayingView> {
                       ),
                       //share
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  Future.delayed(Duration(seconds: 1), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return MyAlert(
+                                      content: 'Đã sao chép đường dẫn');
+                                });
+                          },
                           icon: const Icon(Icons.share_rounded)),
                       //comment
                       CommentModal(),
