@@ -80,7 +80,7 @@ class UploadController:
         db.add(db_upload)
         db.commit()
         db.refresh(db_upload)
-        return {"msg": "Uploaded"}
+        return db_upload
 
     def get_uploaded_song(user_id: int, db: Session):
         upload_song = db.query(SongModel).filter(
