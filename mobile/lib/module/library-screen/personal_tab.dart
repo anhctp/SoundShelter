@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/card/rectangle_card.dart';
+import 'package:mobile/module/detail-screen/personal_screen.dart';
+import 'package:mobile/provider/song_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:provider/provider.dart';
 
 class PersonalTab extends StatefulWidget {
   const PersonalTab({super.key});
@@ -10,28 +14,58 @@ class PersonalTab extends StatefulWidget {
 
 class _PersonalTabState extends State<PersonalTab> {
   @override
+  void initState() {
+    super.initState();
+    requestPermissions();
+  }
+
+  Future<void> requestPermissions() async {
+    PermissionStatus status = await Permission.storage.request();
+    if (status.isGranted) {
+      print("Quyền truy cập bộ nhớ đã được cấp.");
+    } else if (status.isDenied) {
+      print("Quyền truy cập bộ nhớ không được cấp.");
+    } else if (status.isPermanentlyDenied) {
+      // Notification permissions permanently denied, open app settings
+      await openAppSettings();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return //personal
-        Container(
-      height: 110,
-      width: double.maxFinite,
-      padding: EdgeInsets.symmetric(vertical: 10),
-      child: ListView.builder(
-          itemCount: 3,
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return Container(
-              margin: EdgeInsets.only(right: 20),
-              child: RectangleCard(
-                icon: Icons.download,
-                title: "title",
-                subtitle: "subtitle",
-                onTap: () {},
-              ),
-            );
-          }),
+    return Consumer<SongProvider>(
+      builder: (context, songProvider, child) {
+        return Container(
+          height: 110,
+          width: double.maxFinite,
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: ListView.builder(
+              itemCount: 1,
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: EdgeInsets.only(right: 20),
+                  child: RectangleCard(
+                    icon: Icons.download,
+                    title: "Bài hát đã tải",
+                    subtitle: songProvider.downloadedSongs.length.toString(),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PersonalScreen(
+                            songProvider: songProvider,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                );
+              }),
+        );
+      },
     );
   }
 }

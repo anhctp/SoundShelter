@@ -1,5 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Thêm quyền truy cập vào bộ nhớ -->
+    <uses-permission android:name="android.permission.READ_MEDIA_*"/>
+
     <application
+        android:requestLegacyExternalStorage="true"
         android:label="mobile"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

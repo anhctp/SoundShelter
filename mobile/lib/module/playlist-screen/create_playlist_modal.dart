@@ -63,6 +63,24 @@ class _CreatePlaylistModalState extends State<CreatePlaylistModal> {
                   ),
                 ),
           const SizedBox(height: 10),
+          InkWell(
+            onTap: () {
+              widget.songProvider.downloadSong(widget.currentSong);
+              Navigator.pop(context);
+            },
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.grey.shade300),
+              width: double.infinity,
+              child: Text(
+                'Tải xuống',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
         ],
       ),
     );
