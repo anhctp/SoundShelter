@@ -47,39 +47,36 @@ class _UploadScreenState extends State<UploadScreen> {
                     height: MediaQuery.of(context).size.height,
                     padding: const EdgeInsets.all(10.0),
                     child: userProvider.currentUser != null
-                        ? Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 15),
-                            child: Column(
-                              children: [
-                                FileUploadWidget(),
-                                Container(
-                                  height: 400,
-                                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                                  child: GridView.count(
-                                    scrollDirection: Axis.vertical,
-                                    crossAxisCount: 1,
-                                    crossAxisSpacing: 10,
-                                    mainAxisSpacing: 15,
-                                    padding: const EdgeInsets.all(2),
-                                    childAspectRatio: 5,
-                                    children: List.generate(
-                                      uploadProvider.songs.length,
-                                      (index) {
-                                        final song =
-                                            uploadProvider.songs[index];
-                                        return MusicItem(
-                                            songProvider: uploadProvider,
-                                            song: song,
-                                            add: true,
-                                            index: index,
-                                            playlist: uploadProvider.songs);
-                                      },
-                                    ),
+                        ? Column(
+                            children: [
+                              FileUploadWidget(),
+                              Container(
+                                height: 580,
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: GridView.count(
+                                  scrollDirection: Axis.vertical,
+                                  crossAxisCount: 1,
+                                  crossAxisSpacing: 10,
+                                  mainAxisSpacing: 15,
+                                  padding: const EdgeInsets.all(2),
+                                  childAspectRatio: 5,
+                                  children: List.generate(
+                                    uploadProvider.songs.length,
+                                    (index) {
+                                      final song = uploadProvider.songs[index];
+                                      return MusicItem(
+                                          songProvider: uploadProvider,
+                                          song: song,
+                                          add: true,
+                                          index: index,
+                                          playlist: uploadProvider.songs);
+                                    },
                                   ),
                                 ),
-                              ],
-                            ))
+                              ),
+                            ],
+                          )
                         : Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: RichText(
