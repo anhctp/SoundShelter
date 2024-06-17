@@ -39,7 +39,8 @@ cd SoundShelter
 cd server
 pip install -r requirements.txt
 uvicorn main:app --reload
-
+cp .env.example .env
+# set up environment variables in file .env
 # add data for the first time
 Call API http://localhost:8000/api/data/
 - Interface: Go to [http://localhost:8000/docs#/default/save_data_api_data_get](http://localhost:8000/docs#/Data/save_data_api_data__get)
@@ -49,4 +50,10 @@ Call API http://localhost:8000/api/data/
 cd client
 yarn install
 yarn run dev
+
+# run mobile
+cd mobile
+flutter pub get
+flutter run
+ 
 ```
