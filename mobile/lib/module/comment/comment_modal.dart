@@ -11,6 +11,23 @@ class CommentModal extends StatefulWidget {
 class _CommentModalState extends State<CommentModal>
     with TickerProviderStateMixin {
   final _textEditingController = TextEditingController();
+  List<CommentItem> items = [
+    CommentItem(
+      accountName: "Tam",
+      comment: "Hay quá",
+      date: "15/06/2024",
+    ),
+    CommentItem(
+      accountName: "Thủy",
+      comment: "Tuyệt vời",
+      date: "13/06/2024",
+    ),
+    CommentItem(
+      accountName: "Phanh",
+      comment: "Nên nghe",
+      date: "10/06/2024",
+    ),
+  ];
 
   @override
   void dispose() {
@@ -34,11 +51,11 @@ class _CommentModalState extends State<CommentModal>
                       children: [
                         Row(
                           children: [
-                            const Expanded(
+                            Expanded(
                               child: Align(
                                   alignment: Alignment.center,
                                   child: Text(
-                                    "? bình luận",
+                                    "${items.length} bình luận",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 20),
@@ -97,17 +114,16 @@ class _CommentModalState extends State<CommentModal>
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         child: ListView.separated(
-                          itemCount: 10,
+                          itemCount: items.length,
                           separatorBuilder: (BuildContext context, int index) =>
                               const SizedBox(
                             height: 5,
                           ),
                           itemBuilder: (BuildContext context, int index) {
                             return CommentItem(
-                              accountName: "account name $index",
-                              comment:
-                                  "cmtcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
-                              date: "dd/mm/yyyy",
+                              accountName: "Tam",
+                              comment: "Hay quá",
+                              date: "15/06/2024",
                             );
                           },
                         ),

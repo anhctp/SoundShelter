@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/components/notification/my_alert.dart';
 import 'package:mobile/model/song_model.dart';
 
 class CreatePlaylistModal extends StatefulWidget {
@@ -32,6 +33,15 @@ class _CreatePlaylistModalState extends State<CreatePlaylistModal> {
                   onTap: () {
                     widget.songProvider.createFavorite(widget.currentSong.id!);
                     Navigator.pop(context);
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          Future.delayed(Duration(seconds: 1), () {
+                            Navigator.of(context).pop(true);
+                          });
+                          return MyAlert(
+                              content: 'Đã thêm vào danh sách yêu thích');
+                        });
                   },
                   child: Container(
                     padding: const EdgeInsets.all(10),
@@ -49,6 +59,15 @@ class _CreatePlaylistModalState extends State<CreatePlaylistModal> {
                   onTap: () {
                     widget.songProvider.deleteFavorite(widget.currentSong.id!);
                     Navigator.pop(context);
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          Future.delayed(Duration(seconds: 1), () {
+                            Navigator.of(context).pop(true);
+                          });
+                          return MyAlert(
+                              content: 'Đã xóa khỏi danh sách yêu thích');
+                        });
                   },
                   child: Container(
                     padding: const EdgeInsets.all(10),
@@ -67,6 +86,14 @@ class _CreatePlaylistModalState extends State<CreatePlaylistModal> {
             onTap: () {
               widget.songProvider.downloadSong(widget.currentSong);
               Navigator.pop(context);
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    Future.delayed(Duration(seconds: 1), () {
+                      Navigator.of(context).pop(true);
+                    });
+                    return MyAlert(content: 'Đã tải xuống');
+                  });
             },
             child: Container(
               padding: const EdgeInsets.all(10),

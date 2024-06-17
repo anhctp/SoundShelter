@@ -122,7 +122,10 @@ class SongProvider with ChangeNotifier {
   //delete favorite
   Future<void> deleteFavorite(int songId) async {
     await favoriteService.delelteFavorite(songId, _user!.token);
-    getFavorite();
+    if (_favoriteSongs.length > 1)
+      getFavorite();
+    else
+      _favoriteSongs = [];
     notifyListeners();
   }
 
