@@ -14,7 +14,7 @@ The key features are:
   - Classification by genre and author: The system will automatically categorize songs into different genres. Provide the ability to filter songs based on the author, year of production, and other factors.
   - User interaction: There are functions for users to choose from: play, stop, pause, next, prev, repeat.
 - Personalization:
-  - Upload music. (in process)
+  - Upload music.
   - Favorite music.
   - Playlist.
   - Interaction (like, comment, share). (api)
